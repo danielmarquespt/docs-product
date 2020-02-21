@@ -1,5 +1,7 @@
 ---
-summary: Follow this tutorial to quickly create and test an example mobile app to manage tasks.
+summary: >-
+  Follow this tutorial to quickly create and test an example mobile app to
+  manage tasks.
 tags: runtime-mobile; support-Mobile_Apps; support-Mobile_Apps-overview
 ---
 
@@ -23,11 +25,11 @@ Let's create a new task management mobile app. An application contains one or mo
 
 In Service Studio, click **New Application**, choose **Mobile App**, choose the **Phone** template and name it `To Do`.
 
-![Create a Mobile App](images/create-mobile-01.png)
+![Create a Mobile App](../../.gitbook/assets/create-mobile-01.png)
 
 In the new **To Do** application, create a **Mobile** module, named `ToDo`.
 
-![Create a Mobile Module](images/create-mobile-02.png)
+![Create a Mobile Module](../../.gitbook/assets/create-mobile-02.png)
 
 ## Create a database table from an Excel file
 
@@ -41,9 +43,9 @@ To do this, we are going to use an Excel file that already contains the followin
 
 In the `ToDo` module, open the **Data** tab on the top right-hand corner, right-click the **Entities** folder, choose **Import Entities from Excel...**, and select the sample file `Tasks.xlsx` available by default in the directory `C:\Program Files\OutSystems\Development Environment 11\Service Studio\TutorialResources`.
 
-![Create a Database Table from an Excel File](images/create-mobile-03.png)
+![Create a Database Table from an Excel File](../../.gitbook/assets/create-mobile-03.png)
 
-When importing an Excel file, OutSystems creates a database table (called an Entity in OutSystems) with the necessary columns (called Attributes in OutSystems) to store the data in the database.
+When importing an Excel file, OutSystems creates a database table \(called an Entity in OutSystems\) with the necessary columns \(called Attributes in OutSystems\) to store the data in the database.
 
 Behind the scenes, OutSystems also creates logic to import each row in the Excel file into a corresponding database record. After publishing your application, the background logic populates your database with the data from the Excel file.
 
@@ -55,85 +57,82 @@ Now we can create a screen that lists all of the tasks.
 
 Open the **Interface** tab on the top right-hand corner, and double-click **MainFlow** under **UI Flows**. Then, drag a **Screen** from the Toolbox to an empty area in the Main Editor window. Choose the **Empty** template, name your screen `Tasks` and click **Create Screen**.
 
-![Create a new empty screen](images/create-mobile-04.png)
+![Create a new empty screen](../../.gitbook/assets/create-mobile-04.png)
 
 Drag the **Task** entity from the **Data** tab to the Content placeholder of the mobile screen that is displayed in the Main Editor window.
 
-![Create a Screen to List Tasks](images/create-mobile-05.png)
+![Create a Screen to List Tasks](../../.gitbook/assets/create-mobile-05.png)
 
 This updates the **Tasks** to include a list that initially displays 20 tasks and automatically loads more tasks when the user scrolls to the end of the list.
 
-![Tasks Screen](images/create-mobile-06.png)
+![Tasks Screen](../../.gitbook/assets/create-mobile-06.png)
 
 ## Create a screen to edit tasks
 
 Creating a screen to edit the records is as fast as creating a list screen.
 
-Right-click the title of the first task in the list, click **Link to** > **(New Screen)**, choose the **Empty** template, name your screen `TaskDetail` and click **Create Screen**.
+Right-click the title of the first task in the list, click **Link to** &gt; **\(New Screen\)**, choose the **Empty** template, name your screen `TaskDetail` and click **Create Screen**.
 
-![Create a Screen to Edit Tasks](images/create-mobile-07.png)
+![Create a Screen to Edit Tasks](../../.gitbook/assets/create-mobile-07.png)
 
 This links the title of the tasks to a newly created screen. We will use this new screen to edit the tasks, but for that we will need a form:
 
 1. Drag a **Form** widget from the Toolbox to the Content placeholder in the **TaskDetail** mobile screen.
 
-    ![Drag a Form](images/create-mobile-08.png)
+   ![Drag a Form](../../.gitbook/assets/create-mobile-08.png)
 
-1. Drag the **Task** entity from the **Data** tab to the previously created Form.
+2. Drag the **Task** entity from the **Data** tab to the previously created Form.
 
-    ![Create a Screen to Edit Tasks](images/create-mobile-10.png)
+   ![Create a Screen to Edit Tasks](../../.gitbook/assets/create-mobile-10.png)
 
 Now we will define the logic that runs when the end users press the Save button:
 
 1. Double-click an empty area of the **Save** button to define the logic associated with the button. This will create a new screen action named **SaveOnClick**.
+2. In the **Data** tab, expand the **Task** entity and drag the **CreateOrUpdateTask** entity action to the **True** branch of the **If**. Set the **Source** property to `GetTaskById.List.Current`.
+3. Drag the screen **Tasks** from the **Interface** tab to the End node so that the user is redirected back to the main screen after saving a task.
 
-1. In the **Data** tab, expand the **Task** entity and drag the **CreateOrUpdateTask** entity action to the **True** branch of the **If**. Set the **Source** property to `GetTaskById.List.Current`.
-
-1. Drag the screen **Tasks** from the **Interface** tab to the End node so that the user is redirected back to the main screen after saving a task. 
-
-    ![Create a Screen to Edit Tasks](images/create-mobile-11.png)
+   ![Create a Screen to Edit Tasks](../../.gitbook/assets/create-mobile-11.png)
 
 ## Allow adding tasks
 
 We want to enable the end users to add new tasks from the list screen by linking to the screen that is already used to edit tasks:
 
 1. In the **Interface** tab, double-click the **Tasks** to open the list screen.  
-Drag an **Icon** widget from the Toolbox to the Actions placeholder in the top right-hand corner of the screen and select the **plus** icon.
+   Drag an **Icon** widget from the Toolbox to the Actions placeholder in the top right-hand corner of the screen and select the **plus** icon.
 
-    ![Add plus icon to Actions placeholder](images/create-mobile-12.png)
+   ![Add plus icon to Actions placeholder](../../.gitbook/assets/create-mobile-12.png)
 
-1. Right-click the **plus** icon and choose **Link** > **MainFlow\TaskDetail**.
+2. Right-click the **plus** icon and choose **Link** &gt; **MainFlow\TaskDetail**.
 
-    ![Allow Adding Tasks](images/create-mobile-13.png)
+   ![Allow Adding Tasks](../../.gitbook/assets/create-mobile-13.png)
 
 ## Allow completing tasks
 
 Now let's add the functionality to mark tasks as complete. Let's implement that by deleting the completed tasks:
 
 1. Click the item of the list and then, on the Toolbar, click **Swipe Left Action**.
+2. In the newly created List Action, replace the text "Action" with "Done".
 
-1. In the newly created List Action, replace the text "Action" with "Done".
+   ![Allow Completing Tasks](../../.gitbook/assets/create-mobile-14.png)
 
-    ![Allow Completing Tasks](images/create-mobile-14.png)
+3. Double-click an empty area of the List Action to define the logic associated with the Swipe Left Action.
+4. In the **Data** tab, expand the **Task** entity and drag **DeleteTask** entity action available under the entity Task in the Data tab to the flow of the Swipe Left Action. Set the **Id** property to `GetTasks.List.Current.Task.Id`.
 
-1. Double-click an empty area of the List Action to define the logic associated with the Swipe Left Action.
+   ![Allow Completing Tasks](../../.gitbook/assets/create-mobile-15.png)
 
-1. In the **Data** tab, expand the **Task** entity and drag **DeleteTask** entity action  available under the entity Task in the Data tab to the flow of the Swipe Left Action. Set the **Id** property  to `GetTasks.List.Current.Task.Id`.
+5. Drag **Refresh Data** from the Toolbox to the action Flow, after the **DeleteTask** action, and select the aggregate **GetTasks** to refresh the available tasks in the screen.
 
-    ![Allow Completing Tasks](images/create-mobile-15.png)
-
-1. Drag **Refresh Data** from the Toolbox to the action Flow, after the **DeleteTask** action, and select the aggregate **GetTasks** to refresh the available tasks in the screen.
-
-    ![Allow Completing Tasks](images/create-mobile-16.png)
+   ![Allow Completing Tasks](../../.gitbook/assets/create-mobile-16.png)
 
 ## Test your Mobile App
 
-At this stage we test the mobile app. Click the **![1-Click Publish](../shared/icons-service-studio/publish.png) 1-Click Publish** button to publish the application to your environment.
+At this stage we test the mobile app. Click the ![1-Click Publish](../../.gitbook/assets/publish.png) **1-Click Publish** button to publish the application to your environment.
 
-![Publish Your Mobile App](images/create-mobile-17.png)
+![Publish Your Mobile App](../../.gitbook/assets/create-mobile-17.png)
 
-When the application is deployed, click the **![Open in Browser](../shared/icons-service-studio/open-browser.png) Open in Browser** button to test your application in a browser (Chrome and Safari are supported).
+When the application is deployed, click the ![Open in Browser](../../.gitbook/assets/open-browser.png) **Open in Browser** button to test your application in a browser \(Chrome and Safari are supported\).
 
-![Test Your Mobile App](images/create-mobile-18.png)
+![Test Your Mobile App](../../.gitbook/assets/create-mobile-18.png)
 
 To test the application on your mobile device see [Preview Your Mobile App in the Device Using OutSystems Now](../deliver-mobile/preview-your-mobile-app-in-the-device-using-outsystems-now.md).
+

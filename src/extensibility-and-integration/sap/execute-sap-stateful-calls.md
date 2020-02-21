@@ -12,17 +12,18 @@ To achieve this, you need an extension module to manage stateful calls in SAP.
 
 ## Create an Extension Module Using SAP Extensibility API
 
-1. Go to Forge and get the component [SAP Utilities](<http://www.outsystems.com/forge/component/1012/sap-utilities/>). It's a sample with an extension module for SAP, with actions for handling stateful calls.
-1. Because SAPUtilities extension makes use of the SAP Extensibility API, setup your extension following the requirements described in [here](<../../ref/apis/sap-extensibility-api.md>).
-1. Publish the extension.
+1. Go to Forge and get the component [SAP Utilities](http://www.outsystems.com/forge/component/1012/sap-utilities/>). It's a sample with an extension module for SAP, with actions for handling stateful calls.
+2. Because SAPUtilities extension makes use of the SAP Extensibility API, setup your extension following the requirements described in [here](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/ref/apis/sap-extensibility-api.md%3E).
+3. Publish the extension.
 
 ## Use the Extension in your Application
 
 To implement stateful calls in your application do the following:
 
 1. Add dependencies to the following actions of the SAPUtilities extension:
-    * **BeginContext**: starts a stateful connection in SAP
-    * **EndContext**: ends the stateful connection in SAP
-    * **Commit**: commits changes inside a stateful connection in SAP
-    * **Rollback**: rolls back changes inside a stateful connection in SAP
+   * **BeginContext**: starts a stateful connection in SAP
+   * **EndContext**: ends the stateful connection in SAP
+   * **Commit**: commits changes inside a stateful connection in SAP
+   * **Rollback**: rolls back changes inside a stateful connection in SAP
 2. Use SAP remote functions together with the actions from the extension to implement a stateful call. 
+

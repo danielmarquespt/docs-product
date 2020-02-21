@@ -14,10 +14,11 @@ For most errors and warnings, double-clicking the error line in the TrueChange t
 
 In OutSystems, an error is a problem that prevents deploying the module to the server.
 
-Only when all errors are fixed, the module can be deployed to the server. 
+Only when all errors are fixed, the module can be deployed to the server.
 
 ## Warnings
 
-In OutSystems, a warning is a potential problem but does not prevent the deployment of a module to the server. 
+In OutSystems, a warning is a potential problem but does not prevent the deployment of a module to the server.
 
-However, it's advisable to check the warnings and solve them, since they may be tip of the iceberg for unexpected or bad behaviors. 
+However, it's advisable to check the warnings and solve them, since they may be tip of the iceberg for unexpected or bad behaviors.
+

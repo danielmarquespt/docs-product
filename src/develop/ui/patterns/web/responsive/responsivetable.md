@@ -1,6 +1,8 @@
 ---
-tags: runtime-traditionalweb; 
-summary: ResponsiveTable displays information in a logical and organized way that is easy to scan and read.
+tags: runtime-traditionalweb;
+summary: >-
+  ResponsiveTable displays information in a logical and organized way that is
+  easy to scan and read.
 ---
 
 # ResponsiveTable
@@ -13,50 +15,46 @@ Use Table Records to display information in a logical and organized way that is 
 
 1. Drag ResponsiveTable pattern into the preview.
 
-    ![](<images/responsivetable-image-1.png?width=500>)
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/responsive/images/responsivetable-image-1.png?width=500%3E)
 
-1. Drag the Table Widget you want to change to the Content placholder.
+2. Drag the Table Widget you want to change to the Content placholder.
 
-    ![](<images/responsivetable-image-2.png>)
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/responsive/images/responsivetable-image-2.png%3E)
 
-1. Set the mandatory values.
+3. Set the mandatory values.
 
-    ![](<images/responsivetable-image-3.png>)
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/responsive/images/responsivetable-image-3.png%3E)
 
-1. Publish and test.
-
+4. Publish and test.
 
 ## Input Parameters
 
-| **Input Name** |  **Description** |  **Type** | **Mandatory** | **Default Value** |
-|---|---|---|---|---|
-| ResponsiveBehavior  |  TableRecords responsive behavior. | ResponsiveTableRecords Identifier | Yes | none |
-  
+| **Input Name** | **Description** | **Type** | **Mandatory** | **Default Value** |
+| :--- | :--- | :--- | :--- | :--- |
+| ResponsiveBehavior | TableRecords responsive behavior. | ResponsiveTableRecords Identifier | Yes | none |
+
 ## Layout and Classes
 
-![](<images/responsivetable-image-4.png>)
-
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/responsive/images/responsivetable-image-4.png%3E)
 
 ## CSS Selectors
 
-| **Element** |  **CSS Class** |  **Description**  |
-| ---|---|---
-| .table-records-responsive |  .table-records-responsive.scrollable-row|  When the ResponsiveBehavior parameter is set to scrollable  |
-| .table-records-responsive |  .table-records-responsive.expandable-row|  When the ResponsiveBehavior parameter is set to expandable  |
-| table tbody tr |  .TableRecords_ExpandedRow |  When using the expandable-row option, identifies when the the row is expanded  |
-
+| **Element** | **CSS Class** | **Description** |
+| :--- | :--- | :--- |
+| .table-records-responsive | .table-records-responsive.scrollable-row | When the ResponsiveBehavior parameter is set to scrollable |
+| .table-records-responsive | .table-records-responsive.expandable-row | When the ResponsiveBehavior parameter is set to expandable |
+| table tbody tr | .TableRecords\_ExpandedRow | When using the expandable-row option, identifies when the the row is expanded |
 
 ## Advanced Use Case
 
 ### Change Responsive Behavior parameter according to device
 
 1. Drag the ResponsiveTable Pattern into the page.
+2. Set the ResponsiveBehaviour parameter to `If(IsPhone(), Entities.ResponsiveTableRecords.ExpandableRows, Entities.ResponsiveTableRecords.ScrollabeRows)`.
 
-1.  Set the ResponsiveBehaviour parameter to `If(IsPhone(), Entities.ResponsiveTableRecords.ExpandableRows, Entities.ResponsiveTableRecords.ScrollabeRows)`. 
+   We use the server action IsPhone as the condition to set the property for phone devices. You can also use the IsTablet action, or invert the False & True statements as required.
 
-    We use the server action IsPhone as the condition to set the property for phone devices. You can also use the IsTablet action, or invert the False & True statements as required.
-
-1. Publish and test.
+3. Publish and test.
 
 ### Change expandable-row's arrow color
 
@@ -71,7 +69,7 @@ To implement this, you can use either method described below.
 }
 ```
 
-2. Use CSS variables like `var(--color-yourcolor)`.
+1. Use CSS variables like `var(--color-yourcolor)`.
 
 ```css
 .tablet.portrait .expandable-row .TableRecords tbody tr td:first-child:after, 
@@ -79,3 +77,4 @@ To implement this, you can use either method described below.
     color: var(--color-yourcolor);
 }
 ```
+

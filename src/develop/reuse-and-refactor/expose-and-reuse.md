@@ -1,5 +1,7 @@
 ---
-summary: Learn how to make elements of your module available for reuse by other modules and how to to use elements exposed by other modules.
+summary: >-
+  Learn how to make elements of your module available for reuse by other modules
+  and how to to use elements exposed by other modules.
 tags: support-Mobile_Apps; support-webapps
 ---
 
@@ -9,7 +11,7 @@ When developing your OutSystems applications, elements are implemented and reuse
 
 The module that implements and exposes functionality is the **producer** module. On the other hand, the module that reuses the exposed functionality is the **consumer** module. The functionality exposed by a **producer** module is considered as **dependencies** in the **consumers**.
 
-![](images/expose-and-reuse-1.png?width=400)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/reuse-and-refactor/images/expose-and-reuse-1.png?width=400)
 
 Changes made in the producer module to the signature or implementation of the exposed elements may have impact in the consumer module. Check [this topic](handle-changes.md) to learn how the changes made in the producer in the exposed elements will impact the consumer modules.
 
@@ -21,9 +23,9 @@ To expose an element to other modules, do the following:
 
 1. Set the element’s Public property to ‘Yes’:
 
-    ![](images/expose-and-reuse-2.png?width=300)
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/reuse-and-refactor/images/expose-and-reuse-2.png?width=300)
 
-1. Publish your module. After publishing your module, the public elements can be reused by other modules in the environment.
+2. Publish your module. After publishing your module, the public elements can be reused by other modules in the environment.
 
 By definition, Service Actions will always be public to other modules, so you don’t need to set them public. This also happens for the elements exposed by [Extensions](../../extensibility-and-integration/integration-studio/getting-started/extension.md).
 
@@ -37,19 +39,19 @@ To reuse elements from other modules, do the following:
 
 1. Open the **Manage Dependencies** window.
 
-    ![](images/expose-and-reuse-3.png?width=300)
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/reuse-and-refactor/images/expose-and-reuse-3.png?width=300)
 
-1. Select the producer module and then select the element you want to use.
+2. Select the producer module and then select the element you want to use.
 
-    ![](images/expose-and-reuse-4.png?width=600)
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/reuse-and-refactor/images/expose-and-reuse-4.png?width=600)
 
-1. Press **OK** to make the element available in your module.
+3. Press **OK** to make the element available in your module.
 
-    ![](images/expose-and-reuse-5.png?width=300)
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/reuse-and-refactor/images/expose-and-reuse-5.png?width=300)
 
-1. Use the element exposed by the producer as any other element in your module.
+4. Use the element exposed by the producer as any other element in your module.
 
-    ![](images/expose-and-reuse-6.png?width=600)
-
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/reuse-and-refactor/images/expose-and-reuse-6.png?width=600)
 
 In the consumer module, you will see all the details you need to reuse the exposed element, such as the element name, the description or the input/output parameters - this is called the element’s signature. You will not be able to modify the exposed elements.
+

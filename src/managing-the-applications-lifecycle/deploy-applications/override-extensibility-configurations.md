@@ -1,5 +1,7 @@
 ---
-summary: Override the default Extensibility Configurations of a mobile app for a specific environment.
+summary: >-
+  Override the default Extensibility Configurations of a mobile app for a
+  specific environment.
 tags: runtime-mobile
 ---
 
@@ -14,25 +16,24 @@ With OutSystems you can override, for a specific environment, the default Extens
 To override the Extensibility Configurations of your mobile app for a specific environment, do the following:
 
 1. In LifeTime management console, go to the details page of the application.
+2. Press the **Settings** link.
 
-1. Press the **Settings** link.  
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/managing-the-applications-lifecycle/deploy-applications/images/override-extensibility-configurations-1.png?width=700)
 
-    ![](images/override-extensibility-configurations-1.png?width=700)
+3. Choose the environment where you want to override the Extensibility Configurations. The application must be already deployed in that environment.
 
-1. Choose the environment where you want to override the Extensibility Configurations. The application must be already deployed in that environment.  
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/managing-the-applications-lifecycle/deploy-applications/images/override-extensibility-configurations-2.png?width=400)
 
-    ![](images/override-extensibility-configurations-2.png?width=400)
+4. In the **Advanced** section, you will see the default Extensibility Configurations that were defined at design time. Choose the **Custom** option.
 
-1. In the **Advanced** section, you will see the default Extensibility Configurations that were defined at design time. Choose the **Custom** option.
+   ![](../../../.gitbook/assets/override-extensibility-configurations-3.png)
 
-    ![](images/override-extensibility-configurations-3.png)
+5. Use the **Copy from Default** button to copy the default configurations to the custom field.
+6. In the Custom field, change only the configurations that need to be different for that environment, keeping the remaining configurations as is. Make sure the development team validates or provides you with the custom configurations.
 
-1. Use the **Copy from Default** button to copy the default configurations to the custom field.
+   ![](../../../.gitbook/assets/override-extensibility-configurations-4.png)
 
-1. In the Custom field, change only the configurations that need to be different for that environment, keeping the remaining configurations as is. Make sure the development team validates or provides you with the custom configurations.
-
-    ![](images/override-extensibility-configurations-4.png)
-
-1. Press the **Save** button.
+7. Press the **Save** button.
 
 Now, when a new mobile app package is generated in this environment, the custom configurations will override the default configurations defined in the application module. Also, the custom configurations will be kept for the environment after new application deployments.
+

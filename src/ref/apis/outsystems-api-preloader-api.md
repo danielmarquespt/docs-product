@@ -1,55 +1,56 @@
 ---
-summary: A JavaScript API that allows you to prefetch static resources (css, js, png, gif. jpg, jpeg, woff) for a list of modules.
-tags: runtime-traditionalweb; support-application_development; support-Front_end_Development; support-webapps
+summary: >-
+  A JavaScript API that allows you to prefetch static resources (css, js, png,
+  gif. jpg, jpeg, woff) for a list of modules.
+tags: >-
+  runtime-traditionalweb; support-application_development;
+  support-Front_end_Development; support-webapps
 ---
 
 # outsystems.api.preloader API
 
-A JavaScript API that allows you to prefetch static resources (css, js, png, gif. jpg, jpeg, woff) for a list of modules. This way, when the page needs a resource, it can be already in the browser's cache.
+A JavaScript API that allows you to prefetch static resources \(css, js, png, gif. jpg, jpeg, woff\) for a list of modules. This way, when the page needs a resource, it can be already in the browser's cache.
 
 The following files are prefetched:
 
 * CSS styles and JavaScript code added to Web Blocks, Screens, and Themes
 * Image files used in the application module
 * Module resources with their 'Deploy Action' property set to 'Deploy to Target Directory', and that have the following file formats: 
-    * css 
-    * js 
-    * gif, png, jpg, jpeg 
-    * woff 
+  * css 
+  * js 
+  * gif, png, jpg, jpeg 
+  * woff 
 * If your module has a dependency to other modules: 
-    * CSS of referenced Web Blocks and Themes
-    * All referenced images
+  * CSS of referenced Web Blocks and Themes
+  * All referenced images
 
 ## Requirements
 
-Include the _preloader.js file in your application. It needs to be added to the screen where you want to use the API. To do so, follow these steps:
+Include the \_preloader.js file in your application. It needs to be added to the screen where you want to use the API. To do so, follow these steps:
 
-1. Reference the [AddJavaScriptTag](<auto/httprequesthandler-api.final.md#AddJavaScriptTag>) of the [HTTPRequestHandler](<auto/httprequesthandler-api.final.md>) extension in your application. 
-1. Use the 'AddJavaScriptTag' action in your application to import the `_preloader.js` file.   
-Set the 'JavaScriptURL' parameter to `_preloader.js`.
+1. Reference the [AddJavaScriptTag](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/ref/apis/auto/httprequesthandler-api.final.md#AddJavaScriptTag%3E) of the [HTTPRequestHandler](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/ref/apis/auto/httprequesthandler-api.final.md%3E) extension in your application. 
+2. Use the 'AddJavaScriptTag' action in your application to import the `_preloader.js` file.   
+
+   Set the 'JavaScriptURL' parameter to `_preloader.js`.
 
 ## preloadApp Method
 
-Prefetches static resources (css, js, png, gif, jpg, jpeg, woff) for a list of modules.
+Prefetches static resources \(css, js, png, gif, jpg, jpeg, woff\) for a list of modules.
 
 This way, when the page needs a resource, it can be already in the browser's cache.
 
 ### Input Parameters
 
-`modules`
-:   Array. A string array with the names of the modules from where resources are fetched.
+`modules` : Array. A string array with the names of the modules from where resources are fetched.
 
-`redirectUrl`
-:   String. The URL to redirect to, after all static resources are prefetched.  
-    If you pass an empty string, there is no redirection.
+`redirectUrl` : String. The URL to redirect to, after all static resources are prefetched.  
+If you pass an empty string, there is no redirection.
 
-`locale`
-:   String. Fetch resources in the language indicated by this locale code. Example: "en-US".  
-    If you pass an empty string, the resources will be prefetched without any locale.
+`locale` : String. Fetch resources in the language indicated by this locale code. Example: "en-US".  
+If you pass an empty string, the resources will be prefetched without any locale.
 
-`ProgressCallback`
-:   Function. Allows defining a JavaScript callback function. It is called each time a resource is loaded. Example: give visual feedback about the progress.  
-    This callback function has a decimal input parameter, with the percentage of files prefetched from the server.
+`ProgressCallback` : Function. Allows defining a JavaScript callback function. It is called each time a resource is loaded. Example: give visual feedback about the progress.  
+This callback function has a decimal input parameter, with the percentage of files prefetched from the server.
 
 ## Example
 
@@ -85,3 +86,4 @@ outsystems.api.preloader.preloadApp(modulesToPrefetch, redirectUrl, locale, Prel
 // 20%
 // ...
 ```
+

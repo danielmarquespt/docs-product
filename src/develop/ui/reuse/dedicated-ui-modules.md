@@ -1,6 +1,10 @@
 ---
-summary: Reuse Screens and Blocks between Apps to increase team efficiency and follow good development practices. 
-tags: support-application_development; support-Front_end_Development; runtime-reactiveweb;
+summary: >-
+  Reuse Screens and Blocks between Apps to increase team efficiency and follow
+  good development practices.
+tags: >-
+  support-application_development; support-Front_end_Development;
+  runtime-reactiveweb;
 ---
 
 # Maintain UI in dedicated modules
@@ -10,7 +14,7 @@ Your team can benefit from having Screens and Blocks in separate UI Modules and 
 To reuse Screens and Blocks between Modules, you need to meet the following requirements in your App.
 
 * The Themes need to be the same. This guarantees that UI looks the same. If the Themes are different, you get the Theme compatibility warning.
-* The UI elements (Screens, Blocks) need to be public. By setting these elements as public you make them available for referencing in other Modules. 
+* The UI elements \(Screens, Blocks\) need to be public. By setting these elements as public you make them available for referencing in other Modules. 
 
 ## Current limitations
 

@@ -1,5 +1,7 @@
 ---
-summary: Start here for an overview of the Development Environment and development of Mobile and Web applications in OutSystems.
+summary: >-
+  Start here for an overview of the Development Environment and development of
+  Mobile and Web applications in OutSystems.
 tags: support-application_development; support-Mobile_Apps; support-webapps
 ---
 

@@ -1,5 +1,2 @@
----
-tags: 
----
-
 # Implementing Logic
+

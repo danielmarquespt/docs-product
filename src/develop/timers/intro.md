@@ -1,5 +1,5 @@
 ---
-summary: Learn how to use Timers to execute asynchronous logic. 
+summary: Learn how to use Timers to execute asynchronous logic.
 ---
 
 # Use Timers
@@ -18,18 +18,15 @@ When the Timer action ends successfully, the `NextRun` property of the Timer is 
 
 If a Timer is not executed, if an unhandled exception occurs, or if the action times out, the Timer's `NextRun` property is not updated. This means that the next time the OutSystems Scheduler Service checks for timers ready to run, the timer will be picked for execution.
 
-<div class="info" markdown="1">
-
-For Timers to operate correctly, make sure that the environment's database, controller and all front-ends are in the [same timezone and their system clocks are synchronized](https://success.outsystems.com/Support/Enterprise_Customers/Maintenance_and_Operations/Timezone_considerations_in_the_OutSystems_Platform).
-
-</div>
+ For Timers to operate correctly, make sure that the environment's database, controller and all front-ends are in the \[same timezone and their system clocks are synchronized\]\(https://success.outsystems.com/Support/Enterprise\_Customers/Maintenance\_and\_Operations/Timezone\_considerations\_in\_the\_OutSystems\_Platform\).
 
 ## Timers Timeout
 
 The timeout of a Timer is set by default to 20 minutes, but you can change it by setting the `Timeout in Minutes` property of the timer.
 
-If the action associated with a Timer does not end within a pre-defined time, the action is aborted and the Timer stops. This is considered an error and, therefore, the Timer will be executed again for the number of retries you set in the Environment Configuration area of Service Center (set by default to 3 retries).
+If the action associated with a Timer does not end within a pre-defined time, the action is aborted and the Timer stops. This is considered an error and, therefore, the Timer will be executed again for the number of retries you set in the Environment Configuration area of Service Center \(set by default to 3 retries\).
 
 ## Sessions in Timers
 
 Asynchronous logic such as Timers and Process Activities run on a separate session. This means that when executing the action associated with the timer, all session variables will have their default value.
+

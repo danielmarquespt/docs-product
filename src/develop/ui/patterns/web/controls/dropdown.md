@@ -1,5 +1,5 @@
 ---
-tags: runtime-traditionalweb; 
+tags: runtime-traditionalweb;
 summary: Dropdown allows end-users to make a choice from several options.
 ---
 
@@ -15,41 +15,41 @@ Fill in the label of the Dropdown and add the required links in the DropdownList
 
 1. Drag the Dropdown pattern into the preview.
 
-    ![](<images/dropdown-image-1.png?width=500>)
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/controls/images/dropdown-image-1.png?width=500%3E)
 
-1. Set your content in the placeholders.
-1. Publish and test.
+2. Set your content in the placeholders.
+3. Publish and test.
 
 ## Input Parameters
 
-| **Input Name** |  **Description** |  **Type** | **Mandatory** | **Default Value** |
-|---|---|---|---|---|
-| ExtendedClass  |  Add custom style classes to this Block. |  Text | False | none |
-  
+| **Input Name** | **Description** | **Type** | **Mandatory** | **Default Value** |
+| :--- | :--- | :--- | :--- | :--- |
+| ExtendedClass | Add custom style classes to this Block. | Text | False | none |
+
 ## Layout and Classes
 
-![](<images/dropdown-image-2.png>)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/controls/images/dropdown-image-2.png%3E)
 
 ## CSS Selectors
 
-| **Element** |  **CSS Class** |  **Description**  |
-| ---|---|---  
-| .dropdown |  .is--hidden |  Defines if the dropdown list is closed  |
-| .dropdown |  .is--visible |  Defines if the dropdown list is open  |
+| **Element** | **CSS Class** | **Description** |
+| :--- | :--- | :--- |
+| .dropdown | .is--hidden | Defines if the dropdown list is closed |
+| .dropdown | .is--visible | Defines if the dropdown list is open |
 
 ## Advanced Use Case
 
 ### Use with ListRecords to make a list of links
 
 1. Drag the Dropdown Pattern into the page.
+2. In the DropdownList placeholder, drag a ListRecords widget.
+3. Set the Line Separator property of the ListRecords widget to None.
+4. In the ListRecords widget, drag a link and connect it to the required destination.
+5. Inside the List, use expressions to display the content.
+6. In the Prompt placeholder, set the text you want to define as the prompt.
+7. Publish and test.
 
-1. In the DropdownList placeholder, drag a ListRecords widget.
-1. Set the Line Separator property of the ListRecords widget to None.
-1. In the ListRecords widget, drag a link and connect it to the required destination.
-1. Inside the List, use expressions to display the content.
-1. In the Prompt placeholder, set the text you want to define as the prompt.
-1. Publish and test.
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/controls/images/dropdown-image-3.png%3E)
 
-![](<images/dropdown-image-3.png>)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/controls/images/dropdown-gif-1.gif%3E)
 
-![](<images/dropdown-gif-1.gif>)

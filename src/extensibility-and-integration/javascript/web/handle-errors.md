@@ -1,5 +1,7 @@
 ---
-summary: Learn how to handle JavaScript errors in thrown in some specific situations within your web application.
+summary: >-
+  Learn how to handle JavaScript errors in thrown in some specific situations
+  within your web application.
 tags: runtime-traditionalweb
 ---
 
@@ -16,7 +18,7 @@ To handle these types of errors you need to define a JavaScript function that wi
 
 By default, OutSystems provides you with a basic error handler function called **OsAlertExceptionHandler** , which displays an alert box with information about the error.
 
-You can use the **OsAlertExceptionHandler** function to handle the JavaScript errors or you can [define your own function](<run-js-code.md>) with the following signature:
+You can use the **OsAlertExceptionHandler** function to handle the JavaScript errors or you can [define your own function](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/extensibility-and-integration/javascript/web/run-js-code.md%3E) with the following signature:
 
 `function <ErrorHandlerFunctionName>( event, exception [, errorCode] [, origin] )`
 
@@ -24,8 +26,8 @@ The arguments are:
 
 * **event:** jQuery event.
 * **exception:** JavaScript exception instance that raised the error. For more details about the error use the `exception.name` and `exception.message` properties. 
-* **errorCode:** Integer that identifies the type of the error (optional argument). 
-* **origin:** JavaScript function where the error was trapped (optional argument).
+* **errorCode:** Integer that identifies the type of the error \(optional argument\). 
+* **origin:** JavaScript function where the error was trapped \(optional argument\).
 
 The following error codes are predefined and you can use them in the logic of your function:
 
@@ -43,8 +45,9 @@ If you want to use **OutSystems OsAlertExceptionHandler** function, you must reg
 
 The example below shows the definition, in the scope of the Module, of a function to handle the JavaScript errors and its registration as an error handler function:
 
-![](images/handle-errors-1.png)
+![](../../../../.gitbook/assets/handle-errors-1.png)
 
-![](images/handle-errors-2.png)
+![](../../../../.gitbook/assets/handle-errors-2.png)
 
 You may register multiple functions to handle errors. All the registered error handler functions are executed when a JavaScript error occurs.
+

@@ -1,6 +1,8 @@
 ---
-summary: Add documentation to your REST API to help developers to integrate their applications with your system.
-tags: 
+summary: >-
+  Add documentation to your REST API to help developers to integrate their
+  applications with your system.
+tags: null
 ---
 
 # Document an Exposed REST API
@@ -11,14 +13,13 @@ OutSystems facilitates documenting your REST API by automatically generating the
 
 Do the following:
 
-1. In Service Studio, make sure that your REST API methods and their parameters have their "Description" property filled in. You can use [Markdown](http://daringfireball.net/projects/markdown/syntax) in the description to format the text. 
-
-1. Publish the module. 
+1. In Service Studio, make sure that your REST API methods and their parameters have their "Description" property filled in. You can use [Markdown](http://daringfireball.net/projects/markdown/syntax) in the description to format the text.
+2. Publish the module.
 
 The documentation is made available under the base URL of the REST API. To open it do the following:
 
 1. In Service Studio, right-click the tree element of your REST API.
+2. Choose **Open Documentation**.
 
-1. Choose **Open Documentation**.
+   ![](../../../../.gitbook/assets/ss-rest-open-documentation.png)
 
-    ![](images/ss-rest-open-documentation.png)

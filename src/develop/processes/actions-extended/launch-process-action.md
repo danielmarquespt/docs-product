@@ -6,14 +6,11 @@ Use the **Launch&lt;Process Name&gt;** [process extended action](intro.md) in an
 
 * **Process Input Parameters**: one parameter for each input parameter in the process definition.
 
-<div class="warning" markdown="1">
-
-The input parameters must be in the same order and of the same type as what is defined in the process.
-
-</div>
+ The input parameters must be in the same order and of the same type as what is defined in the process.
 
 ## Output parameters
 
 * **Id**: Identifier of the created process. The `Id` argument is of type Process Identifier.
 
 See [how to access the output parameters](intro.md).
+

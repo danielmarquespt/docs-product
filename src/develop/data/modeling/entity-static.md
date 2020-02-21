@@ -6,19 +6,15 @@ summary: Use Static Entities for immutable data.
 
 A **Static Entity** consists of a set of named values. Think of static entities as enumerates or literal values stored in the database. The structure is defined by the Static Entity attributes, while the data is managed in **Records**. The scope of Static Entities is always global. Static Entities can only have relationships with other Static Entities.
 
-The following attributes are automatically created: **Id**, **Label**, **Order**, and **Is_Active**. 
+The following attributes are automatically created: **Id**, **Label**, **Order**, and **Is\_Active**.
 
-Id
-:   The identifier is a unique record identifier, and it's the only attribute in the Static Entity that can be auto-number.
+Id : The identifier is a unique record identifier, and it's the only attribute in the Static Entity that can be auto-number.
 
-Label
-:   Holds a value that can be displayed in an application.
+Label : Holds a value that can be displayed in an application.
 
-Order
-:   Defines the order by which the records are displayed to the end-user.
+Order : Defines the order by which the records are displayed to the end-user.
 
-Is_Active
-:   The boolean Is_Active attribute defines if a record is available during runtime. For example, the records with Is_Active set to false will be ignored when the Static Entity is used in scaffolding.
+Is\_Active : The boolean Is\_Active attribute defines if a record is available during runtime. For example, the records with Is\_Active set to false will be ignored when the Static Entity is used in scaffolding.
 
 You can create new entity attributes and define their types.
 
@@ -30,16 +26,17 @@ You can convert existing entities to Static Entities and vice versa. After conve
 
 ## Example
 
-Use static entities when you need a predefined immutable (constant) set of values. For example, in a hotel app we will probably need some reservation statuses: "booked", "checked in", "checked out", and "canceled". We also need the default descriptions for the statuses (e.g. "The guests have just left." for "checked out").
+Use static entities when you need a predefined immutable \(constant\) set of values. For example, in a hotel app we will probably need some reservation statuses: "booked", "checked in", "checked out", and "canceled". We also need the default descriptions for the statuses \(e.g. "The guests have just left." for "checked out"\).
 
 Your Static Entity Status may look like this:
 
-![Static Entity example](images/static-entity-example.png)
+![Static Entity example](../../../../.gitbook/assets/static-entity-example.png)
 
 All statuses are created in the Records folder of your Static Entity. If you select "CheckedOut", the Properties Editor will show the details:
 
-![Static Entity - a Record example](images/static-entity-record-example.png)
+![Static Entity - a Record example](../../../../.gitbook/assets/static-entity-record-example.png)
 
 The Identifier for the checked out status is `CheckedOut`, the Label is `"Checked-Out"`. The field TextDescription is our custom field and has the string value `"The guests have just left."`.
 
 You can access the record for checked out status by referencing its Identifier, like this: `Entities.Status.CheckedOut`.
+

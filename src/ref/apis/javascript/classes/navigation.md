@@ -1,13 +1,16 @@
 ---
 tags: runtime-mobileandreactiveweb
-summary: Provides the ability to perform normal and history navigations, and to override some navigation behaviors (e.g. back). Used to create new transition animations instead of overriding the existing ones using CSS.
+summary: >-
+  Provides the ability to perform normal and history navigations, and to
+  override some navigation behaviors (e.g. back). Used to create new transition
+  animations instead of overriding the existing ones using CSS.
 ---
 
 # Navigation
 
-Provides the ability to perform normal and history navigations, and to override some navigation behaviors (e.g. back). Used to create new transition animations instead of overriding the existing ones using CSS.
+Provides the ability to perform normal and history navigations, and to override some navigation behaviors \(e.g. back\). Used to create new transition animations instead of overriding the existing ones using CSS.
 
-The methods below related with BackHandlers ([registerBackNavigationHandler](navigation.md#registerbacknavigationhandler) and [unregisterBackNavigationHandler](navigation.md#unregisterbacknavigationhandler)) are used to manipulate the behavior of back actions, e.g. pressing the 'Back' button in Android. A common use case is when the 'Back' button is pressed just to close a menu instead of navigating to the previous screen.
+The methods below related with BackHandlers \([registerBackNavigationHandler](navigation.md#registerbacknavigationhandler) and [unregisterBackNavigationHandler](navigation.md#unregisterbacknavigationhandler)\) are used to manipulate the behavior of back actions, e.g. pressing the 'Back' button in Android. A common use case is when the 'Back' button is pressed just to close a menu instead of navigating to the previous screen.
 
 ## Hierarchy
 
@@ -15,57 +18,20 @@ The methods below related with BackHandlers ([registerBackNavigationHandler](nav
 
 ## Summary
 
-<table markdown="1">
-<thead>
-<tr>
-<th colspan="2">Methods</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>[navigateBack](navigation.md#navigateback)</td>
-<td>
-Performs a back navigation, using an optional transition animation.
-</td>
-</tr>
-<tr>
-<td>[navigateForward](navigation.md#navigateforward)</td>
-<td>
-Performs a forward navigation, using an optional transition animation.
-</td>
-</tr>
-<tr>
-<td>[navigateTo](navigation.md#navigateto)</td>
-<td>
-Performs a navigation to a provided URL using an optional transition animation.
-</td>
-</tr>
-<tr>
-<td>[navigatedFromHistory](navigation.md#navigatedfromhistory)</td>
-<td>
-Checks if the current screen was loaded from the browser's history.
-</td>
-</tr>
-<tr>
-<td>[registerBackNavigationHandler](navigation.md#registerbacknavigationhandler)</td>
-<td>
-Registers a callback function in a queue to be called when navigating back.
-</td>
-</tr>
-<tr>
-<td>[unregisterBackNavigationHandler](navigation.md#unregisterbacknavigationhandler)</td>
-<td>
-Unregisters a previously registered callback.
-</td>
-</tr>
-</tbody>
-</table>
+| Methods |  |
+| :--- | :--- |
+| \[navigateBack\]\(navigation.md\#navigateback\) |  Performs a back navigation, using an optional transition animation. |
+| \[navigateForward\]\(navigation.md\#navigateforward\) |  Performs a forward navigation, using an optional transition animation. |
+| \[navigateTo\]\(navigation.md\#navigateto\) |  Performs a navigation to a provided URL using an optional transition animation. |
+| \[navigatedFromHistory\]\(navigation.md\#navigatedfromhistory\) |  Checks if the current screen was loaded from the browser's history. |
+| \[registerBackNavigationHandler\]\(navigation.md\#registerbacknavigationhandler\) |  Registers a callback function in a queue to be called when navigating back. |
+| \[unregisterBackNavigationHandler\]\(navigation.md\#unregisterbacknavigationhandler\) |  Unregisters a previously registered callback. |
 
 ## Methods
 
 ### navigateBack
 
-**navigateBack([transition: TransitionAnimation \| string]): void**
+**navigateBack\(\[transition: TransitionAnimation \| string\]\): void**
 
 Performs a back navigation, using an optional transition animation.
 
@@ -80,13 +46,13 @@ $public.Navigation.navigateBack(3);
 
 Parameters:
 
-* (Optional) **transition**: TransitionAnimation \| string<br/> Either a known transition type (0 = None, 1 = Default, 2 = Fade, 3 = Slide from Left, 4 = Slide from Right, 5 = Slide from Bottom, 6 = Slide from Top) or a string representing the prefix of the CSS classes used to animate the transition. If a value is not provided, the animation used to enter the current screen is reversed and used.
+* \(Optional\) **transition**: TransitionAnimation \| string  Either a known transition type \(0 = None, 1 = Default, 2 = Fade, 3 = Slide from Left, 4 = Slide from Right, 5 = Slide from Bottom, 6 = Slide from Top\) or a string representing the prefix of the CSS classes used to animate the transition. If a value is not provided, the animation used to enter the current screen is reversed and used.
 
 Returns: void
 
 ### navigateForward
 
-**navigateForward([transition: TransitionAnimation \| string]): void**
+**navigateForward\(\[transition: TransitionAnimation \| string\]\): void**
 
 Performs a forward navigation, using an optional transition animation.
 
@@ -101,27 +67,27 @@ $public.Navigation.navigateForward(4);
 
 Parameters:
 
-* (Optional) **transition**: TransitionAnimation \| string<br/> Either a known transition type (0 = None, 1 = Default, 2 = Fade, 3 = Slide from Left, 4 = Slide from Right, 5 = Slide from Bottom, 6 = Slide from Top) or a string representing the prefix of the CSS classes used to animate the transition. If a value is not provided, the same animation used to enter the next screen for the last time is used.
+* \(Optional\) **transition**: TransitionAnimation \| string  Either a known transition type \(0 = None, 1 = Default, 2 = Fade, 3 = Slide from Left, 4 = Slide from Right, 5 = Slide from Bottom, 6 = Slide from Top\) or a string representing the prefix of the CSS classes used to animate the transition. If a value is not provided, the same animation used to enter the next screen for the last time is used.
 
 Returns: void
 
 ### navigateTo
 
-**navigateTo(url: string, [transition: TransitionAnimation \| string], [replace: boolean]): void**
+**navigateTo\(url: string, \[transition: TransitionAnimation \| string\], \[replace: boolean\]\): void**
 
 Performs a navigation to a provided URL using an optional transition animation.
 
 Parameters:
 
-* **url**: string<br/> Relative or absolute URL to navigate to. If the URL points to a screen of the application, the transition will be animated according to the value of the `transition` parameter. Otherwise, a normal browser navigation is done.
-* (Optional) **transition**: TransitionAnimation \| string<br/> Either a known transition type (0 = None, 1 = Default, 2 = Fade, 3 = Slide from Left, 4 = Slide from Right, 5 = Slide from Bottom, 6 = Slide from Top) or a string representing the prefix of the CSS classes used to animate the transition. If a value is not provided, the default transition of the application’s entry module will be used.
-* (Optional) **replace**: boolean<br/> Indicates if the navigation should replace the current history entry, instead of creating a new one that the user can navigate back to. If a value is not provided, the default is `false`.
+* **url**: string  Relative or absolute URL to navigate to. If the URL points to a screen of the application, the transition will be animated according to the value of the `transition` parameter. Otherwise, a normal browser navigation is done.
+* \(Optional\) **transition**: TransitionAnimation \| string  Either a known transition type \(0 = None, 1 = Default, 2 = Fade, 3 = Slide from Left, 4 = Slide from Right, 5 = Slide from Bottom, 6 = Slide from Top\) or a string representing the prefix of the CSS classes used to animate the transition. If a value is not provided, the default transition of the application’s entry module will be used.
+* \(Optional\) **replace**: boolean  Indicates if the navigation should replace the current history entry, instead of creating a new one that the user can navigate back to. If a value is not provided, the default is `false`.
 
 Returns: void
 
 ### navigatedFromHistory
 
-**navigatedFromHistory(): boolean**
+**navigatedFromHistory\(\): boolean**
 
 Checks if the current screen was loaded from the browser's history.
 
@@ -131,7 +97,7 @@ Returns `true` if the current screen was loaded from the browser's history, `fal
 
 ### registerBackNavigationHandler
 
-**registerBackNavigationHandler(handlerCallback: function): number**
+**registerBackNavigationHandler\(handlerCallback: function\): number**
 
 Registers a callback function in a queue to be called when navigating back.
 
@@ -155,7 +121,7 @@ $public.Navigation.navigateBack();
 
 Parameters:
 
-* **handlerCallback**: function<br/> Callback to be called when a 'back' event occurs.
+* **handlerCallback**: function  Callback to be called when a 'back' event occurs.
 
 Returns: number
 
@@ -163,7 +129,7 @@ Id of the registered callback.
 
 ### unregisterBackNavigationHandler
 
-**unregisterBackNavigationHandler(id: number): void**
+**unregisterBackNavigationHandler\(id: number\): void**
 
 Unregisters a previously registered callback.
 
@@ -171,7 +137,7 @@ If no callback exists with the provided id, no action is taken.
 
 Parameters:
 
-* **id**: number<br/> Id of the callback to be unregistered.
+* **id**: number  Id of the callback to be unregistered.
 
 Returns: void
 

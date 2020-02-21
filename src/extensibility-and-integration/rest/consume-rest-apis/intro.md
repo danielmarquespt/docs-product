@@ -1,6 +1,8 @@
 ---
 summary: Consume REST APIs in your OutSystems applications.
-tags: support-application_development; support-Integrations_Extensions; support-Integrations_Extensions-overview
+tags: >-
+  support-application_development; support-Integrations_Extensions;
+  support-Integrations_Extensions-overview
 ---
 
 # Consume REST APIs
@@ -10,15 +12,11 @@ Start by looking into the documentation of the REST API you want to use and unde
 
 * Base URL
 * Security/Authentication requirements
-* Methods definition (HTTP Method, URL Path, response format)
+* Methods definition \(HTTP Method, URL Path, response format\)
 
 Check how you can [Consume one or more REST API Methods](consume-a-rest-api.md) in Service Studio.
 
-<div class="info" markdown="1">
-
-If you want to **expose** an OutSystems REST API, check [Expose REST APIs](../expose-rest-apis/intro.md).
-
-</div>
+ If you want to \*\*expose\*\* an OutSystems REST API, check \[Expose REST APIs\]\(../expose-rest-apis/intro.md\).
 
 ## REST API Authentication
 
@@ -27,8 +25,6 @@ Each consumed REST API will have their own model of security and authentication 
 REST APIs using **Basic Authentication** are supported out of the box in the "Consume REST API Method" dialog box described below. You can use the REST customization capabilities to add support for other authentication methods:
 
 * For **token-based authentication**, use the "OnBeforeRequest" callback to add the required HTTP authorization header to the outgoing requests. Check [Simple Customizations](simple-customizations.md) for more information.
-
-* For **client certificate authentication**, use the "OnBeforeRequestAdvanced" callback, together with .NET code in an extension, to customize the outgoing requests. Check the [HTTPS Consumer](https://www.outsystems.com/forge/component-overview/3591/https-consumer) component provided by the OutSystems Community for a possible implementation.  
-    Additionally, check the [Advanced Customizations](advanced-customizations.md) topic for more information on how you can implement advanced use cases. 
-
+* For **client certificate authentication**, use the "OnBeforeRequestAdvanced" callback, together with .NET code in an extension, to customize the outgoing requests. Check the [HTTPS Consumer](https://www.outsystems.com/forge/component-overview/3591/https-consumer) component provided by the OutSystems Community for a possible implementation. Additionally, check the [Advanced Customizations](advanced-customizations.md) topic for more information on how you can implement advanced use cases.
 * For **other authentication methods**, check the [Advanced Customizations](advanced-customizations.md) topic on how you can use the [REST Extensibility API](../../../ref/apis/rest-extensibility-api.md) to implement advanced REST use cases.
+

@@ -1,5 +1,5 @@
 ---
-tags: 
+tags: null
 ---
 
 # Supported Join Types
@@ -15,13 +15,13 @@ To do this, just drag the entities into your aggregate. They are automatically j
 
 In the examples below we will combine the following two entities:
 
-![](images/originaltables.jpg)
+![](../../../../../.gitbook/assets/originaltables.jpg)
 
 ## Only fetch records with a match
 
 To only retrieve Issues that have an Engineer assigned, use **Only With**.
 
-![](images/onlywith-example.jpg)
+![](../../../../../.gitbook/assets/onlywith-example.jpg)
 
 Notice how Issues that have no Engineer assigned yet are not returned.
 
@@ -31,7 +31,7 @@ To retrieve all Issues regardless of whether they have an Engineer assigned to t
 
 In this join type the order of the Entities in the join condition makes a difference in the returned rows. The idea is to retrieve all records from the first entity, and combine the rows of the second entity to them. So if you swap the order of the Entities, you will get a different result.
 
-![](images/withorwithout-difference.jpg)
+![](../../../../../.gitbook/assets/withorwithout-difference.jpg)
 
 Notice that for the Issues that have no Engineer assigned, the columns with the Engineer information contain the default values.
 
@@ -39,7 +39,7 @@ Notice that for the Issues that have no Engineer assigned, the columns with the 
 
 To fetch all Issues and all Engineers, even if there is no match between them, use **With**.
 
-![](images/with-example.jpg)
+![](../../../../../.gitbook/assets/with-example.jpg)
 
 Notice that for Issues without an engineer assigned, the columns with the engineer information contain the default values.
 
@@ -49,10 +49,11 @@ This option is specially useful for exporting data into third-party systems.
 
 ## Combine all records, ignore relationship
 
-To combine each record from an entity with all records of a second entity (for example: to create a list that pairs each team with every adversary team), just make sure that there is no Join defined in the Sources tab.
+To combine each record from an entity with all records of a second entity \(for example: to create a list that pairs each team with every adversary team\), just make sure that there is no Join defined in the Sources tab.
 
 To pair each team with their adversaries, add the Team entity twice to your aggregate.
 
-![](images/crossjoin-example.jpg)
+![](../../../../../.gitbook/assets/crossjoin-example.jpg)
 
 Then filter the aggregate to ensure that a team is not paired up with itself.
+

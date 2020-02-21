@@ -1,5 +1,7 @@
 ---
-summary: Customize the SOAP Web Service endpoint URL and user credentials per environment in Service Center.
+summary: >-
+  Customize the SOAP Web Service endpoint URL and user credentials per
+  environment in Service Center.
 ---
 
 # Configure a SOAP Web Service at Runtime
@@ -16,4 +18,5 @@ To configure the runtime settings of a SOAP Web Service you are consuming, do th
 * Go to Factory section and open your application;
 * Open the module where you are consuming the SOAP Web Service;
 * Select the Integrations tab and click on the consumed SOAP Web Service name to edit it;
-* Set the Effective URL and/or effective authentication credentials (username and password) for the current environment and click "Apply".
+* Set the Effective URL and/or effective authentication credentials \(username and password\) for the current environment and click "Apply".
+

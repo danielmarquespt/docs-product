@@ -1,6 +1,8 @@
 ---
 tags: runtime-mobileandreactiveweb
-summary: Provides contextual information based on the screen that is being presented. Used to identify the screen, module and application that is currently running.
+summary: >-
+  Provides contextual information based on the screen that is being presented.
+  Used to identify the screen, module and application that is currently running.
 ---
 
 # ApplicationContext
@@ -13,27 +15,15 @@ Provides contextual information based on the screen that is being presented. Use
 
 ## Summary
 
-<table markdown="1">
-<thead>
-<tr>
-<th colspan="2">Methods</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>[getCurrentContext](applicationcontext.md#getcurrentcontext)</td>
-<td>
-Gets the current context based on the screen being presented.
-</td>
-</tr>
-</tbody>
-</table>
+| Methods |  |
+| :--- | :--- |
+| \[getCurrentContext\]\(applicationcontext.md\#getcurrentcontext\) |  Gets the current context based on the screen being presented. |
 
 ## Methods
 
 ### &lt;Static&gt; getCurrentContext
 
-**getCurrentContext(): object**
+**getCurrentContext\(\): object**
 
 Gets the current context based on the screen being presented.
 

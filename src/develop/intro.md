@@ -1,6 +1,10 @@
 ---
-summary: Define and manage the user interface, data model, logic and security of your OutSystems applications.
-tags: support-application_development; support-Mobile_Apps; support-webapps; support-webapps-overview
+summary: >-
+  Define and manage the user interface, data model, logic and security of your
+  OutSystems applications.
+tags: >-
+  support-application_development; support-Mobile_Apps; support-webapps;
+  support-webapps-overview
 ---
 
 # Developing an Application
@@ -19,9 +23,9 @@ Reactive, Mobile and Traditional Web modules are the place to implement the UI i
 
 ## Library Modules
 
-Use [Library modules](reuse-and-refactor/libraries.md) (or just Libraries) to encapsulate logic and UI patterns that are database independent, promoting the reuse of these elements within you factory.
+Use [Library modules](reuse-and-refactor/libraries.md) \(or just Libraries\) to encapsulate logic and UI patterns that are database independent, promoting the reuse of these elements within you factory.
 
 ## Extension Modules
 
-Extension modules (or just Extensions) allow you to integrate with enterprise systems and to extend the existing functionality and data model of OutSystems. Learn more on how to [extend logic with your own code](../extensibility-and-integration/integration-studio/getting-started/intro.md).
+Extension modules \(or just Extensions\) allow you to integrate with enterprise systems and to extend the existing functionality and data model of OutSystems. Learn more on how to [extend logic with your own code](../extensibility-and-integration/integration-studio/getting-started/intro.md).
 

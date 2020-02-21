@@ -1,38 +1,44 @@
 ---
-summary: How to add support for a different character encoding using the SOAP Extensibility API.
+summary: >-
+  How to add support for a different character encoding using the SOAP
+  Extensibility API.
 ---
 
 # Example: Use a different character encoding
 
 In this example scenario we will add support for using a different character encoding in the contents of SOAP requests.
 
-Out of the box, Windows Communication Framework (WCF) — the underlying .NET framework used to make SOAP requests — only supports the following character encodings: UTF-8, UTF-16 and Big Endian Unicode. If you try to use other encodings you will probably face one of the following runtime errors:
+Out of the box, Windows Communication Framework \(WCF\) — the underlying .NET framework used to make SOAP requests — only supports the following character encodings: UTF-8, UTF-16 and Big Endian Unicode. If you try to use other encodings you will probably face one of the following runtime errors:
 
-    FailedSystem.ServiceModel.ProtocolException: The content type text/xml; 
-    charset=ISO-8859-1 of the response message does not match the content
-    type of the binding (text/xml; charset=utf-8). If using a custom encoder, 
-    be sure that the IsContentTypeSupported method is implemented properly.
+```text
+FailedSystem.ServiceModel.ProtocolException: The content type text/xml; 
+charset=ISO-8859-1 of the response message does not match the content
+type of the binding (text/xml; charset=utf-8). If using a custom encoder, 
+be sure that the IsContentTypeSupported method is implemented properly.
+```
 
 Or:
 
-    System.ServiceModel.ProtocolException: There is a problem with the XML 
-    that was received from the network. See inner exception for more details. 
-    ---> System.Xml.XmlException: The encoding in the declaration 
-    'iso-8859-1' does not match the encoding of the document 'utf-8'.
+```text
+System.ServiceModel.ProtocolException: There is a problem with the XML 
+that was received from the network. See inner exception for more details. 
+---> System.Xml.XmlException: The encoding in the declaration 
+'iso-8859-1' does not match the encoding of the document 'utf-8'.
+```
 
-You can add support for other character encodings by implementing a series of helper classes, following the sample code provided by Microsoft in [Custom Message Encoder: Custom Text Encoder](<https://docs.microsoft.com/en-us/dotnet/framework/wcf/samples/custom-message-encoder-custom-text-encoder>).
+You can add support for other character encodings by implementing a series of helper classes, following the sample code provided by Microsoft in [Custom Message Encoder: Custom Text Encoder](https://docs.microsoft.com/en-us/dotnet/framework/wcf/samples/custom-message-encoder-custom-text-encoder>).
 
 To add support for other character encodings do the following:
 
-1\. In Integration Studio create an extension and define an action that will be used to define the encoding you wish to use.  
+1. In Integration Studio create an extension and define an action that will be used to define the encoding you wish to use.
 
 In example below we defined an action in Integration Studio called "SetEncoding", with a "Encoding" input parameter of type Text.
 
-![](<images/is-action-set-encoding.png>)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/extensibility-and-integration/soap/consume/extensibility-use-cases/images/is-action-set-encoding.png%3E)
 
-2\. Click 'Edit Source Code .NET'. In Visual Studio .NET, set the project target framework and add a reference to `System.ServiceModel` and `System.Runtime.Serialization` assemblies.  
+2. Click 'Edit Source Code .NET'. In Visual Studio .NET, set the project target framework and add a reference to `System.ServiceModel` and `System.Runtime.Serialization` assemblies.
 
-3\. Create some helper classes by copying the code presented below and pasting it in the `[yourExtensionName].cs` file, for example below the `Css[yourExtensionName]` class definition.  
+3. Create some helper classes by copying the code presented below and pasting it in the `[yourExtensionName].cs` file, for example below the `Css[yourExtensionName]` class definition.  
 Note: For more information on how these classes fit the WCF architecture, check the Microsoft page mentioned above.
 
 ```csharp
@@ -194,10 +200,9 @@ public class CustomTextMessageEncodingBindingElement : MessageEncodingBindingEle
         return context.BuildInnerChannelFactory<TChannel>();
     }
 }
-
 ```
 
-4\. Add the code below, replacing the `MssSetEncoding` function placeholder that Integration Studio created for you:  
+4. Add the code below, replacing the `MssSetEncoding` function placeholder that Integration Studio created for you:
 
 ```csharp
 // required 'using' statements at the beginning of the file
@@ -232,10 +237,11 @@ public void MssSetEncoding(string ssEncoding) {
 }
 ```
 
-5\. Quit Visual Studio .NET and, back in Integration Studio, publish the extension by clicking the "1-Click Publish" toolbar icon or by pressing `F5`.
+5. Quit Visual Studio .NET and, back in Integration Studio, publish the extension by clicking the "1-Click Publish" toolbar icon or by pressing `F5`.
 
-6\. In Service Studio, add a reference to the "SetEncoding" action of your extension in your application module.  
+6. In Service Studio, add a reference to the "SetEncoding" action of your extension in your application module.
 
-7\. In the flow of the SOAP callback of your SOAP Web Service, i.e. the flow of "OnBeforeRequestAdvanced", drag the "SetEncoding" action to the flow and enter the desired encoding value in the "Encoding" input parameter. 
+7. In the flow of the SOAP callback of your SOAP Web Service, i.e. the flow of "OnBeforeRequestAdvanced", drag the "SetEncoding" action to the flow and enter the desired encoding value in the "Encoding" input parameter.
 
-8\. Publish the application module and test the application, checking that the requests made to the consumed SOAP Web Service are done with the correct encoding and that no runtime errors occur due to encoding mismatch.
+8. Publish the application module and test the application, checking that the requests made to the consumed SOAP Web Service are done with the correct encoding and that no runtime errors occur due to encoding mismatch.
+

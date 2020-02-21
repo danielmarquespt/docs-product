@@ -1,5 +1,7 @@
 ---
-summary: Replace data in Screens created from Screen Templates with your data. The replacement can be manual or semi-automatic.
+summary: >-
+  Replace data in Screens created from Screen Templates with your data. The
+  replacement can be manual or semi-automatic.
 ---
 
 # Replace the sample data in Screens created from Screen Templates
@@ -18,10 +20,11 @@ Use the manual replacement when you want full control over the changes in the Sc
 
 ## Semi-automatic replacement of Sample Data
 
-The semi-automatic replacement works by dragging and dropping an Entity to the Widget that supports the automatic data replacement. Sometimes the labels associated with the data in your Screen are also replaced. The semi-automatic replacement is designed as an assistance to the manual data replacement and it does not always result in best matches. 
+The semi-automatic replacement works by dragging and dropping an Entity to the Widget that supports the automatic data replacement. Sometimes the labels associated with the data in your Screen are also replaced. The semi-automatic replacement is designed as an assistance to the manual data replacement and it does not always result in best matches.
 
 When replacing the data inside the Screen created from a Screen Template, you can only replace server data with server data, and local data with local data. The drag and drop data replacement accelerators do not work with the mixed data sources.
 
 1. Drag and drop the Entity, that has the data you want to use over the Widget for which you want to replace the data.
-2.  Check the **TrueChange** tab for errors and warnings and fix them.
-3.  Verify the Widget labels correspond to the data and edit the labels or Expressions if needed.
+2. Check the **TrueChange** tab for errors and warnings and fix them.
+3. Verify the Widget labels correspond to the data and edit the labels or Expressions if needed.
+

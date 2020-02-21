@@ -1,5 +1,7 @@
 ---
-summary: Use light process execution for large scale batch processing scenarios, such as an event broker.
+summary: >-
+  Use light process execution for large scale batch processing scenarios, such
+  as an event broker.
 tags: support-webapps
 ---
 
@@ -11,13 +13,11 @@ When enabling **light process execution** you allow simpler processes that don't
 
 Processes that benefit from light process execution must meet all the following conditions:
 
-* Has a simplified structure (Start > Automatic Activity > End).
-
+* Has a simplified structure \(Start &gt; Automatic Activity &gt; End\).
 * Is triggered by a database event.
+* `Expose Process Entity` property is set to No:
 
-* `Expose Process Entity` property is set to No:  
-
-    ![](images/light-process-1.png)
+  ![](../../../.gitbook/assets/light-process-1.png)
 
 This kind of Process does not create any process instances or activity instances, therefore the **process history will not be available**. Defining start dates for Automatic Activities is also **not supported**.
 
@@ -26,28 +26,20 @@ This kind of Process does not create any process instances or activity instances
 To enable light process execution for your module, do the following:
 
 1. Go to the Service Center management console of your OutSystems environment.
+2. Go to the Factory section and select your application.
+3. In the application details screen, select the module containing the Processes for which you want to allow light process execution.
+4. In the module details screen, go to the Operation tab and check the "Light process execution" option.
+5. Click the "Apply" button. Changing this setting requires republishing the module.
 
-1. Go to the Factory section and select your application.
+   ![light process execution](../../../.gitbook/assets/light-process-enable-sc.png)
 
-1. In the application details screen, select the module containing the Processes for which you want to allow light process execution.
+6. Go to the Versions tab and publish the module. You will get a compilation message for the processes that will benefit from light process execution:
 
-1. In the module details screen, go to the Operation tab and check the "Light process execution" option.
+   ![publish module](../../../.gitbook/assets/light-process-publish-module-sc.png)
 
-1. Click the "Apply" button. Changing this setting requires republishing the module.    
+   You will see the same compilation message when you publish the module through Service Studio:
 
-    ![light process execution](images/light-process-enable-sc.png)
+   ![](../../../.gitbook/assets/light-process-3.png)
 
-1. Go to the Versions tab and publish the module. You will get a compilation message for the processes that will benefit from light process execution:
+ Light process execution is available when using SQL Server or Oracle as main OutSystems database.
 
-    ![publish module](images/light-process-publish-module-sc.png)  
-
-    You will see the same compilation message when you publish the module through Service Studio:  
-
-    ![](images/light-process-3.png)
-
-
-<div class="info" markdown="1">
-
-Light process execution is available when using SQL Server or Oracle as main OutSystems database.
-
-</div>

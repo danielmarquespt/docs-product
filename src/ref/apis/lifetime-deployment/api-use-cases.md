@@ -13,25 +13,22 @@ We provide real-world scenarios of using several API calls to perform common tas
 
 In this example we will perform the following generic steps using API calls:
 
-1. Get the **environment key** of the environment where you want to create the application version _(optional if you already have this information)_;
+1. Get the **environment key** of the environment where you want to create the application version _\(optional if you already have this information\)_;
+2. Get the **application key** of the desired application _\(optional if you already have this information\)_;
+3. Get the **module version key** of each application module;
+4. Create a new **application version** using the module\(s\) version information obtained in the previous step.
 
-1. Get the **application key** of the desired application _(optional if you already have this information)_;
-
-1. Get the **module version key** of each application module;
-
-1. Create a new **application version** using the module(s) version information obtained in the previous step.
-
-Check below for example API calls (requests and responses) for each of the presented steps.
+Check below for example API calls \(requests and responses\) for each of the presented steps.
 
 ### 1. Get environment key
 
-We start by calling the API method that returns all the environments available on your infrastructure (only necessary if we don't know the environment key yet):
+We start by calling the API method that returns all the environments available on your infrastructure \(only necessary if we don't know the environment key yet\):
 
 Request: `GET /lifetimeapi/rest/v2/environments/`
 
 Response body:
 
-```javascript      
+```javascript
 [
   {
     "Key": "f3582e43-43c7-4bb4-8cbb-d9f6cbcbd35e",
@@ -64,13 +61,13 @@ Response body:
 ]
 ```
 
-Since we want to create an application version in our environment of type "Development" — coincidentally, the environment is also called "Development" —, we take note of its key so that we can use it in the upcoming API calls: 
+Since we want to create an application version in our environment of type "Development" — coincidentally, the environment is also called "Development" —, we take note of its key so that we can use it in the upcoming API calls:
 
 Environment key: **f3582e43-43c7-4bb4-8cbb-d9f6cbcbd35e**
 
 ### 2. Get application key
 
-Next, we call the API method that returns all the available applications in the infrastructure to get the application key (only necessary if we don't know the application key yet):
+Next, we call the API method that returns all the available applications in the infrastructure to get the application key \(only necessary if we don't know the application key yet\):
 
 Request: `GET /lifetimeapi/rest/v2/applications/`
 
@@ -95,7 +92,7 @@ Response body:
 ]
 ```
 
-We want to create an application version for the "EmployeeBackoffice" application. We take note of its key so that we can use it in the next API calls: 
+We want to create an application version for the "EmployeeBackoffice" application. We take note of its key so that we can use it in the next API calls:
 
 "EmployeeBackoffice" application key: **c9a7a82e-0eee-4a3d-8e22-2a19c69c766f**
 
@@ -109,7 +106,7 @@ We then change the `{EnvironmentKey}` and `{ApplicationKey}` placeholders to the
 
 Request: `GET /lifetimeapi/rest/v2/environments/f3582e43-43c7-4bb4-8cbb-d9f6cbcbd35e/applications/c9a7a82e-0eee-4a3d-8e22-2a19c69c766f/?IncludeEnvStatus=true&IncludeModules=true`
 
-Note: We need the extra flags (`IncludeEnvStatus` and `IncludeModules`) to obtain the necessary module version key information.
+Note: We need the extra flags \(`IncludeEnvStatus` and `IncludeModules`\) to obtain the necessary module version key information.
 
 Response body:
 
@@ -165,7 +162,7 @@ We change the `{EnvironmentKey}` and `{ApplicationKey}` placeholders to the corr
 
 Request: `POST lifetimeapi/rest/v2/environments/f3582e43-43c7-4bb4-8cbb-d9f6cbcbd35e/applications/c9a7a82e-0eee-4a3d-8e22-2a19c69c766f/versions/`
 
-We insert the following text in the `POST` request body (using the module version key retrieved in step 3):
+We insert the following text in the `POST` request body \(using the module version key retrieved in step 3\):
 
 ```javascript
 {
@@ -192,23 +189,18 @@ Response body:
 
 In this example we will perform the following generic steps using API calls:
 
-1. Get the **environment keys** of the source and target environments _(optional if you already have this information)_;
+1. Get the **environment keys** of the source and target environments _\(optional if you already have this information\)_;
+2. Get the **base application version key** of the desired application _\(optional if you already have this information\)_;
+3. Create a new **deployment**;
+4. Get the **details** of the created deployment, checking for any conflicts arising from the deployment of the application;
+5. **Start** the created deployment;
+6. Get the deployment **execution status** until the execution has finished and the deployment status is a terminal one \(i.e. one of "needs\_user\_intervention", "aborted", "finished\_successful", "finished\_with\_warnings", "finished\_with\_errors"\).
 
-1. Get the **base application version key** of the desired application _(optional if you already have this information)_;
-
-1. Create a new **deployment**;
-
-1. Get the **details** of the created deployment, checking for any conflicts arising from the deployment of the application;
-
-1. **Start** the created deployment;
-
-1. Get the deployment **execution status** until the execution has finished and the deployment status is a terminal one (i.e. one of "needs_user_intervention", "aborted", "finished_successful", "finished_with_warnings", "finished_with_errors").
-
-Check below for example API calls (requests and responses) for each of the presented steps.
+Check below for example API calls \(requests and responses\) for each of the presented steps.
 
 ### 1. Get source and target environment keys
 
-We start by calling the API method that returns all the environments available on the infrastructure to determine the source and target environment keys (only necessary when we don't have this information yet):
+We start by calling the API method that returns all the environments available on the infrastructure to determine the source and target environment keys \(only necessary when we don't have this information yet\):
 
 Request: `GET /lifetimeapi/rest/v2/environments/`
 
@@ -246,7 +238,8 @@ Response body:
     }
 ]
 ```
-We take note of the environment keys of the Development and Production environments so that we can use them in the next API calls: 
+
+We take note of the environment keys of the Development and Production environments so that we can use them in the next API calls:
 
 Development environment key: **f3582e43-43c7-4bb4-8cbb-d9f6cbcbd35e**  
 Production environment key: **849515f2-b4ff-4aca-a9d6-9407bea655f4**
@@ -299,7 +292,7 @@ Response body:
 ]
 ```
 
-We take note of the base application version key of the "EmployeeBackoffice" in the "Development" environment (i.e. the environment with key "f3582e43-43c7-4bb4-8cbb-d9f6cbcbd35e"):
+We take note of the base application version key of the "EmployeeBackoffice" in the "Development" environment \(i.e. the environment with key "f3582e43-43c7-4bb4-8cbb-d9f6cbcbd35e"\):
 
 Base Application Version Key: **b3d2ef6b-e5c5-4c7e-851e-0547f7bd634c**
 
@@ -329,7 +322,7 @@ If the operation is successful, the response body will contain the deployment ke
 
 Response body:
 
-```
+```text
 dce64ad4-2ddf-4e54-a639-3524bcd5b9a1
 ```
 
@@ -391,7 +384,6 @@ Adapting the template above to our example:
 Request: `POST /lifetimeapi/rest/v2/deployments/dce64ad4-2ddf-4e54-a639-3524bcd5b9a1/start/`
 
 If the "start" command is successful, OutSystems will return a `202 Accepted` HTTP status code, with an empty response body.
-
 
 ### 6. Check deployment execution status
 
@@ -471,6 +463,7 @@ Response body:
 }
 ```
 
-Since the deployment status is "finished_successful", we know that the application deployment has finished successfully.
+Since the deployment status is "finished\_successful", we know that the application deployment has finished successfully.
 
-If we get an intermediate deployment status like "running" in the response, we would need to keep polling the status of the deployment execution (i.e. by repeating the API method call) until the execution reached a terminal deployment status, either a successful or an unsuccessful one.
+If we get an intermediate deployment status like "running" in the response, we would need to keep polling the status of the deployment execution \(i.e. by repeating the API method call\) until the execution reached a terminal deployment status, either a successful or an unsuccessful one.
+

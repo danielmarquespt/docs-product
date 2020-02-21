@@ -4,14 +4,14 @@ For version 10.0.708.100. Provides APIs to LifeTime functionality.
 
 ## Summary
 
-Web Service | Description
----|---
-[RoleManagementService](<#RoleManagementService>) | The Platform API to manage IT roles: roles created in the platform. The authenticated user needs to have 'Manage Infrastructure' permissions in the platform to use this API.%%To use this API you need to send an authentication argument with username/password, or use the AuthenticationService Web Service API to acquire a session token to send as argument.
-[AuthenticationService](<#AuthenticationService>) | The Platform API to acquire an authentication token to be used when invoking other OutSystems APIs. After 5 minutes, the token expires.
-[TeamManagementService](<#TeamManagementService>) | The Platform API to manage teams in the platform.%%To use this API you need to send an authentication argument with username/password, or use the AuthenticationService Web Service API to acquire a session token to send as argument.
-[SecurityManagementService](<#SecurityManagementService>) | The Platform API for getting security information about users and addresses who login to the platform.%%To use this API you need to send an authentication argument with username/password, or use the AuthenticationService Web Service API to acquire a session token to send as argument.
-[DbConnectionManagementService](<#DbConnectionManagementService>) | This API provides methods to create, change, and delete connections to external databases. It also allows managing users permissions.
-[UserManagementService](<#UserManagementService>) | The Platform API to manage IT users: users created in the platform. The authenticated user needs to have 'Manage Infrastructure' permissions in the platform to use this API.%%To use this API you need to send an authentication argument with username/password, or use the AuthenticationService Web Service API to acquire a session token to send as argument.
+| Web Service | Description |
+| :--- | :--- |
+| [RoleManagementService](lifetime-services-api.md#RoleManagementService%3E) | The Platform API to manage IT roles: roles created in the platform. The authenticated user needs to have 'Manage Infrastructure' permissions in the platform to use this API.%%To use this API you need to send an authentication argument with username/password, or use the AuthenticationService Web Service API to acquire a session token to send as argument. |
+| [AuthenticationService](lifetime-services-api.md#AuthenticationService%3E) | The Platform API to acquire an authentication token to be used when invoking other OutSystems APIs. After 5 minutes, the token expires. |
+| [TeamManagementService](lifetime-services-api.md#TeamManagementService%3E) | The Platform API to manage teams in the platform.%%To use this API you need to send an authentication argument with username/password, or use the AuthenticationService Web Service API to acquire a session token to send as argument. |
+| [SecurityManagementService](lifetime-services-api.md#SecurityManagementService%3E) | The Platform API for getting security information about users and addresses who login to the platform.%%To use this API you need to send an authentication argument with username/password, or use the AuthenticationService Web Service API to acquire a session token to send as argument. |
+| [DbConnectionManagementService](lifetime-services-api.md#DbConnectionManagementService%3E) | This API provides methods to create, change, and delete connections to external databases. It also allows managing users permissions. |
+| [UserManagementService](lifetime-services-api.md#UserManagementService%3E) | The Platform API to manage IT users: users created in the platform. The authenticated user needs to have 'Manage Infrastructure' permissions in the platform to use this API.%%To use this API you need to send an authentication argument with username/password, or use the AuthenticationService Web Service API to acquire a session token to send as argument. |
 
 ## RoleManagementService
 
@@ -21,225 +21,184 @@ To use this API you need to send an authentication argument with username/passwo
 This API is exposed as a Web Service, made available at:  
 `http://<InfrastructureManagementEnvironment>/LifeTimeServices/RoleManagementService.asmx?WSDL`
 
-Action | Description
----|---
-[Role_ChangeName](<#Role_ChangeName>) | Updates the name of a platform role.
-[Role_CreateOrUpdate](<#Role_CreateOrUpdate>) | Creates a new platform role or updates a platform role that already exists.
-[Role_Delete](<#Role_Delete>) | Deletes a platform role that already exists. Since the platform requires IT users to have a single platform role, you need to specify a new platform role to grant to the users that are currently set with the role you want to delete.%%
-[Role_GetEnvironmentPermissionsLevels](<#Role_GetEnvironmentPermissionsLevels>) | Lists the permission levels that a platform user has over the environments.
-[Role_GetPermissions](<#Role_GetPermissions>) | Returns the list of permissions a platform role has in the environments registered in the platform.
-[Role_List](<#Role_List>) | Returns all platform roles with their information.
-[Role_UpdatePermission](<#Role_UpdatePermission>) | Updates the permissions a platform role has in a specified environment.
+| Action | Description |
+| :--- | :--- |
+| [Role\_ChangeName](lifetime-services-api.md#Role_ChangeName%3E) | Updates the name of a platform role. |
+| [Role\_CreateOrUpdate](lifetime-services-api.md#Role_CreateOrUpdate%3E) | Creates a new platform role or updates a platform role that already exists. |
+| [Role\_Delete](lifetime-services-api.md#Role_Delete%3E) | Deletes a platform role that already exists. Since the platform requires IT users to have a single platform role, you need to specify a new platform role to grant to the users that are currently set with the role you want to delete.%% |
+| [Role\_GetEnvironmentPermissionsLevels](lifetime-services-api.md#Role_GetEnvironmentPermissionsLevels%3E) | Lists the permission levels that a platform user has over the environments. |
+| [Role\_GetPermissions](lifetime-services-api.md#Role_GetPermissions%3E) | Returns the list of permissions a platform role has in the environments registered in the platform. |
+| [Role\_List](lifetime-services-api.md#Role_List%3E) | Returns all platform roles with their information. |
+| [Role\_UpdatePermission](lifetime-services-api.md#Role_UpdatePermission%3E) | Updates the permissions a platform role has in a specified environment. |
 
 ### Actions
 
-#### Role_ChangeName { #Role_ChangeName }
+#### Role\_ChangeName { \#Role\_ChangeName }
 
 Updates the name of a platform role.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-OldRoleName
-:   Type: mandatory, Text.  
-    The name of a platform role that is going to be renamed.
+OldRoleName : Type: mandatory, Text.  
+The name of a platform role that is going to be renamed.
 
-NewRoleName
-:   Type: mandatory, Text.  
-    The new name of the platform role.
+NewRoleName : Type: mandatory, Text.  
+The new name of the platform role.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### Role_CreateOrUpdate { #Role_CreateOrUpdate }
+#### Role\_CreateOrUpdate { \#Role\_CreateOrUpdate }
 
 Creates a new platform role or updates a platform role that already exists.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-RoleName
-:   Type: mandatory, Text.  
-    The name of a platform role. If this role does not exist in the platform it is created, otherwise it is updated.  
-    
+RoleName : Type: mandatory, Text.  
+The name of a platform role. If this role does not exist in the platform it is created, otherwise it is updated.
 
-CanConfigureInfrastructure
-:   Type: mandatory, Boolean.  
-    Specifies whether the platform role has permissions to configure the infrastructure.
+CanConfigureInfrastructure : Type: mandatory, Boolean.  
+Specifies whether the platform role has permissions to configure the infrastructure.
 
-RoleDescription
-:   Type: mandatory, Text.  
-    The description for the platform role.
+RoleDescription : Type: mandatory, Text.  
+The description for the platform role.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-PlatformRole
-:   Type: [PlatformRole](<#Structure_PlatformRole>).  
-    A platform role with its information.
+PlatformRole : Type: [PlatformRole](lifetime-services-api.md#Structure_PlatformRole%3E).  
+A platform role with its information.
 
-#### Role_Delete { #Role_Delete }
+#### Role\_Delete { \#Role\_Delete }
 
-Deletes a platform role that already exists. Since the platform requires IT users to have a single platform role, you need to specify a new platform role to grant to the users that are currently set with the role you want to delete.  
+Deletes a platform role that already exists. Since the platform requires IT users to have a single platform role, you need to specify a new platform role to grant to the users that are currently set with the role you want to delete.
 
+_Inputs_
 
-*Inputs*
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+RoleName : Type: mandatory, Text.  
+The name of a platform role.
 
-RoleName
-:   Type: mandatory, Text.  
-    The name of a platform role.
+UsersNewRoleName : Type: mandatory, Text.  
+A platform role to grant to the users that had the platform role that is going to be deleted.
 
-UsersNewRoleName
-:   Type: mandatory, Text.  
-    A platform role to grant to the users that had the platform role that is going to be deleted.
+_Outputs_
 
-*Outputs*
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+AffectedPlatformUsers : Type: [PlatformUser](lifetime-services-api.md#Structure_PlatformUser%3E) List.  
+The list of IT users that had the deleted platform role assigned to them.
 
-AffectedPlatformUsers
-:   Type: [PlatformUser](<#Structure_PlatformUser>) List.  
-    The list of IT users that had the deleted platform role assigned to them.
-
-#### Role_GetEnvironmentPermissionsLevels { #Role_GetEnvironmentPermissionsLevels }
+#### Role\_GetEnvironmentPermissionsLevels { \#Role\_GetEnvironmentPermissionsLevels }
 
 Lists the permission levels that a platform user has over the environments.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-RolePermissionLevels
-:   Type: EnvironmentPermissionLevel List.  
-    The permissions an IT user has over an environment, as configured in the platform.
+RolePermissionLevels : Type: EnvironmentPermissionLevel List.  
+The permissions an IT user has over an environment, as configured in the platform.
 
-#### Role_GetPermissions { #Role_GetPermissions }
+#### Role\_GetPermissions { \#Role\_GetPermissions }
 
 Returns the list of permissions a platform role has in the environments registered in the platform.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-RoleName
-:   Type: mandatory, Text.  
-    The name of a platform role.
+RoleName : Type: mandatory, Text.  
+The name of a platform role.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-PlatformRolePermissions
-:   Type: [EnvironmentPermissionForRole](<#Structure_EnvironmentPermissionForRole>) List.  
-    The list of permissions a platform role has over the environments registered in the platform.
+PlatformRolePermissions : Type: [EnvironmentPermissionForRole](lifetime-services-api.md#Structure_EnvironmentPermissionForRole%3E) List.  
+The list of permissions a platform role has over the environments registered in the platform.
 
-#### Role_List { #Role_List }
+#### Role\_List { \#Role\_List }
 
 Returns all platform roles with their information.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.  
-    
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-PlatformRoles
-:   Type: [PlatformRole](<#Structure_PlatformRole>) List.  
-    The list of platform roles.
+PlatformRoles : Type: [PlatformRole](lifetime-services-api.md#Structure_PlatformRole%3E) List.  
+The list of platform roles.
 
-#### Role_UpdatePermission { #Role_UpdatePermission }
+#### Role\_UpdatePermission { \#Role\_UpdatePermission }
 
 Updates the permissions a platform role has in a specified environment.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-RoleName
-:   Type: mandatory, Text.  
-    The name of a platform role.
+RoleName : Type: mandatory, Text.  
+The name of a platform role.
 
-EnvironmentKey
-:   Type: mandatory, Text.  
-    The environment unique identifier.
+EnvironmentKey : Type: mandatory, Text.  
+The environment unique identifier.
 
-NewPermissionLevelId
-:   Type: mandatory, EnvironmentPermissionLevel Identifier.  
-    A reference to the new permission level the platform role will have.
+NewPermissionLevelId : Type: mandatory, EnvironmentPermissionLevel Identifier.  
+A reference to the new permission level the platform role will have.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
-
+Status : Type: APIStatus.  
+The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
 
 ## AuthenticationService
 
@@ -248,41 +207,34 @@ The Platform API to acquire an authentication token to be used when invoking oth
 This API is exposed as a Web Service, made available at:  
 `http://<InfrastructureManagementEnvironment>/LifeTimeServices/AuthenticationService.asmx?WSDL`
 
-Action | Description
----|---
-[Authentication_GetToken](<#Authentication_GetToken>) | Returns an authentication token that is valid for 5 minutes.
+| Action | Description |
+| :--- | :--- |
+| [Authentication\_GetToken](lifetime-services-api.md#Authentication_GetToken%3E) | Returns an authentication token that is valid for 5 minutes. |
 
 ### Actions
 
-#### Authentication_GetToken { #Authentication_GetToken }
+#### Authentication\_GetToken { \#Authentication\_GetToken }
 
 Returns an authentication token that is valid for 5 minutes.
 
-*Inputs*
+_Inputs_
 
-Username
-:   Type: mandatory, Text.  
-    A platform username.
+Username : Type: mandatory, Text.  
+A platform username.
 
-Password
-:   Type: mandatory, Text.  
-    A platform password.
+Password : Type: mandatory, Text.  
+A platform password.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.  
-    
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-Token
-:   Type: Text.  
-    A session token. This token expires 5 minutes after it has been created.
-
+Token : Type: Text.  
+A session token. This token expires 5 minutes after it has been created.
 
 ## TeamManagementService
 
@@ -292,243 +244,202 @@ To use this API you need to send an authentication argument with username/passwo
 This API is exposed as a Web Service, made available at:  
 `http://<InfrastructureManagementEnvironment>/LifeTimeServices/TeamManagementService.asmx?WSDL`
 
-Action | Description
----|---
-[Team_AddUser](<#Team_AddUser>) | Adds a user to a team with a specified role.
-[Team_AssignApplication](<#Team_AssignApplication>) | Assigns an application to a team, replacing a previous assignment, if any. An application can only be assigned to a team a time.
-[Team_CreateOrUpdate](<#Team_CreateOrUpdate>) | Creates a new team or updates an already existent team.
-[Team_Delete](<#Team_Delete>) | Deletes a team.
-[Team_GetDetails](<#Team_GetDetails>) | Returns the details of a team, with its users and applications.
-[Team_List](<#Team_List>) | Returns a list of the teams.
-[Team_RemoveApplication](<#Team_RemoveApplication>) | Removes an application from a team.
-[Team_RemoveUser](<#Team_RemoveUser>) | Removes a user from a team.
+| Action | Description |
+| :--- | :--- |
+| [Team\_AddUser](lifetime-services-api.md#Team_AddUser%3E) | Adds a user to a team with a specified role. |
+| [Team\_AssignApplication](lifetime-services-api.md#Team_AssignApplication%3E) | Assigns an application to a team, replacing a previous assignment, if any. An application can only be assigned to a team a time. |
+| [Team\_CreateOrUpdate](lifetime-services-api.md#Team_CreateOrUpdate%3E) | Creates a new team or updates an already existent team. |
+| [Team\_Delete](lifetime-services-api.md#Team_Delete%3E) | Deletes a team. |
+| [Team\_GetDetails](lifetime-services-api.md#Team_GetDetails%3E) | Returns the details of a team, with its users and applications. |
+| [Team\_List](lifetime-services-api.md#Team_List%3E) | Returns a list of the teams. |
+| [Team\_RemoveApplication](lifetime-services-api.md#Team_RemoveApplication%3E) | Removes an application from a team. |
+| [Team\_RemoveUser](lifetime-services-api.md#Team_RemoveUser%3E) | Removes a user from a team. |
 
 ### Actions
 
-#### Team_AddUser { #Team_AddUser }
+#### Team\_AddUser { \#Team\_AddUser }
 
 Adds a user to a team with a specified role.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
 
-TeamName
-:   Type: mandatory, Text.  
-    The name of the team.
+TeamName : Type: mandatory, Text.  
+The name of the team.
 
-Username
-:   Type: mandatory, Text.  
-    The username of the user.
+Username : Type: mandatory, Text.  
+The username of the user.
 
-RoleName
-:   Type: mandatory, Text.  
-    The name of the role to assign to the user.
+RoleName : Type: mandatory, Text.  
+The name of the role to assign to the user.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
 
-#### Team_AssignApplication { #Team_AssignApplication }
+#### Team\_AssignApplication { \#Team\_AssignApplication }
 
 Assigns an application to a team, replacing a previous assignment, if any. An application can only be assigned to a team a time.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
 
-TeamName
-:   Type: mandatory, Text.  
-    The name of the team.
+TeamName : Type: mandatory, Text.  
+The name of the team.
 
-ApplicationKey
-:   Type: mandatory, Text.  
-    The application unique identifier.
+ApplicationKey : Type: mandatory, Text.  
+The application unique identifier.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
 
-#### Team_CreateOrUpdate { #Team_CreateOrUpdate }
+#### Team\_CreateOrUpdate { \#Team\_CreateOrUpdate }
 
 Creates a new team or updates an already existent team.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
 
-TeamName
-:   Type: mandatory, Text.  
-    The name of the team.
+TeamName : Type: mandatory, Text.  
+The name of the team.
 
-Description
-:   Type: mandatory, Text.  
-    The description of the team.
+Description : Type: mandatory, Text.  
+The description of the team.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
 
-PlatformTeam
-:   Type: [PlatformTeam](<#Structure_PlatformTeam>).  
-    The team created or updated.
+PlatformTeam : Type: [PlatformTeam](lifetime-services-api.md#Structure_PlatformTeam%3E).  
+The team created or updated.
 
-#### Team_Delete { #Team_Delete }
+#### Team\_Delete { \#Team\_Delete }
 
 Deletes a team.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
 
-TeamName
-:   Type: mandatory, Text.  
-    The name of the team.
+TeamName : Type: mandatory, Text.  
+The name of the team.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
 
-#### Team_GetDetails { #Team_GetDetails }
+#### Team\_GetDetails { \#Team\_GetDetails }
 
 Returns the details of a team, with its users and applications.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
 
-TeamName
-:   Type: mandatory, Text.  
-    The name of the team.
+TeamName : Type: mandatory, Text.  
+The name of the team.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
 
-PlatformTeam
-:   Type: [PlatformTeam](<#Structure_PlatformTeam>).  
-    The team details.
+PlatformTeam : Type: [PlatformTeam](lifetime-services-api.md#Structure_PlatformTeam%3E).  
+The team details.
 
-#### Team_List { #Team_List }
+#### Team\_List { \#Team\_List }
 
 Returns a list of the teams.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
 
-PlatformTeams
-:   Type: [PlatformTeam](<#Structure_PlatformTeam>) List.  
-    The list with the teams. The returned ApplicationList and UserList attributes of each team will be empty; call the Team_GetDetails action to obtain the application and user list of a team.
+PlatformTeams : Type: [PlatformTeam](lifetime-services-api.md#Structure_PlatformTeam%3E) List.  
+The list with the teams. The returned ApplicationList and UserList attributes of each team will be empty; call the Team\_GetDetails action to obtain the application and user list of a team.
 
-#### Team_RemoveApplication { #Team_RemoveApplication }
+#### Team\_RemoveApplication { \#Team\_RemoveApplication }
 
 Removes an application from a team.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
 
-TeamName
-:   Type: mandatory, Text.  
-    The name of the team.
+TeamName : Type: mandatory, Text.  
+The name of the team.
 
-ApplicationKey
-:   Type: mandatory, Text.  
-    The application unique identifier.
+ApplicationKey : Type: mandatory, Text.  
+The application unique identifier.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
 
-#### Team_RemoveUser { #Team_RemoveUser }
+#### Team\_RemoveUser { \#Team\_RemoveUser }
 
 Removes a user from a team.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid username and password, or use the AuthenticationService API to acquire a session token.
 
-TeamName
-:   Type: mandatory, Text.  
-    The name of the team.
+TeamName : Type: mandatory, Text.  
+The name of the team.
 
-Username
-:   Type: mandatory, Text.  
-    The username of the user.
+Username : Type: mandatory, Text.  
+The username of the user.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
-
+Status : Type: APIStatus.  
+The status of invoking this API action. In case of error, contains the error code and human-readable error messages.
 
 ## SecurityManagementService
 
@@ -538,139 +449,107 @@ To use this API you need to send an authentication argument with username/passwo
 This API is exposed as a Web Service, made available at:  
 `http://<InfrastructureManagementEnvironment>/LifeTimeServices/SecurityManagementService.asmx?WSDL`
 
-Action | Description
----|---
-[IPAddress_GetLockedStatus](<#IPAddress_GetLockedStatus>) | 
-[IPAddress_Unlock](<#IPAddress_Unlock>) | 
-[User_GetLockedStatus](<#User_GetLockedStatus>) | 
-[User_Unlock](<#User_Unlock>) | 
+| Action | Description |
+| :--- | :--- |
+| [IPAddress\_GetLockedStatus](lifetime-services-api.md#IPAddress_GetLockedStatus%3E) |  |
+| [IPAddress\_Unlock](lifetime-services-api.md#IPAddress_Unlock%3E) |  |
+| [User\_GetLockedStatus](lifetime-services-api.md#User_GetLockedStatus%3E) |  |
+| [User\_Unlock](lifetime-services-api.md#User_Unlock%3E) |  |
 
 ### Actions
 
-#### IPAddress_GetLockedStatus { #IPAddress_GetLockedStatus }
+#### IPAddress\_GetLockedStatus { \#IPAddress\_GetLockedStatus }
 
+_Inputs_
 
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-*Inputs*
+IPAddress : Type: optional, Text.  
+IP Address to which the lock information, should it exist, belongs to. If this parameter is empty, information on all IP locked addresses is returned.
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+EnvironmentKey : Type: optional, Text.  
+The environment unique identifier in which the lock information should be searched. If the parameter is empty, it returns the pertaining information regarding all active environments.
 
-IPAddress
-:   Type: optional, Text.  
-    IP Address to which the lock information, should it exist, belongs to. If this parameter is empty, information on all IP locked addresses is returned.
+_Outputs_
 
-EnvironmentKey
-:   Type: optional, Text.  
-    The environment unique identifier in which the lock information should be searched. If the parameter is empty, it returns the pertaining information regarding all active environments.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-*Outputs*
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+PlatformLoginAttempts : Type: [PlatformLoginAttempt](lifetime-services-api.md#Structure_PlatformLoginAttempt%3E) List.  
+List of login attempts with respect to the given IP address \(or all IP addresses\) in the given environment \(or all active environments\).
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+#### IPAddress\_Unlock { \#IPAddress\_Unlock }
 
-PlatformLoginAttempts
-:   Type: [PlatformLoginAttempt](<#Structure_PlatformLoginAttempt>) List.  
-    List of login attempts with respect to the given IP address (or all IP addresses) in the given environment (or all active environments).
+_Inputs_
 
-#### IPAddress_Unlock { #IPAddress_Unlock }
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
+IPAddress : Type: mandatory, Text.  
+IP Address to be unlocked in the given environment.
 
+EnvironmentKey : Type: optional, Text.  
+The environment unique identifier in which the IP address should be unlocked.
 
-*Inputs*
+_Outputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-IPAddress
-:   Type: mandatory, Text.  
-    IP Address to be unlocked in the given environment.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-EnvironmentKey
-:   Type: optional, Text.  
-    The environment unique identifier in which the IP address should be unlocked.
+#### User\_GetLockedStatus { \#User\_GetLockedStatus }
 
-*Outputs*
+_Inputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Username : Type: mandatory, Text.  
+Username to which the lock information, should it exist, belongs to.
 
-#### User_GetLockedStatus { #User_GetLockedStatus }
+EnvironmentKey : Type: optional, Text.  
+The environment unique identifier in which the lock information should be searched. If the parameter is empty, it returns the pertaining information regarding all active environments.
 
+_Outputs_
 
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-*Inputs*
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+PlatformLoginAttempts : Type: [PlatformLoginAttempt](lifetime-services-api.md#Structure_PlatformLoginAttempt%3E) List.  
+List of login attempts with respect to the given Username in the given environment \(or all active environments\).
 
-Username
-:   Type: mandatory, Text.  
-    Username to which the lock information, should it exist, belongs to.
+#### User\_Unlock { \#User\_Unlock }
 
-EnvironmentKey
-:   Type: optional, Text.  
-    The environment unique identifier in which the lock information should be searched. If the parameter is empty, it returns the pertaining information regarding all active environments.
+_Inputs_
 
-*Outputs*
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Username : Type: mandatory, Text.  
+Username to be unlocked in the given environment \(or all environments\).
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+IPAddress : Type: optional, Text.  
+IP address from which the specified Username is to be unlocked.
 
-PlatformLoginAttempts
-:   Type: [PlatformLoginAttempt](<#Structure_PlatformLoginAttempt>) List.  
-    List of login attempts with respect to the given Username in the given environment (or all active environments).
+EnvironmentKey : Type: optional, Text.  
+The environment unique identifier in which the Username should be unlocked.
 
-#### User_Unlock { #User_Unlock }
+_Outputs_
 
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-
-*Inputs*
-
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
-
-Username
-:   Type: mandatory, Text.  
-    Username to be unlocked in the given environment (or all environments).
-
-IPAddress
-:   Type: optional, Text.  
-    IP address from which the specified Username is to be unlocked.
-
-EnvironmentKey
-:   Type: optional, Text.  
-    The environment unique identifier in which the Username should be unlocked.
-
-*Outputs*
-
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
-
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
-
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
 ## DbConnectionManagementService
 
@@ -679,550 +558,448 @@ This API provides methods to create, change, and delete connections to external 
 This API is exposed as a Web Service, made available at:  
 `http://<InfrastructureManagementEnvironment>/LifeTimeServices/DbConnectionManagementService.asmx?WSDL`
 
-Action | Description
----|---
-[DbConnection_Create](<#DbConnection_Create>) | Creates a new database connection.
-[DbConnection_Delete](<#DbConnection_Delete>) | Deletes the database connection given by the name.
-[DbConnection_Edit](<#DbConnection_Edit>) | Updates the configuration of the database connection.
-[DbConnection_Get](<#DbConnection_Get>) | Returns the database connection.
-[DbConnection_GetRoleAccess](<#DbConnection_GetRoleAccess>) | Returns the role permissions to use a database connection.
-[DbConnection_GetUserAccess](<#DbConnection_GetUserAccess>) | Returns the user permissions to use a database connection.
-[DbConnection_GrantRoleAccess](<#DbConnection_GrantRoleAccess>) | Grants a role with a permission level to use the database connection.
-[DbConnection_GrantUserAccess](<#DbConnection_GrantUserAccess>) | Grants a user with a permission level to use the database connection.
-[DbConnection_ListAll](<#DbConnection_ListAll>) | Returns a list with all database connections.
-[DbConnection_ListProviders](<#DbConnection_ListProviders>) | The list of database providers that a user can associate to a database connection.
-[DbConnection_PermissionLevel_List](<#DbConnection_PermissionLevel_List>) | Returns the list of permission levels.
-[DbConnection_Rename](<#DbConnection_Rename>) | Renames an database connection. This may have impact on all running application that use this database connection.
-[DbConnection_RevokeRoleAccess](<#DbConnection_RevokeRoleAccess>) | Revokes the role permissions to use the database connection.
-[DbConnection_RevokeUserAccess](<#DbConnection_RevokeUserAccess>) | Revokes the user permissions to use the database connection.
-[DbConnection_TestConnection](<#DbConnection_TestConnection>) | Tests a database connection with the given parameters.
+| Action | Description |
+| :--- | :--- |
+| [DbConnection\_Create](lifetime-services-api.md#DbConnection_Create%3E) | Creates a new database connection. |
+| [DbConnection\_Delete](lifetime-services-api.md#DbConnection_Delete%3E) | Deletes the database connection given by the name. |
+| [DbConnection\_Edit](lifetime-services-api.md#DbConnection_Edit%3E) | Updates the configuration of the database connection. |
+| [DbConnection\_Get](lifetime-services-api.md#DbConnection_Get%3E) | Returns the database connection. |
+| [DbConnection\_GetRoleAccess](lifetime-services-api.md#DbConnection_GetRoleAccess%3E) | Returns the role permissions to use a database connection. |
+| [DbConnection\_GetUserAccess](lifetime-services-api.md#DbConnection_GetUserAccess%3E) | Returns the user permissions to use a database connection. |
+| [DbConnection\_GrantRoleAccess](lifetime-services-api.md#DbConnection_GrantRoleAccess%3E) | Grants a role with a permission level to use the database connection. |
+| [DbConnection\_GrantUserAccess](lifetime-services-api.md#DbConnection_GrantUserAccess%3E) | Grants a user with a permission level to use the database connection. |
+| [DbConnection\_ListAll](lifetime-services-api.md#DbConnection_ListAll%3E) | Returns a list with all database connections. |
+| [DbConnection\_ListProviders](lifetime-services-api.md#DbConnection_ListProviders%3E) | The list of database providers that a user can associate to a database connection. |
+| [DbConnection\_PermissionLevel\_List](lifetime-services-api.md#DbConnection_PermissionLevel_List%3E) | Returns the list of permission levels. |
+| [DbConnection\_Rename](lifetime-services-api.md#DbConnection_Rename%3E) | Renames an database connection. This may have impact on all running application that use this database connection. |
+| [DbConnection\_RevokeRoleAccess](lifetime-services-api.md#DbConnection_RevokeRoleAccess%3E) | Revokes the role permissions to use the database connection. |
+| [DbConnection\_RevokeUserAccess](lifetime-services-api.md#DbConnection_RevokeUserAccess%3E) | Revokes the user permissions to use the database connection. |
+| [DbConnection\_TestConnection](lifetime-services-api.md#DbConnection_TestConnection%3E) | Tests a database connection with the given parameters. |
 
 ### Actions
 
-#### DbConnection_Create { #DbConnection_Create }
+#### DbConnection\_Create { \#DbConnection\_Create }
 
 Creates a new database connection.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid Platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid Platform username and password, or use the LoginService API to acquire a session token.
 
-EnvironmentKey
-:   Type: mandatory, Text.  
-    The environment unique identifier.
+EnvironmentKey : Type: mandatory, Text.  
+The environment unique identifier.
 
-Name
-:   Type: mandatory, Text.  
-    The name of the new database connection.
+Name : Type: mandatory, Text.  
+The name of the new database connection.
 
-ProviderKey
-:   Type: mandatory, Text.  
-    The key of the database provider associated with the new database connection. See method DBConnection_ListProviders.
+ProviderKey : Type: mandatory, Text.  
+The key of the database provider associated with the new database connection. See method DBConnection\_ListProviders.
 
-Description
-:   Type: mandatory, Text.  
-    The description of the new database connection.
+Description : Type: mandatory, Text.  
+The description of the new database connection.
 
-DBUsername
-:   Type: mandatory, Text.  
-    The username to log in to the external database.
+DBUsername : Type: mandatory, Text.  
+The username to log in to the external database.
 
-DBPassword
-:   Type: mandatory, Text.  
-    The password to log in to the external database.
+DBPassword : Type: mandatory, Text.  
+The password to log in to the external database.
 
-DBConfigParams
-:   Type: mandatory, Text.  
-    Parameters for the connection string. Separate them using ';'.
+DBConfigParams : Type: mandatory, Text.  
+Parameters for the connection string. Separate them using ';'.
 
-TestConnection
-:   Type: mandatory, Boolean.  
-    If True, the database connection is only created after being tested with success.
+TestConnection : Type: mandatory, Boolean.  
+If True, the database connection is only created after being tested with success.
 
-*Outputs*
+_Outputs_
 
-DbConnection
-:   Type: .  
-    The database connection that was created.
+DbConnection : Type: .  
+The database connection that was created.
 
-Success
-:   Type: Boolean.  
-    True if the database connection was created.
+Success : Type: Boolean.  
+True if the database connection was created.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### DbConnection_Delete { #DbConnection_Delete }
+#### DbConnection\_Delete { \#DbConnection\_Delete }
 
 Deletes the database connection given by the name.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
 
-EnvironmentKey
-:   Type: mandatory, Text.  
-    An environment unique identifier.
+EnvironmentKey : Type: mandatory, Text.  
+An environment unique identifier.
 
-DbConnectionName
-:   Type: mandatory, Text.  
-    The name of the database connection .
+DbConnectionName : Type: mandatory, Text.  
+The name of the database connection .
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the database connection was deleted.
+Success : Type: Boolean.  
+True if the database connection was deleted.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### DbConnection_Edit { #DbConnection_Edit }
+#### DbConnection\_Edit { \#DbConnection\_Edit }
 
 Updates the configuration of the database connection.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
 
-EnvironmentKey
-:   Type: mandatory, Text.  
-    An environment unique identifier.
+EnvironmentKey : Type: mandatory, Text.  
+An environment unique identifier.
 
-DbConnectionName
-:   Type: mandatory, Text.  
-    The name of the database connection.
+DbConnectionName : Type: mandatory, Text.  
+The name of the database connection.
 
-ProviderKey
-:   Type: mandatory, Text.  
-    The key of the database provider associated with the new database connection. See method DBConnection_ListProviders.
+ProviderKey : Type: mandatory, Text.  
+The key of the database provider associated with the new database connection. See method DBConnection\_ListProviders.
 
-Description
-:   Type: mandatory, Text.  
-    The database connection description.
+Description : Type: mandatory, Text.  
+The database connection description.
 
-DBUsername
-:   Type: mandatory, Text.  
-    The username to log in to the external database.
+DBUsername : Type: mandatory, Text.  
+The username to log in to the external database.
 
-DBPassword
-:   Type: mandatory, Text.  
-    The password to log in to the external database.
+DBPassword : Type: mandatory, Text.  
+The password to log in to the external database.
 
-DBConfigParams
-:   Type: mandatory, Text.  
-    Parameters for the connection string. Separate them using ';'.
+DBConfigParams : Type: mandatory, Text.  
+Parameters for the connection string. Separate them using ';'.
 
-TestConnection
-:   Type: mandatory, Boolean.  
-    If True, the database connection is only updated after being tested with sucess.
+TestConnection : Type: mandatory, Boolean.  
+If True, the database connection is only updated after being tested with sucess.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the database connection was changed.
+Success : Type: Boolean.  
+True if the database connection was changed.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### DbConnection_Get { #DbConnection_Get }
+#### DbConnection\_Get { \#DbConnection\_Get }
 
 Returns the database connection.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
 
-EnvironmentKey
-:   Type: mandatory, Text.  
-    An environment unique identifier.
+EnvironmentKey : Type: mandatory, Text.  
+An environment unique identifier.
 
-DbConnectionName
-:   Type: mandatory, Text.  
-    The name of the database connection.
+DbConnectionName : Type: mandatory, Text.  
+The name of the database connection.
 
-*Outputs*
+_Outputs_
 
-DbConnection
-:   Type: .  
-    The database connection.
+DbConnection : Type: .  
+The database connection.
 
-Success
-:   Type: Boolean.  
-    True if the database connection was got.
+Success : Type: Boolean.  
+True if the database connection was got.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### DbConnection_GetRoleAccess { #DbConnection_GetRoleAccess }
+#### DbConnection\_GetRoleAccess { \#DbConnection\_GetRoleAccess }
 
 Returns the role permissions to use a database connection.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
 
-EnvironmentKey
-:   Type: mandatory, Text.  
-    An environment unique identifier.
+EnvironmentKey : Type: mandatory, Text.  
+An environment unique identifier.
 
-DbConnectionName
-:   Type: mandatory, Text.  
-    The name of the database connection.
+DbConnectionName : Type: mandatory, Text.  
+The name of the database connection.
 
-RoleName
-:   Type: mandatory, Text.  
-    The name of the role.
+RoleName : Type: mandatory, Text.  
+The name of the role.
 
-*Outputs*
+_Outputs_
 
-PermissionLevel
-:   Type: .  
-    The role's permission level.
+PermissionLevel : Type: .  
+The role's permission level.
 
-Success
-:   Type: Boolean.  
-    True if the permissions were got.
+Success : Type: Boolean.  
+True if the permissions were got.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### DbConnection_GetUserAccess { #DbConnection_GetUserAccess }
+#### DbConnection\_GetUserAccess { \#DbConnection\_GetUserAccess }
 
 Returns the user permissions to use a database connection.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
 
-EnvironmentKey
-:   Type: mandatory, Text.  
-    An environment unique identifier.
+EnvironmentKey : Type: mandatory, Text.  
+An environment unique identifier.
 
-DbConnectionName
-:   Type: mandatory, Text.  
-    The name of the database connection.
+DbConnectionName : Type: mandatory, Text.  
+The name of the database connection.
 
-Username
-:   Type: mandatory, Text.  
-    The username of the user.
+Username : Type: mandatory, Text.  
+The username of the user.
 
-*Outputs*
+_Outputs_
 
-PermissionLevel
-:   Type: .  
-    The user's permission level.
+PermissionLevel : Type: .  
+The user's permission level.
 
-Success
-:   Type: Boolean.  
-    True if the permissions were got.
+Success : Type: Boolean.  
+True if the permissions were got.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### DbConnection_GrantRoleAccess { #DbConnection_GrantRoleAccess }
+#### DbConnection\_GrantRoleAccess { \#DbConnection\_GrantRoleAccess }
 
 Grants a role with a permission level to use the database connection.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
 
-EnvironmentKey
-:   Type: mandatory, Text.  
-    An environment unique identifier.
+EnvironmentKey : Type: mandatory, Text.  
+An environment unique identifier.
 
-DbConnectionName
-:   Type: mandatory, Text.  
-    The name of the database connection.
+DbConnectionName : Type: mandatory, Text.  
+The name of the database connection.
 
-RoleName
-:   Type: mandatory, Text.  
-    The name of the role of users to grant permissions.
+RoleName : Type: mandatory, Text.  
+The name of the role of users to grant permissions.
 
-PermissionLevelId
-:   Type: mandatory, DbConnectionPermissionLevel Identifier.  
-    The permission level to be granted. See method DbConnection_PermissionLevel_List.
+PermissionLevelId : Type: mandatory, DbConnectionPermissionLevel Identifier.  
+The permission level to be granted. See method DbConnection\_PermissionLevel\_List.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the permissions were granted.
+Success : Type: Boolean.  
+True if the permissions were granted.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### DbConnection_GrantUserAccess { #DbConnection_GrantUserAccess }
+#### DbConnection\_GrantUserAccess { \#DbConnection\_GrantUserAccess }
 
 Grants a user with a permission level to use the database connection.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
 
-EnvironmentKey
-:   Type: mandatory, Text.  
-    An environment unique identifier.
+EnvironmentKey : Type: mandatory, Text.  
+An environment unique identifier.
 
-DbConnectionName
-:   Type: mandatory, Text.  
-    The name of the database connection.
+DbConnectionName : Type: mandatory, Text.  
+The name of the database connection.
 
-Username
-:   Type: mandatory, Text.  
-    The username of the user to grant permissions.
+Username : Type: mandatory, Text.  
+The username of the user to grant permissions.
 
-PermissionLevelId
-:   Type: mandatory, DbConnectionPermissionLevel Identifier.  
-    The permission level to be granted. See method DbConnection_PermissionLevel_List.
+PermissionLevelId : Type: mandatory, DbConnectionPermissionLevel Identifier.  
+The permission level to be granted. See method DbConnection\_PermissionLevel\_List.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the permissions were granted.
+Success : Type: Boolean.  
+True if the permissions were granted.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### DbConnection_ListAll { #DbConnection_ListAll }
+#### DbConnection\_ListAll { \#DbConnection\_ListAll }
 
 Returns a list with all database connections.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
 
-EnvironmentKey
-:   Type: mandatory, Text.  
-    An environment unique identifier.
+EnvironmentKey : Type: mandatory, Text.  
+An environment unique identifier.
 
-*Outputs*
+_Outputs_
 
-DbConnections
-:   Type: DatabaseConnection List.  
-    The list of all database connections.
+DbConnections : Type: DatabaseConnection List.  
+The list of all database connections.
 
-Success
-:   Type: Boolean.  
-    True if the list of database connections is filled.
+Success : Type: Boolean.  
+True if the list of database connections is filled.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### DbConnection_ListProviders { #DbConnection_ListProviders }
+#### DbConnection\_ListProviders { \#DbConnection\_ListProviders }
 
 The list of database providers that a user can associate to a database connection.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid Platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid Platform username and password, or use the LoginService API to acquire a session token.
 
-*Outputs*
+_Outputs_
 
-Providers
-:   Type: DbProvider List.  
-    The list of allowed database providers.
+Providers : Type: DbProvider List.  
+The list of allowed database providers.
 
-Success
-:   Type: Boolean.  
-    True if the authentication succeeds and a list of providers is returned.
+Success : Type: Boolean.  
+True if the authentication succeeds and a list of providers is returned.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error message.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error message.
 
-#### DbConnection_PermissionLevel_List { #DbConnection_PermissionLevel_List }
+#### DbConnection\_PermissionLevel\_List { \#DbConnection\_PermissionLevel\_List }
 
 Returns the list of permission levels.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the authentication succeeds and a list of permission levels is returned.
+Success : Type: Boolean.  
+True if the authentication succeeds and a list of permission levels is returned.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-DbConnectionPermissionLevels
-:   Type: DbConnectionPermissionLevel List.  
-    The list of permission levels.
+DbConnectionPermissionLevels : Type: DbConnectionPermissionLevel List.  
+The list of permission levels.
 
-#### DbConnection_Rename { #DbConnection_Rename }
+#### DbConnection\_Rename { \#DbConnection\_Rename }
 
 Renames an database connection. This may have impact on all running application that use this database connection.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
 
-EnvironmentKey
-:   Type: mandatory, Text.  
-    An environment unique identifier.
+EnvironmentKey : Type: mandatory, Text.  
+An environment unique identifier.
 
-CurrentName
-:   Type: mandatory, Text.  
-    The current name of the database connection.
+CurrentName : Type: mandatory, Text.  
+The current name of the database connection.
 
-NewName
-:   Type: mandatory, Text.  
-    The new name for the database connection.
+NewName : Type: mandatory, Text.  
+The new name for the database connection.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the database connection was renamed.
+Success : Type: Boolean.  
+True if the database connection was renamed.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### DbConnection_RevokeRoleAccess { #DbConnection_RevokeRoleAccess }
+#### DbConnection\_RevokeRoleAccess { \#DbConnection\_RevokeRoleAccess }
 
 Revokes the role permissions to use the database connection.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
 
-EnvironmentKey
-:   Type: mandatory, Text.  
-    An environment unique identifier.
+EnvironmentKey : Type: mandatory, Text.  
+An environment unique identifier.
 
-DbConnectionName
-:   Type: mandatory, Text.  
-    The name of the database connection.
+DbConnectionName : Type: mandatory, Text.  
+The name of the database connection.
 
-RoleName
-:   Type: mandatory, Text.  
-    The name of the role to revoke permissions.
+RoleName : Type: mandatory, Text.  
+The name of the role to revoke permissions.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the permissions were revoked.
+Success : Type: Boolean.  
+True if the permissions were revoked.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### DbConnection_RevokeUserAccess { #DbConnection_RevokeUserAccess }
+#### DbConnection\_RevokeUserAccess { \#DbConnection\_RevokeUserAccess }
 
 Revokes the user permissions to use the database connection.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the LoginService API to acquire a session token.
 
-EnvironmentKey
-:   Type: mandatory, Text.  
-    An environment unique identifier.
+EnvironmentKey : Type: mandatory, Text.  
+An environment unique identifier.
 
-DbConnectionName
-:   Type: mandatory, Text.  
-    The name of the database connection.
+DbConnectionName : Type: mandatory, Text.  
+The name of the database connection.
 
-Username
-:   Type: mandatory, Text.  
-    The username of the user to revoke permissions.
+Username : Type: mandatory, Text.  
+The username of the user to revoke permissions.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the permissions were revoked.
+Success : Type: Boolean.  
+True if the permissions were revoked.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### DbConnection_TestConnection { #DbConnection_TestConnection }
+#### DbConnection\_TestConnection { \#DbConnection\_TestConnection }
 
 Tests a database connection with the given parameters.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid Platform username and password, or use the LoginService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid Platform username and password, or use the LoginService API to acquire a session token.
 
-EnvironmentKey
-:   Type: mandatory, Text.  
-    An environment unique identifier.
+EnvironmentKey : Type: mandatory, Text.  
+An environment unique identifier.
 
-ProviderKey
-:   Type: mandatory, Text.  
-    The key of the database provider associated with the new database connection. See method DBConnection_ListProviders.
+ProviderKey : Type: mandatory, Text.  
+The key of the database provider associated with the new database connection. See method DBConnection\_ListProviders.
 
-DBUsername
-:   Type: mandatory, Text.  
-    The username to log in to the external database.
+DBUsername : Type: mandatory, Text.  
+The username to log in to the external database.
 
-DBPassword
-:   Type: mandatory, Text.  
-    The password to log in to the external database.
+DBPassword : Type: mandatory, Text.  
+The password to log in to the external database.
 
-DBConfigParams
-:   Type: mandatory, Text.  
-    Parameters for the connection string. Separate them using ';'.
+DBConfigParams : Type: mandatory, Text.  
+Parameters for the connection string. Separate them using ';'.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the connection was successful.
+Success : Type: Boolean.  
+True if the connection was successful.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
-
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
 ## UserManagementService
 
@@ -1232,589 +1009,455 @@ To use this API you need to send an authentication argument with username/passwo
 This API is exposed as a Web Service, made available at:  
 `http://<InfrastructureManagementEnvironment>/LifeTimeServices/UserManagementService.asmx?WSDL`
 
-Action | Description
----|---
-[User_ChangePassword](<#User_ChangePassword>) | Changes the password of a platform user.
-[User_ChangeUsername](<#User_ChangeUsername>) | Changes the username of a platform user.
-[User_CreateOrUpdate](<#User_CreateOrUpdate>) | Creates a new platform user or updates an existing one. The operation activates the user in the platform.
-[User_DeleteApplicationPermission](<#User_DeleteApplicationPermission>) | Deletes the permission a platform user has for a specific application. After executing this operation, the user permissions for the application are defined by the platform roles the platform user has.
-[User_GetAllPermissions](<#User_GetAllPermissions>) | Returns the permissions a platform user has over each existing application and the permissions of the platform role, in each environment of the infrastructure.
-[User_GetApplicationPermissions](<#User_GetApplicationPermissions>) | Returns the permissions a platform user has over an application, in each environment of the infrastructure, or the permissions from the platform role in case of specific permissions for the application were not specified.
-[User_List](<#User_List>) | Returns the list of platform users, with their information, such as username, email and platform role.
-[User_SetActive](<#User_SetActive>) | Activates a user in the platform, restoring all permissions the platform user has associated.
-[User_SetApplicationRole](<#User_SetApplicationRole>) | Updates the role a platform user has for an application with the given key.
-[User_SetInactive](<#User_SetInactive>) | Deactivates a user in the platform. The user stops having access to all operations that require authentication.
+| Action | Description |
+| :--- | :--- |
+| [User\_ChangePassword](lifetime-services-api.md#User_ChangePassword%3E) | Changes the password of a platform user. |
+| [User\_ChangeUsername](lifetime-services-api.md#User_ChangeUsername%3E) | Changes the username of a platform user. |
+| [User\_CreateOrUpdate](lifetime-services-api.md#User_CreateOrUpdate%3E) | Creates a new platform user or updates an existing one. The operation activates the user in the platform. |
+| [User\_DeleteApplicationPermission](lifetime-services-api.md#User_DeleteApplicationPermission%3E) | Deletes the permission a platform user has for a specific application. After executing this operation, the user permissions for the application are defined by the platform roles the platform user has. |
+| [User\_GetAllPermissions](lifetime-services-api.md#User_GetAllPermissions%3E) | Returns the permissions a platform user has over each existing application and the permissions of the platform role, in each environment of the infrastructure. |
+| [User\_GetApplicationPermissions](lifetime-services-api.md#User_GetApplicationPermissions%3E) | Returns the permissions a platform user has over an application, in each environment of the infrastructure, or the permissions from the platform role in case of specific permissions for the application were not specified. |
+| [User\_List](lifetime-services-api.md#User_List%3E) | Returns the list of platform users, with their information, such as username, email and platform role. |
+| [User\_SetActive](lifetime-services-api.md#User_SetActive%3E) | Activates a user in the platform, restoring all permissions the platform user has associated. |
+| [User\_SetApplicationRole](lifetime-services-api.md#User_SetApplicationRole%3E) | Updates the role a platform user has for an application with the given key. |
+| [User\_SetInactive](lifetime-services-api.md#User_SetInactive%3E) | Deactivates a user in the platform. The user stops having access to all operations that require authentication. |
 
 ### Actions
 
-#### User_ChangePassword { #User_ChangePassword }
+#### User\_ChangePassword { \#User\_ChangePassword }
 
 Changes the password of a platform user.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-Username
-:   Type: mandatory, Text.  
-    The username of a platform user.
+Username : Type: mandatory, Text.  
+The username of a platform user.
 
-NewPassword
-:   Type: mandatory, Text.  
-    The new password.
+NewPassword : Type: mandatory, Text.  
+The new password.
 
-EncryptPassword
-:   Type: mandatory, Boolean.  
-    Specifies if the password of the platform user will be encrypted.
+EncryptPassword : Type: mandatory, Boolean.  
+Specifies if the password of the platform user will be encrypted.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.  
-    
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### User_ChangeUsername { #User_ChangeUsername }
+#### User\_ChangeUsername { \#User\_ChangeUsername }
 
 Changes the username of a platform user.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-OldUsername
-:   Type: mandatory, Text.  
-    The username of a platform user.
+OldUsername : Type: mandatory, Text.  
+The username of a platform user.
 
-NewUsername
-:   Type: mandatory, Text.  
-    The new username.
+NewUsername : Type: mandatory, Text.  
+The new username.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### User_CreateOrUpdate { #User_CreateOrUpdate }
+#### User\_CreateOrUpdate { \#User\_CreateOrUpdate }
 
 Creates a new platform user or updates an existing one. The operation activates the user in the platform.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-Username
-:   Type: mandatory, Text.  
-    The username of a platform user.
+Username : Type: mandatory, Text.  
+The username of a platform user.
 
-Password
-:   Type: mandatory, Text.  
-    The password of a platform user.
+Password : Type: mandatory, Text.  
+The password of a platform user.
 
-EncryptPassword
-:   Type: mandatory, Boolean.  
-    Specifies if the password of the platform user will be encrypted.
+EncryptPassword : Type: mandatory, Boolean.  
+Specifies if the password of the platform user will be encrypted.
 
-Name
-:   Type: mandatory, Text.  
-    The name of a platform user.
+Name : Type: mandatory, Text.  
+The name of a platform user.
 
-Email
-:   Type: mandatory, Email.  
-    The email of a platform user.
+Email : Type: mandatory, Email.  
+The email of a platform user.
 
-RoleName
-:   Type: mandatory, Text.  
-    The platform role to grant to a platform user.  
-    
+RoleName : Type: mandatory, Text.  
+The platform role to grant to a platform user.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-PlatformUser
-:   Type: [PlatformUser](<#Structure_PlatformUser>).  
-    A platform user.
+PlatformUser : Type: [PlatformUser](lifetime-services-api.md#Structure_PlatformUser%3E).  
+A platform user.
 
-#### User_DeleteApplicationPermission { #User_DeleteApplicationPermission }
+#### User\_DeleteApplicationPermission { \#User\_DeleteApplicationPermission }
 
 Deletes the permission a platform user has for a specific application. After executing this operation, the user permissions for the application are defined by the platform roles the platform user has.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-Username
-:   Type: mandatory, Text.  
-    The username of a platform user.
+Username : Type: mandatory, Text.  
+The username of a platform user.
 
-ApplicationKey
-:   Type: mandatory, Text.  
-    An application unique identifier.
+ApplicationKey : Type: mandatory, Text.  
+An application unique identifier.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### User_GetAllPermissions { #User_GetAllPermissions }
+#### User\_GetAllPermissions { \#User\_GetAllPermissions }
 
 Returns the permissions a platform user has over each existing application and the permissions of the platform role, in each environment of the infrastructure.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-Username
-:   Type: mandatory, Text.  
-    The username of a platform user.
+Username : Type: mandatory, Text.  
+The username of a platform user.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    
+Success : Type: Boolean.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.  
-    
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-ApplicationPermissions
-:   Type: [ApplicationPermissions](<#Structure_ApplicationPermissions>), [ApplicationShortInfo](<#Structure_ApplicationShortInfo>) List.  
-    The list of permissions a platform user has over each application in each environment registered in platform.  
-    
+ApplicationPermissions : Type: [ApplicationPermissions](lifetime-services-api.md#Structure_ApplicationPermissions%3E), [ApplicationShortInfo](lifetime-services-api.md#Structure_ApplicationShortInfo%3E) List.  
+The list of permissions a platform user has over each application in each environment registered in platform.
 
-PlatformRolePermissions
-:   Type: [ApplicationPermissions](<#Structure_ApplicationPermissions>).  
-    The list of permissions a platform user has considering the platform role in each environment registered in platform.
+PlatformRolePermissions : Type: [ApplicationPermissions](lifetime-services-api.md#Structure_ApplicationPermissions%3E).  
+The list of permissions a platform user has considering the platform role in each environment registered in platform.
 
-#### User_GetApplicationPermissions { #User_GetApplicationPermissions }
+#### User\_GetApplicationPermissions { \#User\_GetApplicationPermissions }
 
 Returns the permissions a platform user has over an application, in each environment of the infrastructure, or the permissions from the platform role in case of specific permissions for the application were not specified.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-Username
-:   Type: mandatory, Text.  
-    The username of a platform user.
+Username : Type: mandatory, Text.  
+The username of a platform user.
 
-ApplicationKey
-:   Type: mandatory, Text.  
-    An application unique identifier.
+ApplicationKey : Type: mandatory, Text.  
+An application unique identifier.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.  
-    
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-ArePlatformRolePermissions
-:   Type: Boolean.  
-    Specifies whether the permissions are granted from the user's role or if the user has permissions configured for the application.
+ArePlatformRolePermissions : Type: Boolean.  
+Specifies whether the permissions are granted from the user's role or if the user has permissions configured for the application.
 
-ApplicationPermissions
-:   Type: [ApplicationPermissions](<#Structure_ApplicationPermissions>).  
-    The list of permissions a platform user has over the application in each environment registered in platform.
+ApplicationPermissions : Type: [ApplicationPermissions](lifetime-services-api.md#Structure_ApplicationPermissions%3E).  
+The list of permissions a platform user has over the application in each environment registered in platform.
 
-#### User_List { #User_List }
+#### User\_List { \#User\_List }
 
 Returns the list of platform users, with their information, such as username, email and platform role.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.  
-    
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-ShowInactive
-:   Type: mandatory, Boolean.  
-    If True returns users that are set to inactive. If False, only returns active users.  
-    
+ShowInactive : Type: mandatory, Boolean.  
+If True returns users that are set to inactive. If False, only returns active users.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-PlatformUsers
-:   Type: [PlatformUser](<#Structure_PlatformUser>) List.  
-    The list of platform users.
+PlatformUsers : Type: [PlatformUser](lifetime-services-api.md#Structure_PlatformUser%3E) List.  
+The list of platform users.
 
-#### User_SetActive { #User_SetActive }
+#### User\_SetActive { \#User\_SetActive }
 
 Activates a user in the platform, restoring all permissions the platform user has associated.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-Username
-:   Type: mandatory, Text.  
-    The username of a platform user.
+Username : Type: mandatory, Text.  
+The username of a platform user.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.  
-    
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### User_SetApplicationRole { #User_SetApplicationRole }
+#### User\_SetApplicationRole { \#User\_SetApplicationRole }
 
 Updates the role a platform user has for an application with the given key.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-Username
-:   Type: mandatory, Text.  
-    The username of a platform user.
+Username : Type: mandatory, Text.  
+The username of a platform user.
 
-ApplicationKey
-:   Type: mandatory, Text.  
-    An application unique identifier.
+ApplicationKey : Type: mandatory, Text.  
+An application unique identifier.
 
-RoleName
-:   Type: mandatory, Text.  
-    The role name.
+RoleName : Type: mandatory, Text.  
+The role name.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
-#### User_SetInactive { #User_SetInactive }
+#### User\_SetInactive { \#User\_SetInactive }
 
 Deactivates a user in the platform. The user stops having access to all operations that require authentication.
 
-*Inputs*
+_Inputs_
 
-Authentication
-:   Type: mandatory, [WebServiceSimpleAuthentication](<#Structure_WebServiceSimpleAuthentication>).  
-    The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
+Authentication : Type: mandatory, [WebServiceSimpleAuthentication](lifetime-services-api.md#Structure_WebServiceSimpleAuthentication%3E).  
+The authentication required to use this API. Specify a valid platform username and password, or use the AuthenticationService API to acquire a session token.
 
-Username
-:   Type: mandatory, Text.  
-    The username of a platform user.
+Username : Type: mandatory, Text.  
+The username of a platform user.
 
-*Outputs*
+_Outputs_
 
-Success
-:   Type: Boolean.  
-    True if the method was successful, False otherwise.
+Success : Type: Boolean.  
+True if the method was successful, False otherwise.
 
-Status
-:   Type: APIStatus.  
-    The status of invoking this API. This status contains an error code and human-readable error messages.
-
+Status : Type: APIStatus.  
+The status of invoking this API. This status contains an error code and human-readable error messages.
 
 ## Structures
 
-### ApplicationPermissions { #Structure_ApplicationPermissions }
+### ApplicationPermissions { \#Structure\_ApplicationPermissions }
 
 Represents a set of permissions of an application with respect each one of the available environments.
 
-*Attributes*
+_Attributes_
 
-ApplicationPermissions
-:   Type: [EnvironmentPermissionForApplication](<#Structure_EnvironmentPermissionForApplication>) List.  
-    The permissions list where each permission corresponds to an environment.
+ApplicationPermissions : Type: [EnvironmentPermissionForApplication](lifetime-services-api.md#Structure_EnvironmentPermissionForApplication%3E) List.  
+The permissions list where each permission corresponds to an environment.
 
-### ApplicationShortInfo { #Structure_ApplicationShortInfo }
+### ApplicationShortInfo { \#Structure\_ApplicationShortInfo }
 
 Few details about an application managed by the platform.
 
-*Attributes*
+_Attributes_
 
-Name
-:   Type: Text (50).  
-    Name of the application.
+Name : Type: Text \(50\).  
+Name of the application.
 
-Key
-:   Type: Text (50).  
-    Application unique identifier.
+Key : Type: Text \(50\).  
+Application unique identifier.
 
-Description
-:   Type: Text (50).  
-    Description of the application.
+Description : Type: Text \(50\).  
+Description of the application.
 
-### EnvironmentPermissionForApplication { #Structure_EnvironmentPermissionForApplication }
+### EnvironmentPermissionForApplication { \#Structure\_EnvironmentPermissionForApplication }
 
 Permissions an IT user or role has over an application running on a specified environment.
 
-*Attributes*
+_Attributes_
 
-EnvironmentKey
-:   Type: Text (50).  
-    Environment unique identifier.
+EnvironmentKey : Type: Text \(50\).  
+Environment unique identifier.
 
-EnvironmentName
-:   Type: Text (50).  
-    Name of the environment.
+EnvironmentName : Type: Text \(50\).  
+Name of the environment.
 
-EnvironmentHost
-:   Type: Text (50).  
-    The environment host which is represented by a relative URL path, starting from the hostname.
+EnvironmentHost : Type: Text \(50\).  
+The environment host which is represented by a relative URL path, starting from the hostname.
 
-EnvironmentType
-:   Type: Text (50).  
-    Type of the environment. [Development | Test | Production]
+EnvironmentType : Type: Text \(50\).  
+Type of the environment. \[Development \| Test \| Production\]
 
-ApplicationPermissionLevelId
-:   Type: ApplicationPermissionLevel Identifier.  
-    The Application Permission Level ID with respect to the environment.
+ApplicationPermissionLevelId : Type: ApplicationPermissionLevel Identifier.  
+The Application Permission Level ID with respect to the environment.
 
-### EnvironmentPermissionForRole { #Structure_EnvironmentPermissionForRole }
+### EnvironmentPermissionForRole { \#Structure\_EnvironmentPermissionForRole }
 
 Permissions an IT role has over an environment.
 
-*Attributes*
+_Attributes_
 
-EnvironmentKey
-:   Type: Text (50).  
-    Environment unique identifier.
+EnvironmentKey : Type: Text \(50\).  
+Environment unique identifier.
 
-EnvironmentName
-:   Type: Text (50).  
-    Name of the environment.
+EnvironmentName : Type: Text \(50\).  
+Name of the environment.
 
-EnvironmentHost
-:   Type: Text (50).  
-    The environment host which is represented by a relative URL path, starting from the hostname.
+EnvironmentHost : Type: Text \(50\).  
+The environment host which is represented by a relative URL path, starting from the hostname.
 
-EnvironmentType
-:   Type: Text (50).  
-    Type of the environment. [Development | Test | Production]
+EnvironmentType : Type: Text \(50\).  
+Type of the environment. \[Development \| Test \| Production\]
 
-EnvironmentPermissionLevelId
-:   Type: EnvironmentPermissionLevel Identifier.  
-    The Environment Permission Level ID with respect to the environment.
+EnvironmentPermissionLevelId : Type: EnvironmentPermissionLevel Identifier.  
+The Environment Permission Level ID with respect to the environment.
 
-### PlatformLoginAttempt { #Structure_PlatformLoginAttempt }
+### PlatformLoginAttempt { \#Structure\_PlatformLoginAttempt }
 
+_Attributes_
 
+Id : Type: Long Integer.
 
-*Attributes*
+UserId : Type: Integer.
 
-Id
-:   Type: Long Integer.  
-    
+Username : Type: Text \(250\).
 
-UserId
-:   Type: Integer.  
-    
+Success : Type: Boolean.
 
-Username
-:   Type: Text (250).  
-    
+Instant : Type: Date Time.
 
-Success
-:   Type: Boolean.  
-    
+IPAddress : Type: Text \(45\).
 
-Instant
-:   Type: Date Time.  
-    
+UsernameFailureCount : Type: Integer.
 
-IPAddress
-:   Type: Text (45).  
-    
+OriginAddressFailureCount : Type: Integer.
 
-UsernameFailureCount
-:   Type: Integer.  
-    
+UserAgent : Type: Text \(200\).
 
-OriginAddressFailureCount
-:   Type: Integer.  
-    
+Visitor : Type: Text \(36\).
 
-UserAgent
-:   Type: Text (200).  
-    
+RequestKey : Type: Text \(36\).
 
-Visitor
-:   Type: Text (36).  
-    
+Result : Type: Text \(50\).
 
-RequestKey
-:   Type: Text (36).  
-    
+EnvironmentId : Type: Environment Identifier.
 
-Result
-:   Type: Text (50).  
-    
+EnvironmentName : Type: Text.
 
-EnvironmentId
-:   Type: Environment Identifier.  
-    
-
-EnvironmentName
-:   Type: Text.  
-    
-
-### PlatformRole { #Structure_PlatformRole }
+### PlatformRole { \#Structure\_PlatformRole }
 
 Details about a role.
 
-*Attributes*
+_Attributes_
 
-Id
-:   Type: InfrastructureRole Identifier.  
-    Role unique identifier.  
+Id : Type: InfrastructureRole Identifier.  
+Role unique identifier.
 
+Name : Type: Text \(50\).  
+Name of the role.
 
-Name
-:   Type: Text (50).  
-    Name of the role.
+Description : Type: Text \(500\).  
+Description of the role.
 
-Description
-:   Type: Text (500).  
-    Description of the role.
+CanManageInfrastructure : Type: Boolean.  
+Specifies whether this role has permissions to configure the infrastructure or not.
 
-CanManageInfrastructure
-:   Type: Boolean.  
-    Specifies whether this role has permissions to configure the infrastructure or not.
+IsProtected : Type: Boolean.  
+True if the role is protected. False otherwise.
 
-IsProtected
-:   Type: Boolean.  
-    True if the role is protected. False otherwise.
+AllowChangePermissions : Type: Boolean.  
+True if it is possible to change the role permissions. False otherwise.
 
-AllowChangePermissions
-:   Type: Boolean.  
-    True if it is possible to change the role permissions. False otherwise.
+PermissionsPerEnvironment : Type: [EnvironmentPermissionForRole](lifetime-services-api.md#Structure_EnvironmentPermissionForRole%3E) List.  
+Role permissions information for each environment.
 
-PermissionsPerEnvironment
-:   Type: [EnvironmentPermissionForRole](<#Structure_EnvironmentPermissionForRole>) List.  
-    Role permissions information for each environment.
-
-### PlatformTeam { #Structure_PlatformTeam }
+### PlatformTeam { \#Structure\_PlatformTeam }
 
 The information about a platform team.
 
-*Attributes*
+_Attributes_
 
-Id
-:   Type: Integer.  
-    The team unique identifier.
+Id : Type: Integer.  
+The team unique identifier.
 
-Name
-:   Type: Text (50).  
-    The name of the team.
+Name : Type: Text \(50\).  
+The name of the team.
 
-Description
-:   Type: Text (50).  
-    The description of the team.
+Description : Type: Text \(50\).  
+The description of the team.
 
-ApplicationList
-:   Type: [ApplicationShortInfo](<#Structure_ApplicationShortInfo>) List.  
-    The list of applications associated with the team.
+ApplicationList : Type: [ApplicationShortInfo](lifetime-services-api.md#Structure_ApplicationShortInfo%3E) List.  
+The list of applications associated with the team.
 
-UserList
-:   Type: [PlatformUser](<#Structure_PlatformUser>) List.  
-    The list of users associated with the team.
+UserList : Type: [PlatformUser](lifetime-services-api.md#Structure_PlatformUser%3E) List.  
+The list of users associated with the team.
 
-### PlatformUser { #Structure_PlatformUser }
+### PlatformUser { \#Structure\_PlatformUser }
 
 The information about a user.
 
-*Attributes*
+_Attributes_
 
-Id
-:   Type: Integer.  
-    User unique identifier.
+Id : Type: Integer.  
+User unique identifier.
 
-Username
-:   Type: Text (50).  
-    Username of an IT user.
+Username : Type: Text \(50\).  
+Username of an IT user.
 
-Name
-:   Type: Text (50).  
-    Name of an IT user.
+Name : Type: Text \(50\).  
+Name of an IT user.
 
-Email
-:   Type: Email.  
-    Email of an IT user.
+Email : Type: Email.  
+Email of an IT user.
 
-RoleName
-:   Type: Text (50).  
-    Role name the IT user has assigned.  
+RoleName : Type: Text \(50\).  
+Role name the IT user has assigned.
 
-### WebServiceSimpleAuthentication { #Structure_WebServiceSimpleAuthentication }
+### WebServiceSimpleAuthentication { \#Structure\_WebServiceSimpleAuthentication }
 
 Represents the fields to authenticate an OutSystems IT user. Specify a username/password combination to authenticate, or use the AuthenticationService Web Service API to acquire a session token.
 
-*Attributes*
+_Attributes_
 
-Username
-:   Type: Text (50).  
-    The username of an IT user.
+Username : Type: Text \(50\).  
+The username of an IT user.
 
-Password
-:   Type: Text.  
-    The password of the IT user.
+Password : Type: Text.  
+The password of the IT user.
 
-Token
-:   Type: Text (50).  
-    An authentication token.
-
+Token : Type: Text \(50\).  
+An authentication token.
 

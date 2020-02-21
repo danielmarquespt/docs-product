@@ -1,6 +1,6 @@
 ---
 summary: Check how OutSystems creates and reuses Structures for consumed REST APIs.
-tags: 
+tags: null
 ---
 
 # REST API Structures
@@ -11,15 +11,15 @@ When you consume REST API methods in your module, OutSystems automatically creat
 * The method name 
 * If it will hold a Request or a Response
 
-The data type of each input or output parameter is [mapped into an OutSystems data type](<../../../ref/extensibility-and-integration/rest-apis/consumed-rest-api/mapping.md>).
+The data type of each input or output parameter is [mapped into an OutSystems data type](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/ref/extensibility-and-integration/rest-apis/consumed-rest-api/mapping.md%3E).
 
 For example, consider the following consumed REST API Method from Twitter:
-    
+
 HTTP Request type: `POST`  
 URL: `https://api.twitter.com/1.1/account/settings.json?lang={mylanguage}`  
-Response:  
+Response:
 
-```json
+```javascript
 {
     "use_cookie_personalization": true,
     "language": "en"
@@ -28,7 +28,7 @@ Response:
 
 The following Structure is automatically created for this method:
 
-![](images/ss-rest-consume-structures.png)
+![](../../../../.gitbook/assets/ss-rest-consume-structures.png)
 
 ## Reuse of Structures
 
@@ -45,12 +45,12 @@ For example, the Structure name might change and get new attributes. The methods
 ### Reusing a Structure Example
 
 Considering the previous Twitter's REST API example, we will now add the GetSettings method of the same REST API, keeping only some relevant response parameters:
-    
+
 HTTP Request type: `GET`  
 URL: `https://api.twitter.com/1.1/account/settings.json`  
 Response:
 
-```json
+```javascript
 {
     "use_cookie_personalization": true,
     "language": "en",
@@ -61,15 +61,15 @@ Response:
 As the existing "PostSettingsResponse" Structure is compatible with the new method, the Structure is reused. The following changes take place:
 
 * The Structure is renamed to "Settings" to match both methods where it is used
-* An additional "Always_use_https" attribute is added to the Structure
+* An additional "Always\_use\_https" attribute is added to the Structure
 
-![](images/ss-rest-consume-structures-updated.png)
+![](../../../../.gitbook/assets/ss-rest-consume-structures-updated.png)
 
 ### Creating a New Structure Example
 
 The following example adds a larger number of parameters to the Response example of the "GetSettings" method and removes one parameter that was already there:
-    
-```json
+
+```javascript
 {
     "language": "en",
     "always_use_https": true,
@@ -83,6 +83,7 @@ The following example adds a larger number of parameters to the Response example
 
 As only three of the attributes are covered by the existing Structure, which is less than half of the attributes, the existing Structure is not reused. OutSystems creates a new Structure named "Setting" to hold the response of the "GetSettings" method:
 
-![](images/ss-rest-consume-structures-updated-2.png)
+![](../../../../.gitbook/assets/ss-rest-consume-structures-updated-2.png)
 
 The previous "Settings" structure is not deleted since it is still used by the "PostSettings" method.
+

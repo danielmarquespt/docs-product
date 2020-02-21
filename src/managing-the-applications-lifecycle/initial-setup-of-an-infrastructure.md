@@ -1,6 +1,10 @@
 ---
-summary: LifeTime is the centralized console for managing the infrastructure, environments, applications, IT users, and security.
-tags: support-Application_Lifecycle; support-Cloud_Platform; support-devOps; support-Infrastuture_Architecture-overview
+summary: >-
+  LifeTime is the centralized console for managing the infrastructure,
+  environments, applications, IT users, and security.
+tags: >-
+  support-Application_Lifecycle; support-Cloud_Platform; support-devOps;
+  support-Infrastuture_Architecture-overview
 ---
 
 # Manage Your OutSystems Infrastructure
@@ -13,11 +17,11 @@ A typical OutSystems infrastructure comprises the following environments:
 * **Quality**: The environment where testers and business users experiment applications to perform quality assurance
 * **Production**: The environment that hosts the application version end-users interact with
 
-You can manage your OutSystems infrastructure in the **INFRASTRUCTURE** tab of LifeTime console (`https://<your_lifetime_server>/lifetime`).
+You can manage your OutSystems infrastructure in the **INFRASTRUCTURE** tab of LifeTime console \(`https://<your_lifetime_server>/lifetime`\).
 
 ## Set Up the Infrastructure
 
-To execute the initial setup of your OutSystems infrastructure in LifeTime, follow the instructions in [Configure the infrastructure management console](<https://success.outsystems.com/Support/Enterprise_Customers/Installation/Configure_the_infrastructure_management_console>).
+To execute the initial setup of your OutSystems infrastructure in LifeTime, follow the instructions in [Configure the infrastructure management console](https://success.outsystems.com/Support/Enterprise_Customers/Installation/Configure_the_infrastructure_management_console>).
 
 ## Add or Remove Environments
 
@@ -26,18 +30,18 @@ At any time, you can add or remove environments to your OutSystems infrastructur
 To add a new OutSystems environment to your infrastructure, do the following:
 
 1. Click the **Register an Existing Environment** link.
-1. Register your environment as described in [Configure the infrastructure management console](<https://success.outsystems.com/Support/Enterprise_Customers/Installation/Configure_the_infrastructure_management_console>).
+2. Register your environment as described in [Configure the infrastructure management console](https://success.outsystems.com/Support/Enterprise_Customers/Installation/Configure_the_infrastructure_management_console>).
 
 To remove one of your OutSystems environments from the infrastructure, do the following:
 
 1. Click the **Edit Environment** link for the environment you want to remove.
-1. Click the **Unregister environment** link.
+2. Click the **Unregister environment** link.
 
 ## Switch the Environments Order
 
 You can switch the order of two environments in the infrastructure using the **Switch Order** icon placed between those environments.
 
-![](images/manage-infrastructure-1.png)
+![](../../.gitbook/assets/manage-infrastructure-1.png)
 
 ## Manage an Environment
 
@@ -47,3 +51,4 @@ To manage an environment individually, use the links available in each environme
 * **Configuration**: To configure the environment behaviors like the purpose of the environment in the infrastructure, date formats or building mobile apps. This link redirects to the Service Center console of the environment.
 * **Environment Security**: To configure security settings for applications, like HTTPS or Content Security Policy.
 * **Edit Environment**: To configure specific settings like the connection between the environment and LifeTime.
+

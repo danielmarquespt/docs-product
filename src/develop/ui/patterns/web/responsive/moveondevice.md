@@ -1,9 +1,11 @@
 ---
-tags: runtime-traditionalweb; 
-summary: MoveOnDevice defines where information is displayed thereby improving the display on different devices.
+tags: runtime-traditionalweb;
+summary: >-
+  MoveOnDevice defines where information is displayed thereby improving the
+  display on different devices.
 ---
 
-# MoveOnDevice 
+# MoveOnDevice
 
 Defines the target container for several elements in different devices without duplicating them.
 
@@ -13,18 +15,19 @@ Use Move on Device to define where information is displayed thereby improving th
 
 1. Drag the MoveOnDevice pattern into the preview.
 
-    ![](<images/moveondevice-image-1.png>)
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/responsive/images/moveondevice-image-1.png%3E)
 
-1. Set the required content in the placeholder.
-1. Set the Ids of the target containers you want to move the content to.
+2. Set the required content in the placeholder.
+3. Set the Ids of the target containers you want to move the content to.
 
-    ![](<images/moveondevice-image-2.png>)
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/responsive/images/moveondevice-image-2.png%3E)
 
-1. Publish and test.
+4. Publish and test.
 
 ## Input Parameters
 
-| **Input Name** |  **Description** |  **Type** | **Mandatory** | **Default Value** |
-|---|---|---|---|---|
+| **Input Name** | **Description** | **Type** | **Mandatory** | **Default Value** |
+| :--- | :--- | :--- | :--- | :--- |
 | PhoneWidgetId | Target container that will receive this block on phones. | Text | No | none |
 | TabletWidgetId | Target container that will receive this block on tablets. | Text | No | none |
+

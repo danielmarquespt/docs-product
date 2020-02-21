@@ -1,5 +1,7 @@
 ---
-summary: The authentication is configurable per environment to meet different security requirements.
+summary: >-
+  The authentication is configurable per environment to meet different security
+  requirements.
 tags: runtime-mobileandreactiveweb; support-Security-overview
 ---
 
@@ -26,13 +28,13 @@ Cookie `nr1<User Provider Name>`:
 
 * The server uses this cookie to enforce session expiration as needed
 * Contains information needed to ensure session authenticity
-* Set as `HttpOnly` (can't be accessed through JavaScript)
+* Set as `HttpOnly` \(can't be accessed through JavaScript\)
 
 Cookie `nr2<User Provider Name>`:
 
-* Provides information to the application code about the user identifier via the built-in function GetUserId()
+* Provides information to the application code about the user identifier via the built-in function GetUserId\(\)
 * Contains information needed to avoid CSRF attacks
-* Not set as `HttpOnly` (can be accessed through JavaScript)
+* Not set as `HttpOnly` \(can be accessed through JavaScript\)
 
 ### Verifying Authentication Cookies
 
@@ -47,7 +49,7 @@ The server validates the request by checking the following conditions:
 
 If all conditions apply, the server authenticates the request as coming from the user identified in the cookies, otherwise the server processes the request as if it was coming from an anonymous user.
 
-![Authentication flow](images/authentication-1.png)
+![Authentication flow](../../../.gitbook/assets/authentication-1.png)
 
 ### Authentication Cache
 
@@ -67,9 +69,8 @@ The following setting applies to both persistent and session authentication:
 
 The following settings are used for persistent authentication:
 
-* **Max Idle Time** – The maximum number of days a user stays logged in (in the server) without communicating with the server. After this time passes, the user needs to log in again if the application goes online (connects to the server).
-
-* **Cookie Expiration** – The maximum number of days a user stays logged in (in the application) without communicating with the server. After this time the cookie expires and the application needs to go online (connect to the server) and the user needs to log in again.
+* **Max Idle Time** – The maximum number of days a user stays logged in \(in the server\) without communicating with the server. After this time passes, the user needs to log in again if the application goes online \(connects to the server\).
+* **Cookie Expiration** – The maximum number of days a user stays logged in \(in the application\) without communicating with the server. After this time the cookie expires and the application needs to go online \(connect to the server\) and the user needs to log in again.
 
 The following setting is used for session authentication:
 
@@ -78,13 +79,12 @@ The following setting is used for session authentication:
 To configure the authentication settings for apps in your OutSystems environment, do the following:
 
 1. Go to the Service Center management console of your OutSystems environment.
-
 2. Go to the **Administration** section and select the **Security** tab.
-
 3. Select the **Applications Authentication** area:
 
-    ![Applications Authentication settings in Service Studio](images/configure-mobile-authentication.png?width=600) 
+   ![Applications Authentication settings in Service Studio](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/managing-the-applications-lifecycle/secure-the-applications/images/configure-mobile-authentication.png?width=600)
 
 In this page you can also generate new keys for authenticating and encrypting cookie values. This will force all the users of your apps to login again in the next server request. To generate new keys, press the Generate button in Authentication and Encryption Keys area:
 
-![The Generate button for new Authentication and Encryption Keys](images/configure-mobile-authentication-generate-keys.png)
+![The Generate button for new Authentication and Encryption Keys](../../../.gitbook/assets/configure-mobile-authentication-generate-keys.png)
+

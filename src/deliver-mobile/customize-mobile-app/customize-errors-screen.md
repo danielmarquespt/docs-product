@@ -1,25 +1,24 @@
 ---
-summary: To customize the unhandled errors screen in mobile applications you need to configure a JSON and edit the CSS. This article explains how.
+summary: >-
+  To customize the unhandled errors screen in mobile applications you need to
+  configure a JSON and edit the CSS. This article explains how.
 tags: runtime-mobile; support-application_development; support-Mobile_Apps
 ---
 
 # Customize the Errors Screen
 
-You can customize the error screen that your mobile app displays when there is an unhandled exception. Do it by editing a JSON configuration file in Service Studio. Note that, according to best practices, an error screen should have as less dependencies as possible. That is why the theme CSS is not applied in the error screens (error screens use CSS in the HTML head element instead). The images are base64 encoded.
+You can customize the error screen that your mobile app displays when there is an unhandled exception. Do it by editing a JSON configuration file in Service Studio. Note that, according to best practices, an error screen should have as less dependencies as possible. That is why the theme CSS is not applied in the error screens \(error screens use CSS in the HTML head element instead\). The images are base64 encoded.
 
 Changing the looks of error pages and changing the messages are both done in the same JSON.
 
 Add or edit the JSON for the customizing error screen:
 
 1. In the module properties, locate section Advanced and click on **Extensibility Configuration**.
+2. Add or edit [the JSON string](customize-errors-screen.md#sample-json-for-configuring-the-error-screen%3E).
+3. Enter the messages for the type of error you would like to customize. Refer to the JSON example and `errorPage.messages` block. The explanation of the keys is in [Reference table for the custom error JSON](customize-errors-screen.md#reference-table-for-the-custom-error-json%3E).
+4. Enter the CSS for the error screens in JSON, in `clientRuntime.errorPage.css`. Refer to [HTML structure of the error page](customize-errors-screen.md#html-structure-of-the-error-page%3E) and [CSS selectors in the error page](customize-errors-screen.md#css-selectors-in-the-error-page%3E) for more information. Note that if you enter your own CSS the default CSS does not load.
 
-1. Add or edit [the JSON string](<#sample-json-for-configuring-the-error-screen>).
-
-1. Enter the messages for the type of error you would like to customize. Refer to the JSON example and `errorPage.messages` block. The explanation of the keys is in [Reference table for the custom error JSON](<#reference-table-for-the-custom-error-json>).
-
-1. Enter the CSS for the error screens in JSON, in `clientRuntime.errorPage.css`. Refer to [HTML structure of the error page](<#html-structure-of-the-error-page>) and [CSS selectors in the error page](<#css-selectors-in-the-error-page>) for more information. Note that if you enter your own CSS the default CSS does not load.
-
-## Sample JSON for configuring the error screen { #sample-json-for-configuring-the-error-screen }
+## Sample JSON for configuring the error screen { \#sample-json-for-configuring-the-error-screen }
 
 Add or edit this JSON string in **Extensibility Configuration** to customize the error screen.
 
@@ -42,11 +41,11 @@ Add or edit this JSON string in **Extensibility Configuration** to customize the
 }
 ```
 
-## HTML structure of the error page { #html-structure-of-the-error-page }
+## HTML structure of the error page { \#html-structure-of-the-error-page }
 
 This is the structure of the HTML error page. To simplify the overview only the content of the body element is shown, while the styles and JS are removed.
 
-```html
+```markup
 <body>
     <div id="error-screen-wrapper">
         <div id="error-screen-message-wrapper">
@@ -66,148 +65,45 @@ This is the structure of the HTML error page. To simplify the overview only the 
 </body>
 ```
 
-## Reference table for the custom error JSON { #reference-table-for-the-custom-error-json }
+## Reference table for the custom error JSON { \#reference-table-for-the-custom-error-json }
 
 This is the reference table for the JSON keys you can use to customize the error screen in **Extensibility Configuration** property within Service Studio.
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>clientRuntime.errorPage.messages.defaultMessage</td>
-<td>The message that is displayed to the end-user when a generic error occurs.</td>
-</tr>
-<tr>
-<td>clientRuntime.errorPage.messages.screenNotFound</td>
-<td>The message displayed when the end-user navigates to a screen that does not exist.</td>
-</tr>
-<tr>
-<td>clientRuntime.errorPage.messages.noDefaultScreen</td>
-<td>The message displayed when a default screen was not configured in the application.</td>
-</tr>
-<tr>
-<td>clientRuntime.errorPage.messages.appOffline</td>
-<td>Error message shown when the server is offline.</td>
-</tr>
-<tr>
-<td>clientRuntime.errorPage.messages.incompatibleProducer</td>
-<td>Message shown when the application uses an outdated and incompatible producer module.</td>
-</tr>
-<tr>
-<td>clientRuntime.errorPage.extraMessage</td>
-<td>An extra message that is always displayed in the error screen.</td>
-</tr>
-<tr>
-<td>clientRuntime.errorPage.reloadLabel</td>
-<td>The text for the button used that reloads the application.</td>
-</tr>
-<tr>
-<td>clientRuntime.errorPage.css</td>
-<td>CSS rules to be included in the error page. When this field is defined, the default error stylesheet is not included in the error page.</td>
-</tr>
-</tbody>
-</table>
+| Property | Purpose |
+| :--- | :--- |
+| clientRuntime.errorPage.messages.defaultMessage | The message that is displayed to the end-user when a generic error occurs. |
+| clientRuntime.errorPage.messages.screenNotFound | The message displayed when the end-user navigates to a screen that does not exist. |
+| clientRuntime.errorPage.messages.noDefaultScreen | The message displayed when a default screen was not configured in the application. |
+| clientRuntime.errorPage.messages.appOffline | Error message shown when the server is offline. |
+| clientRuntime.errorPage.messages.incompatibleProducer | Message shown when the application uses an outdated and incompatible producer module. |
+| clientRuntime.errorPage.extraMessage | An extra message that is always displayed in the error screen. |
+| clientRuntime.errorPage.reloadLabel | The text for the button used that reloads the application. |
+| clientRuntime.errorPage.css | CSS rules to be included in the error page. When this field is defined, the default error stylesheet is not included in the error page. |
 
-
-## CSS selectors in the error page { #css-selectors-in-the-error-page }
+## CSS selectors in the error page { \#css-selectors-in-the-error-page }
 
 These are the CSS selectors for custom error HTML page.
 
-<table>
-<thead>
-<tr>
-<th>CSS Identifier/Class</th>
-<th>HTML Element</th>
-<th>Inline CSS</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>#error-screen-wrapper</td>
-<td>div</td>
-<td> </td>
-<td>Container that wraps the whole error screen HTML body.</td>
-</tr>
-<tr>
-<td>#error-screen-message-wrapper</td>
-<td>div</td>
-<td> </td>
-<td>Container that wraps user-visible content (error message, extra details, reload button).</td>
-</tr>
-<tr>
-<td>#error-screen-message-text</td>
-<td>div</td>
-<td> </td>
-<td>Main error message. It shows one of the messages defined in the configuration JSON detailed above, based on the nature of the error.</td>
-</tr>
-<tr>
-<td>.error-screen-button</td>
-<td>button</td>
-<td> </td>
-<td>Class used by the two error screen buttons (reload and show details).</td>
-</tr>
-<tr>
-<td>#error-screen-message-reload-button</td>
-<td>button</td>
-<td>display: inline</td>
-<td>Reload button displaying the text defined in the customization JSON. Clicking this button changes its inline style to “display: none” and the spinner’s to “display: inline-block”.</td>
-</tr>
-<tr>
-<td>#error-screen-spinner</td>
-<td>div</td>
-<td>display: none</td>
-<td>Container for the loading animation that plays after clicking reload (by default, it is a spinner animation).</td>
-</tr>
-<tr>
-<td>#error-screen-message-text-extra</td>
-<td>div</td>
-<td> </td>
-<td>The extra message defined in the JSON is displayed in this container.</td>
-</tr>
-<tr>
-<td>#exception-detail</td>
-<td>div</td>
-<td>display: none</td>
-<td>Wrapper for the exception message and stack trace. It is only shown when the “Remote Stack Display” option is enabled in Service Center.</td>
-</tr>
-<tr>
-<td>#error-screen-show-detail-button</td>
-<td>button</td>
-<td> </td>
-<td>Button used to show/hide the stack trace.</td>
-</tr>
-<tr>
-<td>#exception-detail-text</td>
-<td>div</td>
-<td>hidden</td>
-<td>Wrapper for the exception message and stack trace.</td>
-</tr>
-<tr>
-<td>#error-screen-exception-message</td>
-<td>div</td>
-<td> </td>
-<td>Exception message.</td>
-</tr>
-<tr>
-<td>#error-screen-exception-stack</td>
-<td>pre</td>
-<td> </td>
-<td>Stack trace.</td>
-</tr>
-</tbody>
-</table>
+| CSS Identifier/Class | HTML Element | Inline CSS | Purpose |
+| :--- | :--- | :--- | :--- |
+| \#error-screen-wrapper | div |  | Container that wraps the whole error screen HTML body. |
+| \#error-screen-message-wrapper | div |  | Container that wraps user-visible content \(error message, extra details, reload button\). |
+| \#error-screen-message-text | div |  | Main error message. It shows one of the messages defined in the configuration JSON detailed above, based on the nature of the error. |
+| .error-screen-button | button |  | Class used by the two error screen buttons \(reload and show details\). |
+| \#error-screen-message-reload-button | button | display: inline | Reload button displaying the text defined in the customization JSON. Clicking this button changes its inline style to “display: none” and the spinner’s to “display: inline-block”. |
+| \#error-screen-spinner | div | display: none | Container for the loading animation that plays after clicking reload \(by default, it is a spinner animation\). |
+| \#error-screen-message-text-extra | div |  | The extra message defined in the JSON is displayed in this container. |
+| \#exception-detail | div | display: none | Wrapper for the exception message and stack trace. It is only shown when the “Remote Stack Display” option is enabled in Service Center. |
+| \#error-screen-show-detail-button | button |  | Button used to show/hide the stack trace. |
+| \#exception-detail-text | div | hidden | Wrapper for the exception message and stack trace. |
+| \#error-screen-exception-message | div |  | Exception message. |
+| \#error-screen-exception-stack | pre |  | Stack trace. |
 
 ## Example of a custom error screen configuration
 
 Here is an example of a JSON and the resulting screen. The CSS was minified to fit easier into the value of the css key.
 
-```
+```text
 {
     "clientRuntime": {
         "errorPage": {
@@ -228,5 +124,5 @@ Here is an example of a JSON and the resulting screen. The CSS was minified to f
 
 The resulting error page looks like this:
 
-![](images/error-screen-example-1.png)
-![](images/error-screen-example-2.png)
+![](../../../.gitbook/assets/error-screen-example-1.png) ![](../../../.gitbook/assets/error-screen-example-2.png)
+

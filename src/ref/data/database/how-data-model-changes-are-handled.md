@@ -20,7 +20,7 @@ When deleting an Entity Attribute, OutSystems removes it from your application m
 
 Nonetheless, the data is still safely stored on the database. You can access it directly in the database or by rolling back your application.
 
-After deleting an attribute, OutSystems warns you that the database has more columns than your Entity. Learn more about the [Database Integrity Suggestion](<../../errors-and-warnings/warnings/database-integrity-suggestion-warning.md>).
+After deleting an attribute, OutSystems warns you that the database has more columns than your Entity. Learn more about the [Database Integrity Suggestion](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/ref/errors-and-warnings/warnings/database-integrity-suggestion-warning.md%3E).
 
 ## Adding an Attribute
 
@@ -33,7 +33,7 @@ In this case, OutSystems tries to reuse the existing database column. If the dat
 * If it’s possible to convert the data type without losing data, the deployment is successful.
 * If it’s not possible to convert the data type, OutSystems displays an error and does not publish the application. This ensures that your data is always safe. 
 
-Check the [Changing the Data Type of an Attribute](<#changing-the-data-type-of-an-attribute>) section to learn more.
+Check the [Changing the Data Type of an Attribute](how-data-model-changes-are-handled.md#changing-the-data-type-of-an-attribute%3E) section to learn more.
 
 ## Renaming an Attribute
 
@@ -49,8 +49,9 @@ Since the conversion is done by the database management system you are using, yo
 
 ## Changing the Length Property of a Text Attribute
 
-OutSystems uses two different data types to store strings in the database. The data type used depends on the string size. Learn more about the [Database Data Types](<database-data-types.md>).
+OutSystems uses two different data types to store strings in the database. The data type used depends on the string size. Learn more about the [Database Data Types](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/ref/data/database/database-data-types.md%3E).
 
 When changing the length of a Text attribute from less than 2000 characters to more than 2000 characters, the data type of the column in the database is changed.
 
 You cannot change the length from more than 2000 to less than 2000 characters. OutSystems gives you an error when you try to deploy this modification, and doesn’t change your application, since it would cause data loss.
+

@@ -1,6 +1,6 @@
 ---
-tags: runtime-traditionalweb; 
-summary: Section separates content into groups, easing visual organization.
+tags: runtime-traditionalweb;
+summary: 'Section separates content into groups, easing visual organization.'
 ---
 
 # Section
@@ -15,22 +15,20 @@ Drag the Section to the screen and then add the title and content to the placeho
 
 1. Drag Section pattern into the preview.
 
-    ![](<images/section-image-1.png>)
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/content/images/section-image-1.png%3E)
 
-1. Set the content you need in the placeholders.
-
-1. Publish and test.
-
+2. Set the content you need in the placeholders.
+3. Publish and test.
 
 ## Input Parameters
 
-| **Input Name** |  **Description** |  **Type** | **Mandatory** | **Default Value** |
-|---|---|---|---|---|
-| ExtendedClass  |  Add custom style classes to this Block. | Text | False | none |
-  
+| **Input Name** | **Description** | **Type** | **Mandatory** | **Default Value** |
+| :--- | :--- | :--- | :--- | :--- |
+| ExtendedClass | Add custom style classes to this Block. | Text | False | none |
+
 ## Layout and Classes
 
-![](<images/section-image-2.png>)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/content/images/section-image-2.png%3E)
 
 ## Advanced Use Case
 
@@ -38,7 +36,7 @@ Drag the Section to the screen and then add the title and content to the placeho
 
 Write the following CSS in the CSS editor.
 
- ```css
+```css
     .section-header {
         border-bottom: none;
         padding-bottom: var(--space-none);
@@ -47,14 +45,13 @@ Write the following CSS in the CSS editor.
 
 Before:
 
-![](<images/section-image-3.png>)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/content/images/section-image-3.png%3E)
 
 After:
 
-![](<images/section-image-4.png>)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/content/images/section-image-4.png%3E)
 
 ## Compatibility with other Patterns
 
 Works with Section-Index Pattern on the same screen to create navigable anchors.
-
 

@@ -1,6 +1,9 @@
 ---
 tags: support-Installation_Configuration; support-installation;
-summary: After setting up OutSystems you might want to access additional configurations, such as Remote Desktop access, SSL certificates or the environment scaling.
+summary: >-
+  After setting up OutSystems you might want to access additional
+  configurations, such as Remote Desktop access, SSL certificates or the
+  environment scaling.
 ---
 
 # Additional Configurations for OutSystems on Microsoft Azure
@@ -13,13 +16,12 @@ Check [OutSystems Documentation](https://success.outsystems.com/Documentation) a
 
 To access the machines remotely through RDF, you need to create a jump server - a dedicated VM with enabled RDP to reach and manage devices inside a network.
 
-1. Create a VM with the RDP activated and connect to the VM. This is your jump server. Check [Quickstart: Create a Windows virtual machine in the Azure portal](<https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal>) for detailed instructions.
+1. Create a VM with the RDP activated and connect to the VM. This is your jump server. Check [Quickstart: Create a Windows virtual machine in the Azure portal](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal>) for detailed instructions.
+2. Discover the IP of a machine you want to connect to. Access the machine in the Azure Portal and in the left blade choose **Networking**. The IP shows next to the label **Private IP**.
 
-1. Discover the IP of a machine you want to connect to. Access the machine in the Azure Portal and in the left blade choose **Networking**. The IP shows next to the label **Private IP**.
+   ![Network details of a machine](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/setup/azure/images/additconf-private-ip.png?width=500)
 
-    ![Network details of a machine](images/additconf-private-ip.png?width=500)  
-
-1. After you connect remotely to the jump server, use it to connect to a machine inside the group by using the private IP of the machine.
+3. After you connect remotely to the jump server, use it to connect to a machine inside the group by using the private IP of the machine.
 
 ## Add a Certificate Issued by a Certificate Authority to the Application Gateway of the Environment
 
@@ -31,15 +33,15 @@ To add the trusted certificate to the application gateway of the environment, do
 
 1. Go to the details of the **application gateway** that was created for the environment and choose **Listeners** from the menu to the left.
 
-    ![Application gateway](images/additconf-image12.png?width=700)  
+   ![Application gateway](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/setup/azure/images/additconf-image12.png?width=700)
 
-1. Select the **appGatewayHttpsListener**.
+2. Select the **appGatewayHttpsListener**.
 
-    ![appGatewayHttpsListener](images/additconf-image20.png?width=700)  
+   ![appGatewayHttpsListener](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/setup/azure/images/additconf-image20.png?width=700)
 
-1. Add a new certificate by uploading the .pfx file and providing its password. Name it according to your preference.
+3. Add a new certificate by uploading the .pfx file and providing its password. Name it according to your preference.
 
-    ![The certificate combo box](images/additconf-image11.png)
+   ![The certificate combo box](../../../.gitbook/assets/additconf-image11.png)
 
 Note that you can set up the end-to-end encryption for traffic in Microsoft Azure, as described in the Microsoft document [Configure end to end SSL by using Application Gateway with PowerShell](https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-end-to-end-ssl-powershell).
 
@@ -51,56 +53,55 @@ To scale the number of front-ends of an OutSystems environment on Microsoft Azur
 
 1. Go to your OutSystems resource group and list only the "Virtual machine scale sets" resources.
 
-    ![Virtual machine scale sets](images/additconf-image6.png?width=700)  
+   ![Virtual machine scale sets](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/setup/azure/images/additconf-image6.png?width=700)
 
-1. Select the virtual machine scale set corresponding to your OutSystems Production environment.
+2. Select the virtual machine scale set corresponding to your OutSystems Production environment.
 
-    ![Resource overview](images/additconf-image2.png?width=700)
+   ![Resource overview](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/setup/azure/images/additconf-image2.png?width=700)
 
-1. Choose **Scaling** from the menu to the left.
+3. Choose **Scaling** from the menu to the left.
 
-    ![Scaling](images/additconf-image5.png?width=700)  
+   ![Scaling](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/setup/azure/images/additconf-image5.png?width=700)
 
-1. Drag the slide or input the number of servers you want to add to your environment and click **Save**.
+4. Drag the slide or input the number of servers you want to add to your environment and click **Save**.
 
-    ![The Instance Count slide](images/additconf-image3.png?width=700)
+   ![The Instance Count slide](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/setup/azure/images/additconf-image3.png?width=700)
 
 Choosing **Instances** from the menu to the left, you can see the progress of the deployment.
 
-![Instances section](images/additconf-image1.png?width=700)
+![Instances section](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/setup/azure/images/additconf-image1.png?width=700)
 
 When the deployment finishes, you will see in the Service Center console for your environment that the new front-end servers are already running.
 
-![Monitoring in Service Center](images/additconf-image25.png?width=700)
+![Monitoring in Service Center](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/setup/azure/images/additconf-image25.png?width=700)
 
 ## Update Azure Scale Sets to a Newer Platform Version
 
 Follow these steps to update a Platform Server deployed on Microsoft Azure scale sets.
 
-1. Go to **Service Center** > **Administration** > **Servers** and disable the servers that are part of the scale set. Deleting is optional, but advised, to ensure you stay within the limit of the front-ends your license permits.
+1. Go to **Service Center** &gt; **Administration** &gt; **Servers** and disable the servers that are part of the scale set. Deleting is optional, but advised, to ensure you stay within the limit of the front-ends your license permits.
 
-    ![Front ends in the environment](images/azure-scale-sets-delete-env.png?width=700)
+   ![Front ends in the environment](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/setup/azure/images/azure-scale-sets-delete-env.png?width=700)
 
-1. Go to your Azure Portal and make sure **Scaling** > **Configure** > **Instance count** is 0.
+2. Go to your Azure Portal and make sure **Scaling** &gt; **Configure** &gt; **Instance count** is 0.
 
-    ![Scale set instance count](images/azure-scale-sets-instance-count.png?width=700)
+   ![Scale set instance count](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/setup/azure/images/azure-scale-sets-instance-count.png?width=700)
 
-1. Update the Platform Server in your Deployment Controller, according to the checklist that opens in your browser when you run the update binary.
+3. Update the Platform Server in your Deployment Controller, according to the checklist that opens in your browser when you run the update binary.
+4. Go to the [Base Image Versioning table](https://github.com/OutSystems/AzureARMTemplates/#base-image-versioning>) of the available image versions and note the version that matches the Platform Server you installed/updated in your Deployment Controller VM.
 
-1. Go to the [Base Image Versioning table](<https://github.com/OutSystems/AzureARMTemplates/#base-image-versioning>) of the available image versions and note the version that matches the Platform Server you installed/updated in your Deployment Controller VM.
+   ![Azure image versions](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/setup/azure/images/azure-image-versions.png?width=700)
 
-    ![Azure image versions](images/azure-image-versions.png?width=700)
+5. Update the Platform version by running the following command in your Azure Portal Powershell: `Update-AzVmss -ResourceGroupName "your_resource_group" -VMScaleSetName "your_scaleset_name" -ImageReferenceVersion your_desired_version`
 
-1. Update the Platform version by running the following command in your Azure Portal Powershell: `Update-AzVmss -ResourceGroupName "your_resource_group" -VMScaleSetName "your_scaleset_name" -ImageReferenceVersion your_desired_version`
+   Here is an example:
 
-    Here is an example:
+   ![Example of command in Azure PowerShell](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/setup/azure/images/azure-powershell-image-update.png?width=700)
 
-    ![Example of command in Azure PowerShell](images/azure-powershell-image-update.png?width=700)
+   And here is the expected result. Notice that the version is updated to 1.6.0, which corresponds to the Platform Server 11.0.424.0:
 
-    And here is the expected result. Notice that the version is updated to 1.6.0, which corresponds to the Platform Server 11.0.424.0:
+   ![Updated image](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/setup/azure/images/azure-updated-image.png?width=700)
 
-    ![Updated image](images/azure-updated-image.png?width=700)
+6. Set the desired **Instance count** in the Azure Portal .
+7. After a few minutes confirm that Service Center is reachable through the Application Gateway URL or the Public IP.
 
-1. Set the desired **Instance count** in the Azure Portal .
-
-1. After a few minutes confirm that Service Center is reachable through the Application Gateway URL or the Public IP.

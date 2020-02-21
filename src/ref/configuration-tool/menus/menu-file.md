@@ -1,5 +1,7 @@
 ---
-summary: Use these options to import and export the configuration, and export the SQL/PowerShell scripts.
+summary: >-
+  Use these options to import and export the configuration, and export the
+  SQL/PowerShell scripts.
 ---
 
 # File Menu
@@ -13,11 +15,11 @@ The **File menu** contains entires for import/export of the settings and configu
 
 You can store the exported configuration file in a shared folder, so it can be accessed by all front-end servers.
 
-The **Import/Export Configuration...** options are very useful in environments with a Deployment Controller server and several front-end servers, as it is required that all front-end servers have the same configuration. 
+The **Import/Export Configuration...** options are very useful in environments with a Deployment Controller server and several front-end servers, as it is required that all front-end servers have the same configuration.
 
 1. Configure your Deployment Controller server.
-1. Export the configuration of the Deployment Controller server using the **Export Configuration...** option.
-1. In each Front-end server, open the Configuration Tool and use the **Import Configuration...** option to import the configuration file.
+2. Export the configuration of the Deployment Controller server using the **Export Configuration...** option.
+3. In each Front-end server, open the Configuration Tool and use the **Import Configuration...** option to import the configuration file.
 
 ## Export and inspection of scripts
 
@@ -32,3 +34,4 @@ Use the following to generate the scripts, save them to a destination, and then 
 
 * **Apply and Exit**: Applies the current configuration and exits the Configuration Tool.
 * **Exit**: Exits the Configuration Tool.
+

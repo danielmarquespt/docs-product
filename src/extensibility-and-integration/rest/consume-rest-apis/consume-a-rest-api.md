@@ -1,5 +1,7 @@
 ---
-summary: How to consume a REST API or a single API method and use it in your OutSystems applications.
+summary: >-
+  How to consume a REST API or a single API method and use it in your OutSystems
+  applications.
 tags: support-Integrations_Extensions-featured
 ---
 
@@ -10,27 +12,24 @@ Make sure you gather all the information you need from the REST API documentatio
 In Service Studio you can:
 
 * consume all REST API methods described in a Swagger specification file, provided either by entering a URL or by selecting a specification file from the local file system.
-
 * Consume a single REST API method.
-
 
 ## Consume all methods of a REST API
 
-You can consume all methods of a REST API if that API is compliant with the [Swagger specification](https://swagger.io/specification/) – REST APIs exposed by OutSystems are compliant with this specification.  
+You can consume all methods of a REST API if that API is compliant with the [Swagger specification](https://swagger.io/specification/) – REST APIs exposed by OutSystems are compliant with this specification.
 
 You can import Swagger specifications either by providing a URL or by selecting a specification file from the local file system.
 
-Do the following: 
+Do the following:
 
 1. In the **Logic** tab, open the **Integrations** folder.
+2. Right-click on the **REST** element and select **Consume REST API...**.
 
-1. Right-click on the **REST** element and select **Consume REST API...**.
+   ![](../../../../.gitbook/assets/ss-rest-consume-menu.png)
 
-    ![](images/ss-rest-consume-menu.png)
+3. In the displayed dialog, choose **Add All Methods**.
 
-1. In the displayed dialog, choose **Add All Methods**.
-
-    ![](images/ss-rest-consume-dialog.png)
+   ![](../../../../.gitbook/assets/ss-rest-consume-dialog.png)
 
 When importing the REST API, Service Studio does the following:
 
@@ -39,62 +38,61 @@ When importing the REST API, Service Studio does the following:
 * Creates the Structures to hold the corresponding input and output parameters under a new tree element with the REST API name
 * Maps the [REST Data Types into OutSystems Data Types](../../../ref/extensibility-and-integration/rest-apis/consumed-rest-api/mapping.md)
 
-![](images/ss-rest-consume-created-elements.png)
+![](../../../../.gitbook/assets/ss-rest-consume-created-elements%20%281%29.png)
 
-![](images/ss-rest-consume-created-structures.png)
+![](../../../../.gitbook/assets/ss-rest-consume-created-structures.png)
 
 ## Consume a single method of a REST API
 
 In OutSystems you can consume a **single method** of a REST API, based on example content for the request and/or response. You may need to specify input parameters in the URL and/or a body for manipulation methods like `POST` or `PUT`.
 
-Do the following: 
+Do the following:
 
 1. In the **Logic** tab, open the **Integrations** folder.
+2. Right-click on the **REST** element and select **Consume REST API...**.
 
-1. Right-click on the **REST** element and select **Consume REST API...**.
+   ![](../../../../.gitbook/assets/ss-rest-consume-menu%20%281%29.png)
 
-    ![](images/ss-rest-consume-menu.png)
+3. In the displayed dialog, choose **Add Single Method**.
 
-1. In the displayed dialog, choose **Add Single Method**.
+   ![](../../../../.gitbook/assets/ss-rest-consume-dialog%20%281%29.png)
 
-    ![](images/ss-rest-consume-dialog.png)
+4. Fill the information about the **Method URL**. You can include parameters between braces in the URL for the method's input parameters.
 
-1. Fill the information about the **Method URL**. You can include parameters between braces in the URL for the method's input parameters.
+   Examples:  
+   `GET https://api.example.com/Portal/rest/Contacts/GetAll`  
+   `GET https://api.example.com/Portal/rest/Contacts/Get?Id={Id}`  
+   `POST https://api.example.com/Portal/rest/Contacts/Create`
 
-    Examples:  
-    `GET https://api.example.com/Portal/rest/Contacts/GetAll`  
-    `GET https://api.example.com/Portal/rest/Contacts/Get?Id={Id}`  
-    `POST https://api.example.com/Portal/rest/Contacts/Create`  
+   Each input parameter defined between braces in the URL becomes an input parameter of the method.
 
-    Each input parameter defined between braces in the URL becomes an input parameter of the method.
-    
-1. If the REST API you are consuming requires specific headers or uses HTTP Basic Authentication, open the **Headers / Auth** tab and fill the necessary information.
+5. If the REST API you are consuming requires specific headers or uses HTTP Basic Authentication, open the **Headers / Auth** tab and fill the necessary information.
 
-    ![](images/ss-rest-consume-headers-auth.png)  
+   ![](../../../../.gitbook/assets/ss-rest-consume-headers-auth.png)
 
-1. Fill the information about the Request and the Response. The easiest way to do this is to perform a test to the API and use the test result.
+6. Fill the information about the Request and the Response. The easiest way to do this is to perform a test to the API and use the test result.
 
-    Alternatively, you can add the JSON structure or plain text example directly in the **Request** and **Response** fields in the **Body** tab. Open the **Test** tab. If you have parameters in your **Method URL**, you need to insert the parameter values to execute the test:
+   Alternatively, you can add the JSON structure or plain text example directly in the **Request** and **Response** fields in the **Body** tab. Open the **Test** tab. If you have parameters in your **Method URL**, you need to insert the parameter values to execute the test:
 
-    ![](images/ss-rest-consume-test.png)  
+   ![](../../../../.gitbook/assets/ss-rest-consume-test.png)
 
-    For manipulation methods, such as `POST` or `PUT`, fill the **Request** of the Body Content with the corresponding request structure:  
+   For manipulation methods, such as `POST` or `PUT`, fill the **Request** of the Body Content with the corresponding request structure:
 
-    ![](images/ss-rest-consume-test-request.png)  
+   ![](../../../../.gitbook/assets/ss-rest-consume-test-request.png)
 
-1. Click **Test**. If the test is successful, you will see the method’s response in the Response area of **Test** tab.
+7. Click **Test**. If the test is successful, you will see the method’s response in the Response area of **Test** tab.
 
-    Use that information to fill in the Response in the **Body** tab by clicking **Copy to Response body** in the **Response** area. Leave only the needed fields. 
-    
-    For manipulation methods (such as `POST` or `PUT`), do the same for the Request, by pressing **Copy to Request body** in the Request area:   
+   Use that information to fill in the Response in the **Body** tab by clicking **Copy to Response body** in the **Response** area. Leave only the needed fields.
 
-    ![](images/ss-rest-consume-test-request-copy.png)  
+   For manipulation methods \(such as `POST` or `PUT`\), do the same for the Request, by pressing **Copy to Request body** in the Request area:
 
-    Usually, the most common fields are obtained this way. To know in full detail all the available fields, check the API documentation.
+   ![](../../../../.gitbook/assets/ss-rest-consume-test-request-copy.png)
 
-1. Check if the **Request** and **Response** information is correct in the **Body** tab and click **OK**:   
+   Usually, the most common fields are obtained this way. To know in full detail all the available fields, check the API documentation.
 
-    ![](images/ss-rest-consume-body.png)
+8. Check if the **Request** and **Response** information is correct in the **Body** tab and click **OK**:
+
+   ![](../../../../.gitbook/assets/ss-rest-consume-body.png)
 
 When importing the REST API method, Service Studio does the following:
 
@@ -103,10 +101,9 @@ When importing the REST API method, Service Studio does the following:
 * Creates the Structures to hold the corresponding input and output parameters under a new tree element with the REST API name
 * Maps the [REST Data Types into OutSystems Data Types](../../../ref/extensibility-and-integration/rest-apis/consumed-rest-api/mapping.md)
 
-![](images/ss-rest-consume-created-elements.png)
+![](../../../../.gitbook/assets/ss-rest-consume-created-elements.png)
 
-![](images/ss-rest-consume-created-structures.png)
-
+![](../../../../.gitbook/assets/ss-rest-consume-created-structures%20%281%29.png)
 
 ## Use a REST API Method in your Application
 
@@ -114,16 +111,16 @@ OutSystems translates the methods exposed by a REST API into **OutSystems action
 
 You can now use the newly created methods in your application the same way you use any Server Action:
 
-1. Go to the action flow where you want to use the REST API Method. 
-  
-    ![](images/ss-rest-consume-use-method-3.png)  
+1. Go to the action flow where you want to use the REST API Method.
 
-1. In the **Logic** tab, open the **Integrations** folder and the **REST** element. 
+   ![](../../../../.gitbook/assets/ss-rest-consume-use-method-3.png)
 
-1. Expand the REST API element and drag the REST API Method into your action flow.
-  
-    ![](images/ss-rest-consume-use-method-1.png)  
+2. In the **Logic** tab, open the **Integrations** folder and the **REST** element.
+3. Expand the REST API element and drag the REST API Method into your action flow.
 
-1. Use the method's output parameters as you do for any other action.
-  
-    ![](images/ss-rest-consume-use-method-2.png)
+   ![](../../../../.gitbook/assets/ss-rest-consume-use-method-1.png)
+
+4. Use the method's output parameters as you do for any other action.
+
+   ![](../../../../.gitbook/assets/ss-rest-consume-use-method-2.png)
+

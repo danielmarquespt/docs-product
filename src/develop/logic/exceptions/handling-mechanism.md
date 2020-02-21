@@ -19,23 +19,22 @@ When an exception is raised, the current execution flow is interrupted and the f
 
 As an example, consider an Action B raising a User Exception named MyUserException. Action B is invoked by Action A, which is a screen action. When MyUserException is raised in Action B, the exception handling mechanism works as follows:
 
-![](images/handling-mechanism.png)
+![](../../../../.gitbook/assets/handling-mechanism.png)
 
 You should have, at least, one Exception Handler in your application flow to inform and allow the end-user to continue to navigate.
 
 ## Handling Exceptions Raised by Integrations
 
-When you are handling exceptions raised by an integration you are consuming (such as an action of an Extension or a method of a REST API) you will not be able to determine the type of exception. In these situations, you should handle the exception with an All Exceptions Handler. Then, you can use the ExceptionMessage property of the Exception Handler element to identify the exception.
+When you are handling exceptions raised by an integration you are consuming \(such as an action of an Extension or a method of a REST API\) you will not be able to determine the type of exception. In these situations, you should handle the exception with an All Exceptions Handler. Then, you can use the ExceptionMessage property of the Exception Handler element to identify the exception.
 
 For more information on handling errors in consumed REST APIs, check [Handling REST Errors](../../../extensibility-and-integration/rest/consume-rest-apis/handling-rest-errors.md).
-
 
 ## Managing Database Transactions when Handling Exceptions
 
 When you handle an exception in an action running on server side, you can choose what happens to the database transaction by setting the Abort Transaction property of the Exception Handler:
 
 * Set Abort Transaction property to `Yes` if you want that all the database transactions that weren't committed to being aborted and changes rolled back in the database.
-
-* Set Abort Transaction property to `No` if you want that the database transaction continues to be processed as if no exception had occurred. This transaction will be committed by the next Commit Transaction action or implicitly by OutSystems, typically at the end of request execution. 
+* Set Abort Transaction property to `No` if you want that the database transaction continues to be processed as if no exception had occurred. This transaction will be committed by the next Commit Transaction action or implicitly by OutSystems, typically at the end of request execution.
 
 In Reactive Web and Mobile apps, Abort Transaction property is available only when you are handling exceptions in server actions.
+

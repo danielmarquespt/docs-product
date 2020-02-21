@@ -1,5 +1,2 @@
----
-tags: 
----
-
 # Element Properties Reference
+

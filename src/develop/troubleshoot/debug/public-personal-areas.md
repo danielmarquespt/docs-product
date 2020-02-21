@@ -6,11 +6,7 @@ summary: Learn more about the two areas where modules can be executed and debugg
 
 A Traditional Web module can be executed and debugged in two different areas: the Public Area or the Personal Area.
 
-<div class="info" markdown="1">
-
-Reactive Web and Mobile modules are always published and debugged in the Public Area.
-
-</div>
+ Reactive Web and Mobile modules are always published and debugged in the Public Area.
 
 ## Public Area
 
@@ -24,7 +20,7 @@ Each developer has an associated **Personal Area** to test changes to web applic
 
 When a developer publishes a module to their Personal Area they can test and debug changes privately, since the changes made to the module are not visible to other developers nor to consumer modules. For example, if you change a screen and publish the module to the Personal Area, none of the developers executing the application or working on the same module are affected by your changes.
 
-You can publish a module to your Personal Area using the command "Run and Debug in *[user name]* Personal Area" from the Debugger menu. Besides publishing the module in your Personal Area, this command will also attach the debugger to both your Personal Area and the Public Area. This means that, from this moment on, you will be able to debug threads executing in both areas. When testing a module in the Personal Area, links to screens that are referenced from other modules automatically redirect to the Public Area.
+You can publish a module to your Personal Area using the command "Run and Debug in _\[user name\]_ Personal Area" from the Debugger menu. Besides publishing the module in your Personal Area, this command will also attach the debugger to both your Personal Area and the Public Area. This means that, from this moment on, you will be able to debug threads executing in both areas. When testing a module in the Personal Area, links to screens that are referenced from other modules automatically redirect to the Public Area.
 
 You must publish a module in the Public Area at least once before publishing it to your Personal Area. We are removing some of these limitations, but currently changes to the following elements also require the module to be published to the Public Area to ensure the consistency between the Public and the Personal Areas:
 
@@ -34,3 +30,4 @@ You must publish a module in the Public Area at least once before publishing it 
 * Timers
 * Roles
 * Module references
+

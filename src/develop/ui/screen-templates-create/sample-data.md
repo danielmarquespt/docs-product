@@ -1,5 +1,7 @@
 ---
-summary: Screen Templates contain sample data, which you can manage in a back-office. You can view, reset and add your own data.
+summary: >-
+  Screen Templates contain sample data, which you can manage in a back-office.
+  You can view, reset and add your own data.
 ---
 
 # Sample data
@@ -12,20 +14,15 @@ Sample data is useful when you need to create a prototype, proof of concept, or 
 
 1. Click the manage dependencies icon in the Service Studio toolbar, or press CTRL+Q. **Manage Dependencies** dialog opens.
 
-    ![Manage dependencies icon](images/manage-dependencies.png?width=400)
+   ![Manage dependencies icon](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/screen-templates-create/images/manage-dependencies.png?width=400)
 
 2. Enter OutSystemsSampleDataDB to search the available producer modules. Select **OutSystemsSampleDataDB** in the results, and in the right pane select all **Entities** of the module.
 
-    ![Manage dependencies adding module](images/manage-dependencies-sample-data-module.png?width=400)
+   ![Manage dependencies adding module](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/screen-templates-create/images/manage-dependencies-sample-data-module.png?width=400)
 
 3. Click **Apply** to confirm and close. The Entities are now available in the **Data** tab of Service Studio.
 
-<div class="info" markdown="1">
-
-If there are no results when you search for OutSystemsSampleDataDB, that could mean that [OutSystems Sample Data](https://www.outsystems.com/forge/component-overview/4145/outsystems-sample-data) component, usually installed with Platform Server, is not present in the environment. Try installing the component manually.
-
-</div>
-
+ If there are no results when you search for OutSystemsSampleDataDB, that could mean that \[OutSystems Sample Data\]\(https://www.outsystems.com/forge/component-overview/4145/outsystems-sample-data\) component, usually installed with Platform Server, is not present in the environment. Try installing the component manually.
 
 ## Managing OutSystems Sample Data
 
@@ -56,3 +53,4 @@ To reset the sample data access the Sample Data Back-Office and in the **Data Ma
 ## Custom data model and records
 
 You can create your own Entities as the source of data in your Screen Templates. This can be more suitable for your business requirements.
+

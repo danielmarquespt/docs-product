@@ -4,14 +4,11 @@ Use the **Start&lt;Conditional Start Name&gt;** [process activity extended actio
 
 ## Input parameters
 
-* **ProcessId**: id of the process instance where the Conditional Start instance is executed. (Type: Process Identifier; Mandatory)
+* **ProcessId**: id of the process instance where the Conditional Start instance is executed. \(Type: Process Identifier; Mandatory\)
 
 Use [Process Entities](../process-entities/intro.md) to obtain the process identifier.
 
 * **Conditional Start Input Parameters**: one parameter for each input parameter in the Conditional Start definition.
 
-<div class="warning" markdown="1">
+ The input parameters must be in the same order and of the same type as what is defined in the Conditional Start.
 
-The input parameters must be in the same order and of the same type as what is defined in the Conditional Start.
-
-</div>

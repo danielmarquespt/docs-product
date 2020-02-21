@@ -1,12 +1,13 @@
 ---
-summary: Set of best practices and solutions for securing data in your mobile apps built with OutSystems.
+summary: >-
+  Set of best practices and solutions for securing data in your mobile apps
+  built with OutSystems.
 tags: runtime-mobile; support-Security; support-Security-featured
 ---
 
 # Secure the Data of your Mobile Apps
 
 This document presents a set of best practices and solutions for securing data in your mobile apps built with OutSystems.
-
 
 ## Avoid storing sensitive data on the device
 
@@ -16,21 +17,19 @@ If you need your application to work offline, make an informed decision on what 
 
 A good approach is to find the minimum subset of data your users will need to accomplish their tasks while in offline. This will help you trim down the data and remove all sensitive data.
 
-
 ## Store small snippets of sensitive information
 
-In scenarios where you need to store small amounts of information, like a password or your user’s social security number, you can use the keystore of the device ("keychain" on iOS).
+In scenarios where you need to store small amounts of information, like a password or your user’s social security number, you can use the keystore of the device \("keychain" on iOS\).
 
 The keystore is an app provided by the device that stores small bits of sensitive information. The keystore secures data by encrypting the data before storing it, and the platform itself carefully controls access to stored items.
 
 To safely store information in the keystore, you can use the [KeyStore Plugin](https://www.outsystems.com/forge/component-details/1550/Key+Store+Plugin/) available in the Forge.
 
-
 ## Store sensitive attributes in Local Storage Entities
 
 If the offline operation of your application needs to hold sensitive information in a few entity attributes, you can create logic in your application to encrypt and decrypt those values as needed.
 
-You may use a traditional JavaScript encryption framework (there are several [available here](https://gist.github.com/jo/8619441)) to encrypt the data before writing it to the Local Storage and decrypt it after reading from the Local Storage. The encryption key can be stored securely using the device keystore mechanism as described above.
+You may use a traditional JavaScript encryption framework \(there are several [available here](https://gist.github.com/jo/8619441)\) to encrypt the data before writing it to the Local Storage and decrypt it after reading from the Local Storage. The encryption key can be stored securely using the device keystore mechanism as described above.
 
 ## Store large amounts of sensitive information in Local Storage
 
@@ -40,7 +39,7 @@ To cipher the Local Storage database, you can use the [Ciphered Local Storage Pl
 
 Note that this extra security level may introduce a few performance overheads when reading and writing data to the Local Storage, so be sure to take this in consideration when using this approach.
 
-
 ## Re-validate data in the Server
 
-All data sent from the app to the server should be re-validated in the server. This helps in keeping your server-side logic working over sound data and executing operations as expected. If a hacker is able to forge a request from your app to the server, it will bypass the app validations and can send incorrect requests. Not performing the required validations server-side may lead to data corruption (by replacing real data in the server with bogus data) or data leakage (by accessing data not intended for a specific user).
+All data sent from the app to the server should be re-validated in the server. This helps in keeping your server-side logic working over sound data and executing operations as expected. If a hacker is able to forge a request from your app to the server, it will bypass the app validations and can send incorrect requests. Not performing the required validations server-side may lead to data corruption \(by replacing real data in the server with bogus data\) or data leakage \(by accessing data not intended for a specific user\).
+

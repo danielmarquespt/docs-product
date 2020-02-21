@@ -9,31 +9,19 @@ Provides methods to access native capabilities of the device.
 
 ## Summary
 
-<table markdown="1">
-<thead>
-<tr>
-<th colspan="2">Functions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>[whenReady](device.md#whenready)</td>
-<td>
-Promise that is resolved when the 'deviceready' event is caught.
-</td>
-</tr>
-</tbody>
-</table>
+| Functions |  |
+| :--- | :--- |
+| \[whenReady\]\(device.md\#whenready\) |  Promise that is resolved when the 'deviceready' event is caught. |
 
 ## Functions
 
 ### whenReady
 
-**whenReady(): Promise&lt;void&gt;**
+**whenReady\(\): Promise&lt;void&gt;**
 
 Promise that is resolved when the 'deviceready' event is caught.
 
-You should bind your code on this promise (`whenReady().then(...)`) instead of using the traditional approach of binding the event on `document.addEventListener("deviceready", ...)`. The event fires when Cordova is fully loaded, i.e. it signals that Cordova's device APIs are loaded and are ready for use.
+You should bind your code on this promise \(`whenReady().then(...)`\) instead of using the traditional approach of binding the event on `document.addEventListener("deviceready", ...)`. The event fires when Cordova is fully loaded, i.e. it signals that Cordova's device APIs are loaded and are ready for use.
 
 Example:
 

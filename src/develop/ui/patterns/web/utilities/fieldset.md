@@ -1,5 +1,5 @@
 ---
-tags: runtime-traditionalweb; 
+tags: runtime-traditionalweb;
 summary: Fieldset labels groups of related interface elements and fields.
 ---
 
@@ -7,32 +7,29 @@ summary: Fieldset labels groups of related interface elements and fields.
 
 Group thematically related elements such as controls and labels.
 
-Use the Fieldset to label groups of related interface elements and fields. This improves the layout and helps users understand the information.  
+Use the Fieldset to label groups of related interface elements and fields. This improves the layout and helps users understand the information.
 
 **How to use**
 
 Set the label of the Fieldset and then drag Input widgets to the content placeholder.
 
 1. Drag the Fieldset pattern into the preview.
+2. Set the Title parameter.
+3. Set the content you need on the placeholder.
+4. Publish and test.
 
-1. Set the Title parameter.
-
-1. Set the content you need on the placeholder.
-
-1. Publish and test.
-
-    ![](<images/fieldset-image-1.png>)
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/utilities/images/fieldset-image-1.png%3E)
 
 ## Input Parameters
 
-| **Input Name** |  **Description** |  **Type** | **Mandatory** | **Default Value** |
-|---|---|---|---|---|
-| Title  |  The title that will be the legend of the Fieldset. | Text | True | none |
-| ExtendedClass  |  Add custom style classes to this Block. |  Text | False | none |
+| **Input Name** | **Description** | **Type** | **Mandatory** | **Default Value** |
+| :--- | :--- | :--- | :--- | :--- |
+| Title | The title that will be the legend of the Fieldset. | Text | True | none |
+| ExtendedClass | Add custom style classes to this Block. | Text | False | none |
 
 ## Layout and Classes
 
-![](<images/fieldset-image-2.png>)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/utilities/images/fieldset-image-2.png%3E)
 
 ## Advanced Use Case
 
@@ -55,7 +52,8 @@ Example 1
   top: -15px;
 }
 ```
-![](<images/fieldset-image-3.png>)
+
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/utilities/images/fieldset-image-3.png%3E)
 
 Example 2
 
@@ -71,4 +69,6 @@ Example 2
   width: 100%;
 }
 ```
-![](<images/fieldset-image-4.png>)
+
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/utilities/images/fieldset-image-4.png%3E)
+

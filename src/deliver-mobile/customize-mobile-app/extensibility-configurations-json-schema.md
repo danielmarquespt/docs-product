@@ -10,18 +10,18 @@ The value of the Extensibility Configurations property of a mobile app module is
 ## Constraints
 
 1. The JSON schema and key/value pairs must follow the official structure described in this topic. 
-1. The first-level key/value pairs are optional and the order isn't relevant. 
-1. The developer must write the name of each name/value pair using lower case letters (the JSON is case sensitive). 
-1. Must only be specified one resource key in the JSON. All content used in the app (icons, splashscreens, and plugins) must be inside that file. 
-1. When specifying the resource file for the app, the resource name must end with ".zip". 
-1. The resource file name must be equal to the resource name of the file submitted by the developer. 
-1. The specified path for an asset (e.g. the icon or splash screen) in the JSON must be the same as the path inside the resources ZIP file. 
+2. The first-level key/value pairs are optional and the order isn't relevant. 
+3. The developer must write the name of each name/value pair using lower case letters \(the JSON is case sensitive\). 
+4. Must only be specified one resource key in the JSON. All content used in the app \(icons, splashscreens, and plugins\) must be inside that file. 
+5. When specifying the resource file for the app, the resource name must end with ".zip". 
+6. The resource file name must be equal to the resource name of the file submitted by the developer. 
+7. The specified path for an asset \(e.g. the icon or splash screen\) in the JSON must be the same as the path inside the resources ZIP file. 
 
 In case some constraint is not respected, OutSystems might not be able to generate the mobile app package or the application behavior could be unstable.
 
 ## Property Schema
 
-```javascript 
+```javascript
 {
     "plugin": {
         // Use only one the following ways to reference a plugin
@@ -138,3 +138,4 @@ In case some constraint is not respected, OutSystems might not be able to genera
     ]
 }
 ```
+

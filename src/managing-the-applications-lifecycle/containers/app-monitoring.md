@@ -1,5 +1,7 @@
 ---
-summary: Check how you can gather information from your OutSystems applications running in containers.
+summary: >-
+  Check how you can gather information from your OutSystems applications running
+  in containers.
 tags: support-monitoring
 ---
 
@@ -11,10 +13,11 @@ If you need to obtain more information, check the corresponding section below ac
 
 ## Docker Containers
 
-If you need to get further information, retrieve it using the `docker logs` command. Check the [official documentation](<https://docs.docker.com/engine/reference/commandline/logs/>) for more information.
+If you need to get further information, retrieve it using the `docker logs` command. Check the [official documentation](https://docs.docker.com/engine/reference/commandline/logs/>) for more information.
 
-Additionally, the ["OutSystems-CollectInfo-wdocker" GitHub repository](<https://github.com/OutSystems/OutSystems-CollectInfo-wdocker>) contains some PowerShell scripts that will help you gather information from both the host machine and the container for troubleshooting purposes. Check the `README.md` file available in the repository for more information.
+Additionally, the ["OutSystems-CollectInfo-wdocker" GitHub repository](https://github.com/OutSystems/OutSystems-CollectInfo-wdocker>) contains some PowerShell scripts that will help you gather information from both the host machine and the container for troubleshooting purposes. Check the `README.md` file available in the repository for more information.
 
 ## Pivotal Cloud Foundry
 
 If you need to get further information, you must retrieve it from Cloud Foundry Client or Pivotal Apps Manager.
+

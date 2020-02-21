@@ -1,10 +1,9 @@
 # Invalid Expression Error
 
-Message
-:   `Unknown object in expression.`
+Message : `Unknown object in expression.`
 
-Cause
-:   The syntax of the expression is correct, but has unknown objects.
+Cause : The syntax of the expression is correct, but has unknown objects.
 
 Recommendation  
-:   Check your expression to validate its operands, operators and variables.
+: Check your expression to validate its operands, operators and variables.
+

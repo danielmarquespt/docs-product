@@ -6,27 +6,27 @@ helpids: 30168
 
 This error is issued in the following situations:
 
-  * Invalid Property Value: `'<static_entity> Identifier' is defined by a consumed SOAP Web Service and cannot be used as Data Type of an Entity Attribute.`
+* Invalid Property Value: `'<static_entity> Identifier' is defined by a consumed SOAP Web Service and cannot be used as Data Type of an Entity Attribute.`
 
-    Static entities defined by consumed SOAP web services cannot be used as data types in some OutSystems elements.
+  Static entities defined by consumed SOAP web services cannot be used as data types in some OutSystems elements.
 
-    Choose a different data type for the entity attribute.
+  Choose a different data type for the entity attribute.
 
-  * Invalid Property Value: `'<static_entity>' is defined by a consumed SOAP Web Service and cannot be used as an Aggregate Source.`
+* Invalid Property Value: `'<static_entity>' is defined by a consumed SOAP Web Service and cannot be used as an Aggregate Source.`
 
-    Static entities defined by consumed SOAP web services cannot be used as data sources in aggregates.
+  Static entities defined by consumed SOAP web services cannot be used as data sources in aggregates.
 
-    Exclude the source causing the error from the aggregate.
+  Exclude the source causing the error from the aggregate.
 
-  * Unknown SourceAttributeRecord: `'<static_entity>' is defined by a consumed SOAP Web Service and cannot be used as a Combo Box Source Entity.`
+* Unknown SourceAttributeRecord: `'<static_entity>' is defined by a consumed SOAP Web Service and cannot be used as a Combo Box Source Entity.`
 
-    Static entities defined by consumed SOAP web services cannot be used as sources of combo boxes.
+  Static entities defined by consumed SOAP web services cannot be used as sources of combo boxes.
 
-    Choose a different source entity for the combo box.
+  Choose a different source entity for the combo box.
 
-  * Invalid SQL: `<static_entity> is defined by a consumed SOAP Web Service and cannot be used in an SQL clause.`
+* Invalid SQL: `<static_entity> is defined by a consumed SOAP Web Service and cannot be used in an SQL clause.`
 
-    Static entities defined by consumed SOAP web services cannot be used in SQL clauses.
+  Static entities defined by consumed SOAP web services cannot be used in SQL clauses.
 
-    Exclude the static entity from your SQL clause.
+  Exclude the static entity from your SQL clause.
 

@@ -1,15 +1,15 @@
 ---
-tags: runtime-mobileandreactiveweb;  
-summary: 
+tags: runtime-mobileandreactiveweb;
+summary: null
 ---
 
 # Public Actions
 
 ## Carousel
 
-You can use the [Carousel](<carousel.md>) actions described below anywhere in OutSystems.
+You can use the [Carousel](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/mobile/carousel.md%3E) actions described below anywhere in OutSystems.
 
-![](images/Carousel_Actions.png)
+![](../../../../../.gitbook/assets/carousel_actions.png)
 
 ### CarouselGoTo Action
 
@@ -33,21 +33,21 @@ To remove elements from the Carousel, create an action with the ListRemove and U
 
 ## Stacked Cards
 
-You can use the [Stacked Cards](<stackedcards.md>) actions described below anywhere in OutSystems.
+You can use the [Stacked Cards](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/mobile/stackedcards.md%3E) actions described below anywhere in OutSystems.
 
-![](images/StackedCards_Actions.png)
+![](../../../../../.gitbook/assets/stackedcards_actions.png)
 
 ### SwipeLeft Action
 
-Calling this public action in relation to a button triggers the SwipeRight action and moves the card. You need to set the Stacked Cards ID (Widget ID).
+Calling this public action in relation to a button triggers the SwipeRight action and moves the card. You need to set the Stacked Cards ID \(Widget ID\).
 
 ### SwipeRight Action
 
-Calling this public action in relation to a button triggers the SwipeRight action and moves the card. You need to set the Stacked Cards ID (Widget ID).
+Calling this public action in relation to a button triggers the SwipeRight action and moves the card. You need to set the Stacked Cards ID \(Widget ID\).
 
 ### SwipeTop Action
 
-Calling this public action in relation to a button triggers the SwipeTop action and moves the card. You need to set the Stacked Cards ID (Widget ID).
+Calling this public action in relation to a button triggers the SwipeTop action and moves the card. You need to set the Stacked Cards ID \(Widget ID\).
 
 ### UpdateStackedCards Action
 
@@ -55,6 +55,7 @@ You must use this action on the ListRemove action. The action updates all cards 
 
 ### ListRemove
 
-To remove elements from the Stacked Cards, create an action with the ListRemove and UpdateCarousel actions (see the example below).
+To remove elements from the Stacked Cards, create an action with the ListRemove and UpdateCarousel actions \(see the example below\).
 
-![](images/ListRemove.png)
+![](../../../../../.gitbook/assets/listremove.png)
+

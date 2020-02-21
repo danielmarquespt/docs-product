@@ -1,5 +1,2 @@
----
-tags: 
----
-
 # Logic Tools
+

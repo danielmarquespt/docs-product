@@ -1,65 +1,38 @@
 # Invalid Entity Error
 
-Message
-:   `<entity> must have at least one attribute.`
+Message : `<entity> must have at least one attribute.`
 
-Cause
-:   You have an entity with no attributes.
+Cause : You have an entity with no attributes.
 
-Recommendation
-:   You must [add attributes](<../../../extensibility-and-integration/integration-studio/managing-extensions/entity-attribute.md>) to this entity. 
+Recommendation : You must [add attributes](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/extensibility-and-integration/integration-studio/managing-extensions/entity-attribute.md%3E) to this entity.
 
----
+Message : `<entity> identifier attribute data type must be set to 'Integer' or 'Text'.`
 
-Message
-:   `<entity> identifier attribute data type must be set to 'Integer' or 'Text'.`
+Cause : You have an entity whose identifier is not of type `Integer` nor `Text`.
 
-Cause
-:   You have an entity whose identifier is not of type `Integer` nor `Text`.
+Recommendation : Select the [Identifier](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/extensibility-and-integration/integration-studio/managing-extensions/entity-add.md%3E) attribute and change its data type to `Integer` or `Text`.
 
-Recommendation
-:   Select the [Identifier](<../../../extensibility-and-integration/integration-studio/managing-extensions/entity-add.md>) attribute and change its data type to `Integer` or `Text`.
+Message : `<entity> identifier attribute must be set to 'Mandatory'.`
 
----
+Cause : You have an entity whose identifier is not mandatory.
 
-Message
-:   `<entity> identifier attribute must be set to 'Mandatory'.`
+Recommendation : Select the [Identifier](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/extensibility-and-integration/integration-studio/managing-extensions/entity-add.md%3E) attribute and change it to be mandatory.
 
-Cause
-:   You have an entity whose identifier is not mandatory.
+Message : `<entity> can only have one 'Auto Number' attribute.`
 
-Recommendation
-:   Select the [Identifier](<../../../extensibility-and-integration/integration-studio/managing-extensions/entity-add.md>) attribute and change it to be mandatory.
+Cause : You have an entity with more than one sequential attribute and this situation is not allowed; you can have only one sequential attribute per entity.
 
----
+Recommendation : Check your entity and choose which attribute must be sequential. In the other attribute, you have to [un-check](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/extensibility-and-integration/integration-studio/managing-extensions/entity-attribute.md%3E) the Auto Number property.
 
-Message
-:   `<entity> can only have one 'Auto Number' attribute.`
+Message : `<entity> must have a table name.`
 
-Cause
-:   You have an entity with more than one sequential attribute and this situation is not allowed; you can have only one sequential attribute per entity.
+Cause : You have an entity with no physical table name.
 
-Recommendation
-:   Check your entity and choose which attribute must be sequential. In the other attribute, you have to [un-check](<../../../extensibility-and-integration/integration-studio/managing-extensions/entity-attribute.md>) the Auto Number property. 
+Recommendation : [Edit this entity](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/extensibility-and-integration/integration-studio/managing-extensions/entity-add.md%3E) and specify the Table Name property.
 
----
+Message : `<entity> already uses table name <table>.`
 
-Message
-:   `<entity> must have a table name.`
+Cause : You have more than one entity using the same physical table name.
 
-Cause
-:   You have an entity with no physical table name.
+Recommendation : [Edit one of these entities](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/extensibility-and-integration/integration-studio/managing-extensions/entity-add.md%3E) and change the Table Name property.
 
-Recommendation
-:   [Edit this entity](<../../../extensibility-and-integration/integration-studio/managing-extensions/entity-add.md>) and specify the Table Name property. 
-
----
-
-Message
-:   `<entity> already uses table name <table>.`
-
-Cause
-:   You have more than one entity using the same physical table name.
-
-Recommendation
-:   [Edit one of these entities](<../../../extensibility-and-integration/integration-studio/managing-extensions/entity-add.md>) and change the Table Name property. 

@@ -1,8 +1,6 @@
 # Invalid Extension Error
 
-Message
-:   `'Application Server' <type> not supported.`
+Message : `'Application Server' <type> not supported.`
 
-Cause
-:   Integration Studio only supports Microsoft .NET integration.
+Cause : Integration Studio only supports Microsoft .NET integration.
 

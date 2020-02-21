@@ -31,3 +31,4 @@ Only attributes where the Delete Rule property is set to Protected or Delete cre
 ### Delete
 
 `CONSTRAINT OSFRK_<internal name> FOREIGN KEY (<reference attribute>) REFERENCES <Entity>(<attribute>) ON DELETE CASCADE`
+

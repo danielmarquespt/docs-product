@@ -1,5 +1,2 @@
----
-tags: 
----
-
 # Consumed REST API
+

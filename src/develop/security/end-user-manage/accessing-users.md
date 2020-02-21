@@ -9,9 +9,9 @@ The **Users** application of a specific OutSystems environment is available at `
 
 You need an account with administrator privileges to log in the Users application. This account **is not** the same you use to connect to Service Center, LifeTime or Service Studio, as those are IT users, although you can create accounts with the same credentials for both purposes.
 
-Before accessing the Users application for the first time, you must [configure the Administrator user](#configure-users-administrator).
+Before accessing the Users application for the first time, you must [configure the Administrator user](accessing-users.md#configure-users-administrator).
 
-![users first login](images/users-first-login-usr.png)
+![users first login](../../../../.gitbook/assets/users-first-login-usr.png)
 
 ## Configure Users administrator
 
@@ -19,18 +19,14 @@ Configuring the Administrator user for Users application sets the password and a
 
 To configure the Administrator user, do the following:
 
-1. Log in to Service Center using the administrator credentials (`http://<environment_address>/ServiceCenter`).
+1. Log in to Service Center using the administrator credentials \(`http://<environment_address>/ServiceCenter`\).
+2. Go to **Factory -&gt; Modules**.
+3. Search for **Users** and click the module name to open the details page.
+4. Click the **Single Sign-On** tab.
+5. Click the **Configure Administrator user** button.
 
-1. Go to **Factory -> Modules**.
+   ![configure administrator user](../../../../.gitbook/assets/users-configure-admin-sc.png)
 
-1. Search for **Users** and click the module name to open the details page.
+6. Set the password for the Administrator user.
+7. Click **Apply**.
 
-1. Click the **Single Sign-On** tab.
-
-1. Click the **Configure Administrator user** button.
-
-    ![configure administrator user](images/users-configure-admin-sc.png)
-
-1. Set the password for the Administrator user.
-
-1. Click **Apply**.

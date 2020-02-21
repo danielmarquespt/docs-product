@@ -1,5 +1,7 @@
 ---
-summary: Reuse functionality from other modules to avoid repeated code and to achieve a modular design.
+summary: >-
+  Reuse functionality from other modules to avoid repeated code and to achieve a
+  modular design.
 ---
 
 # Reuse and Refactor

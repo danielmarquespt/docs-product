@@ -1,5 +1,2 @@
----
-tags: 
----
-
 # Designing the Layout
+

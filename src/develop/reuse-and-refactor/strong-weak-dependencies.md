@@ -10,9 +10,9 @@ Depending on the type of element exposed by a producer module, OutSystems will g
 
 When a consumer module has a **strong dependency** to a producer, the producer logic is executed just as if it is defined in the consumer module. They run in the same request, share the same transaction, session variables, site properties, etc.
 
-![](images/strong-weak-dependencies-1.png?width=400)
- 
-In runtime, the consumer module needs to know both the **signature** and the **implementation** of the element exposed by the producer to be able to reuse it. For this reason, when the [producer changes the signature or the implementation](handle-changes.md#change-functionality-in-the-producer-module) of the exposed element, the consumer module becomes outdated and needs to be republished to start using the latest producer version. 
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/reuse-and-refactor/images/strong-weak-dependencies-1.png?width=400)
+
+In runtime, the consumer module needs to know both the **signature** and the **implementation** of the element exposed by the producer to be able to reuse it. For this reason, when the [producer changes the signature or the implementation](handle-changes.md#change-functionality-in-the-producer-module) of the exposed element, the consumer module becomes outdated and needs to be republished to start using the latest producer version.
 
 Reusing the following elements, will make the consumer’s dependency to the producer a **strong** dependency:
 
@@ -34,10 +34,9 @@ If the consumer is reusing more than one element exposed by the same producer mo
 When a consumer module has a **weak dependency** to a producer, depending on the type of the producer’s element reused by the consumer, one of the following happens:
 
 * Elements having associated **logic**, such as actions or screens, run in the context of the producer’s request. Changes in the producer implementation take immediate effect in the consumer.
+* **Data type** elements, such as entities or structures, are defined only by the signature \(there is no associated logic\). Queries over reused entities run in the same transaction as the consumer logic. Changes in entities take immediate effect in the database.
 
-* **Data type** elements, such as entities or structures, are defined only by the signature (there is no associated logic). Queries over reused entities run in the same transaction as the consumer logic. Changes in entities take immediate effect in the database.
-
-![](images/strong-weak-dependencies-2.png?width=400)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/reuse-and-refactor/images/strong-weak-dependencies-2.png?width=400)
 
 In runtime, the consumer module only needs to know the **signature** of the element to be able to reuse it. For this reason, when the [producer changes only the implementation](handle-changes.md#change-functionality-in-the-producer-module) of the exposed elements, the consumer module does not become outdated and the latest producer version is immediately available to the consumer in runtime.
 
@@ -51,3 +50,4 @@ Reusing the following elements, will make the consumer’s dependency to the pro
 * Structures
 
 If the consumer is reusing more than one element exposed by the same producer module, the consumer has a **weak dependency** to that producer only if **all the elements** belong to the list above.
+

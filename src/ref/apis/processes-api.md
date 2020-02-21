@@ -1,17 +1,17 @@
 ---
-summary: The Processes API allows you to get information from the OutSystems data model to customize and extend the design of your Processes.
-tags: 
+summary: >-
+  The Processes API allows you to get information from the OutSystems data model
+  to customize and extend the design of your Processes.
+tags: null
 ---
 
 # Processes API
 
 The Processes API allows you to get information from the OutSystems data model to customize and extend the design of your Processes. With this API your can, for example, do the following:
 
-* **Build Your Taskbox**: Build your custom Taskbox to display the tasks to end-users. 
-
-* **Extend the Data Model**: Extend the OutSystems data model to better adapt Processes to your needs. 
-
-* **Build Process Reports**: Build reports about your Process and KPIs (Key Performance Indicators) from the extracted information. 
+* **Build Your Taskbox**: Build your custom Taskbox to display the tasks to end-users.
+* **Extend the Data Model**: Extend the OutSystems data model to better adapt Processes to your needs.
+* **Build Process Reports**: Build reports about your Process and KPIs \(Key Performance Indicators\) from the extracted information.
 
 The information about your processes is obtained by querying System entities. As such, you must add references to those entities to your module, using the Manage Dependencies dialog box.
 
@@ -39,8 +39,9 @@ The runtime data of all elements related with Processes is stored in the followi
 
 ## Entities Storing Useful Codes
 
-Some useful codes are stored in the following (static) entities:
+Some useful codes are stored in the following \(static\) entities:
 
 * `Process_Status`: the possible statuses for a Process
 * `Activity_Kind`: the kind of Activities
 * `Activity_Status`: the possible statuses for an Activity
+

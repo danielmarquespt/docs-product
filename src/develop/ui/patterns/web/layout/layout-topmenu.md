@@ -1,5 +1,5 @@
 ---
-tags: runtime-traditionalweb; 
+tags: runtime-traditionalweb;
 summary: LayoutTopMenu uses the space available on the top for navigation.
 ---
 
@@ -7,38 +7,38 @@ summary: LayoutTopMenu uses the space available on the top for navigation.
 
 Custom layout with a fixed menu on top.
 
-Useful for simple applications, without a complex navigation structure. 
+Useful for simple applications, without a complex navigation structure.
 
 **How to use**
 
-Fill in the placeholders with the content that you need. 
+Fill in the placeholders with the content that you need.
 
-![](<images/layout-tm-image-2.png?width=600>)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/layout/images/layout-tm-image-2.png?width=600%3E)
 
 ## Input parameters
 
-| **Input Name** |  **Description** |  **Type** | **Mandatory** | **Default Value** |
-|---|---|---|---|---|
-| ExtendedClass  |  Adds custom style classes to this Block |  Text | False | none |
-| DeviceConfiguration  |  Configuration to change the default values that set when the application is seen as phone, tablet or desktop. |  DeviceConfig | False | none |
+| **Input Name** | **Description** | **Type** | **Mandatory** | **Default Value** |
+| :--- | :--- | :--- | :--- | :--- |
+| ExtendedClass | Adds custom style classes to this Block | Text | False | none |
+| DeviceConfiguration | Configuration to change the default values that set when the application is seen as phone, tablet or desktop. | DeviceConfig | False | none |
 
 ## Layout and classes
 
-![](<images/layout-tm-image-1.png>)
- 
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/layout/images/layout-tm-image-1.png%3E)
+
 ## Responsive behavior
 
 This layout comes with a default responsive behavior. On tablets it remains the same as on desktop. But on phones it breaks the content vertically, making the placeholders Title and Actions full-width.
 
-![](<images/layout-tm-image-3.png>)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/layout/images/layout-tm-image-3.png%3E)
 
 The menu also adapts to mobile, moving the navigation to a sidebar, toggled by a hamburger icon.
 
-![](<images/layout-tm-image-4.gif>)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/layout/images/layout-tm-image-4.gif%3E)
 
 On a mobile phone and tablet:
 
-![](<images/layout-tm-image-7.png>)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/layout/images/layout-tm-image-7.png%3E)
 
 ## Advanced
 
@@ -47,21 +47,21 @@ Here are some more advanced use-cases of the widget.
 ### Customize your responsive breakpoints
 
 1. Go to the Common Flow.
-1. Double-click on your Layout to open the widget tree. 
-1. Go to the LayoutTopMenu parameters.
-1. Toggle the DeviceConfiguration 'plus icon'.
-1. Set your custom breakpoints (in pixels). On the example below the phone breaks is set to happen only when the Device with is at 200px.
-1. Publish and test.
+2. Double-click on your Layout to open the widget tree. 
+3. Go to the LayoutTopMenu parameters.
+4. Toggle the DeviceConfiguration 'plus icon'.
+5. Set your custom breakpoints \(in pixels\). On the example below the phone breaks is set to happen only when the Device with is at 200px.
+6. Publish and test.
 
-    ![](<images/layout-tm-image-5.png>)
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/layout/images/layout-tm-image-5.png%3E)
 
 ### Customize your content max-width
 
 1. Go to Themes.
-1. In the Grid section, set your custom width (default value is 1280px) in the Max. Width parameter.
-1. Publish and test.
+2. In the Grid section, set your custom width \(default value is 1280px\) in the Max. Width parameter.
+3. Publish and test.
 
-    ![](<images/layout-tm-image-6.png>)
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/layout/images/layout-tm-image-6.png%3E)
 
 ## Device compatibility
 
@@ -79,3 +79,4 @@ To override this behavior, add the following code snippet to your CSS theme:
    display: block;
 }
 ```
+

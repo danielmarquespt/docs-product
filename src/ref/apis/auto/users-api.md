@@ -4,472 +4,374 @@ For version 10.0.907.100. Backoffice to manage users, groups and roles.
 
 ## Summary
 
-Widget | Description
----|---
-[ChangePassword](<#ChangePassword>) | Allows changing the user password.
-[EditMyInfo](<#EditMyInfo>) | 
+| Widget | Description |
+| :--- | :--- |
+| [ChangePassword](users-api.md#ChangePassword%3E) | Allows changing the user password. |
+| [EditMyInfo](users-api.md#EditMyInfo%3E) |  |
 
-Action | Description
----|---
-[EncryptPassword](<#EncryptPassword>) | Returns the encrypted password for a specific username and password. This is the value kept in the Password attribute of the User system entity.
-[GetEffectiveUserProviderEspaceId](<#GetEffectiveUserProviderEspaceId>) | Returns the eSpace identifier of the effective user provider. Normally it returns the Users eSpaceId, in upgrade scenarios it returns the EnterpriseManager eSpaceId.
-[Group_CreateNew](<#Group_CreateNew>) | Create a new system group. Requires the UserManager role to be invoked.
-[Group_Delete](<#Group_Delete>) | Delete a system group. Requires the UserManager role to be invoked.
-[Group_Update](<#Group_Update>) | Updates a system group. Requires the UserManager role to be invoked.
-[IPAddress_GetBlockedStatus](<#IPAddress_GetBlockedStatus>) | Returns the blocking state of the IP address.
-[IPAddress_GetBlocks](<#IPAddress_GetBlocks>) | Returns the blocking state of the IP address. If there are no blocks for this address, the list will be empty. If no IP address is given, information on all blocked IP addresses will be returned.
-[IPAddress_Unblock](<#IPAddress_Unblock>) | Ends the blocking period for the specified IP address, allowing any user to login in that address.
-[UseActiveDirectoryAuthentication](<#UseActiveDirectoryAuthentication>) | Returns the Users configuration that determines if the Active Directory is used for authentication
-[UseIntegratedAuthentication](<#UseIntegratedAuthentication>) | Returns the Users configuration that determines if the Integrated Authentication is used to login.
-[UseLDAPAuthentication](<#UseLDAPAuthentication>) | Returns the Users configuration that determines if the Active Directory is used for authentication
-[User_CanChangePassword](<#User_CanChangePassword>) | Checks if the User is allowed to change a password. It is false for Active Directory users.
-[User_Create](<#User_Create>) | Create a new user. Requires UserManager role to be invoked.%%Fails when the username is repeated.
-[User_CreateOrUpdate](<#User_CreateOrUpdate>) | Create or updates a user. Requires UserManager role to be invoked.
-[User_DeleteIfNoRoles](<#User_DeleteIfNoRoles>) | Deletes the User if there are no roles assigned to it.
-[User_GetBlockedStatus](<#User_GetBlockedStatus>) | Returns information regarding the blocking state of the user and the blocking reason, in the specified IP address. If no IP address is given, checks the last IP address from where the user attempted to login.
-[User_GetIdByUsername](<#User_GetIdByUsername>) | Returns the user identifier for a specific user given the username
-[User_GetLastFailedLoginAttempts](<#User_GetLastFailedLoginAttempts>) | Returns a list of last failed login attempts (one record for each IP address). This information can be used to invoke User_Unblock or IPaddress_Unblock.
-[User_GetName](<#User_GetName>) | Returns the name of the logged user.
-[User_GetUnifiedLoginUrl](<#User_GetUnifiedLoginUrl>) | Returns the Url used for custom unified login patterns. Includes Windows Integrated Authentication pattern.
-[User_IsExternalUser](<#User_IsExternalUser>) | 
-[User_Login](<#User_Login>) | Action to login using username and password as credentials.
-[User_Logout](<#User_Logout>) | Logs out the current user. Session variables are cleared during the logout process.
-[User_Unblock](<#User_Unblock>) | Ends the blocking period for the specified user, allowing the user to login in all IP addresses where the user was blocked.
-[User_Update](<#User_Update>) | Updates a specific user.
+| Action | Description |
+| :--- | :--- |
+| [EncryptPassword](users-api.md#EncryptPassword%3E) | Returns the encrypted password for a specific username and password. This is the value kept in the Password attribute of the User system entity. |
+| [GetEffectiveUserProviderEspaceId](users-api.md#GetEffectiveUserProviderEspaceId%3E) | Returns the eSpace identifier of the effective user provider. Normally it returns the Users eSpaceId, in upgrade scenarios it returns the EnterpriseManager eSpaceId. |
+| [Group\_CreateNew](users-api.md#Group_CreateNew%3E) | Create a new system group. Requires the UserManager role to be invoked. |
+| [Group\_Delete](users-api.md#Group_Delete%3E) | Delete a system group. Requires the UserManager role to be invoked. |
+| [Group\_Update](users-api.md#Group_Update%3E) | Updates a system group. Requires the UserManager role to be invoked. |
+| [IPAddress\_GetBlockedStatus](users-api.md#IPAddress_GetBlockedStatus%3E) | Returns the blocking state of the IP address. |
+| [IPAddress\_GetBlocks](users-api.md#IPAddress_GetBlocks%3E) | Returns the blocking state of the IP address. If there are no blocks for this address, the list will be empty. If no IP address is given, information on all blocked IP addresses will be returned. |
+| [IPAddress\_Unblock](users-api.md#IPAddress_Unblock%3E) | Ends the blocking period for the specified IP address, allowing any user to login in that address. |
+| [UseActiveDirectoryAuthentication](users-api.md#UseActiveDirectoryAuthentication%3E) | Returns the Users configuration that determines if the Active Directory is used for authentication |
+| [UseIntegratedAuthentication](users-api.md#UseIntegratedAuthentication%3E) | Returns the Users configuration that determines if the Integrated Authentication is used to login. |
+| [UseLDAPAuthentication](users-api.md#UseLDAPAuthentication%3E) | Returns the Users configuration that determines if the Active Directory is used for authentication |
+| [User\_CanChangePassword](users-api.md#User_CanChangePassword%3E) | Checks if the User is allowed to change a password. It is false for Active Directory users. |
+| [User\_Create](users-api.md#User_Create%3E) | Create a new user. Requires UserManager role to be invoked.%%Fails when the username is repeated. |
+| [User\_CreateOrUpdate](users-api.md#User_CreateOrUpdate%3E) | Create or updates a user. Requires UserManager role to be invoked. |
+| [User\_DeleteIfNoRoles](users-api.md#User_DeleteIfNoRoles%3E) | Deletes the User if there are no roles assigned to it. |
+| [User\_GetBlockedStatus](users-api.md#User_GetBlockedStatus%3E) | Returns information regarding the blocking state of the user and the blocking reason, in the specified IP address. If no IP address is given, checks the last IP address from where the user attempted to login. |
+| [User\_GetIdByUsername](users-api.md#User_GetIdByUsername%3E) | Returns the user identifier for a specific user given the username |
+| [User\_GetLastFailedLoginAttempts](users-api.md#User_GetLastFailedLoginAttempts%3E) | Returns a list of last failed login attempts \(one record for each IP address\). This information can be used to invoke User\_Unblock or IPaddress\_Unblock. |
+| [User\_GetName](users-api.md#User_GetName%3E) | Returns the name of the logged user. |
+| [User\_GetUnifiedLoginUrl](users-api.md#User_GetUnifiedLoginUrl%3E) | Returns the Url used for custom unified login patterns. Includes Windows Integrated Authentication pattern. |
+| [User\_IsExternalUser](users-api.md#User_IsExternalUser%3E) |  |
+| [User\_Login](users-api.md#User_Login%3E) | Action to login using username and password as credentials. |
+| [User\_Logout](users-api.md#User_Logout%3E) | Logs out the current user. Session variables are cleared during the logout process. |
+| [User\_Unblock](users-api.md#User_Unblock%3E) | Ends the blocking period for the specified user, allowing the user to login in all IP addresses where the user was blocked. |
+| [User\_Update](users-api.md#User_Update%3E) | Updates a specific user. |
 
-Structure | Description
----|---
-[LoginAttemptPublic](<#Structure_LoginAttemptPublic>) | Represents the Login attempt record structure that is exposed
+| Structure | Description |
+| :--- | :--- |
+| [LoginAttemptPublic](users-api.md#Structure_LoginAttemptPublic%3E) | Represents the Login attempt record structure that is exposed |
 
-Static Entity | Description
----|---
-[LoginAttemptResult](<#StaticEntity_LoginAttemptResult>) | The alternative values that may appear in the LoginAttempt record Result column.
-[MenuItem](<#StaticEntity_MenuItem>) | Menu item to be used in menu web block parameters.
+| Static Entity | Description |
+| :--- | :--- |
+| [LoginAttemptResult](users-api.md#StaticEntity_LoginAttemptResult%3E) | The alternative values that may appear in the LoginAttempt record Result column. |
+| [MenuItem](users-api.md#StaticEntity_MenuItem%3E) | Menu item to be used in menu web block parameters. |
 
-Role | Description
----|---
-UserManager | 
+| Role | Description |
+| :--- | :--- |
+| UserManager |  |
 
 ## Widgets
 
-### ChangePassword { #ChangePassword }
+### ChangePassword { \#ChangePassword }
 
 Allows changing the user password.
 
-*Inputs*
+_Inputs_
 
-UserId
-:   Type: optional, User Identifier.  
-    
+UserId : Type: optional, User Identifier.
 
-### EditMyInfo { #EditMyInfo }
-
-
-
+### EditMyInfo { \#EditMyInfo }
 
 ## Actions
 
-### EncryptPassword { #EncryptPassword }
+### EncryptPassword { \#EncryptPassword }
 
 Returns the encrypted password for a specific username and password. This is the value kept in the Password attribute of the User system entity.
 
-*Inputs*
+_Inputs_
 
-Username
-:   Type: mandatory, Text.  
-    
+Username : Type: mandatory, Text.
 
-Password
-:   Type: mandatory, Text.  
-    
+Password : Type: mandatory, Text.
 
-*Outputs*
+_Outputs_
 
-EncryptedPassword
-:   Type: Text.  
-    
+EncryptedPassword : Type: Text.
 
-### GetEffectiveUserProviderEspaceId { #GetEffectiveUserProviderEspaceId }
+### GetEffectiveUserProviderEspaceId { \#GetEffectiveUserProviderEspaceId }
 
-Returns the eSpace identifier of the effective user provider. Normally it returns the Users eSpaceId, in upgrade scenarios it returns the EnterpriseManager eSpaceId.  
+Returns the eSpace identifier of the effective user provider. Normally it returns the Users eSpaceId, in upgrade scenarios it returns the EnterpriseManager eSpaceId.
 
+_Outputs_
 
-*Outputs*
+EspaceId : Type: Espace Identifier.
 
-EspaceId
-:   Type: Espace Identifier.  
-    
-
-### Group_CreateNew { #Group_CreateNew }
+### Group\_CreateNew { \#Group\_CreateNew }
 
 Create a new system group. Requires the UserManager role to be invoked.
 
-*Inputs*
+_Inputs_
 
-Group
-:   Type: mandatory, Group.  
-    
+Group : Type: mandatory, Group.
 
-*Outputs*
+_Outputs_
 
-GroupId
-:   Type: Group Identifier.  
-    
+GroupId : Type: Group Identifier.
 
-### Group_Delete { #Group_Delete }
+### Group\_Delete { \#Group\_Delete }
 
 Delete a system group. Requires the UserManager role to be invoked.
 
-*Inputs*
+_Inputs_
 
-GroupId
-:   Type: mandatory, Group Identifier.  
-    
+GroupId : Type: mandatory, Group Identifier.
 
-### Group_Update { #Group_Update }
+### Group\_Update { \#Group\_Update }
 
 Updates a system group. Requires the UserManager role to be invoked.
 
-*Inputs*
+_Inputs_
 
-Group
-:   Type: mandatory, Group.  
-    
+Group : Type: mandatory, Group.
 
-### IPAddress_GetBlockedStatus { #IPAddress_GetBlockedStatus }
+### IPAddress\_GetBlockedStatus { \#IPAddress\_GetBlockedStatus }
 
 Returns the blocking state of the IP address.
 
-*Inputs*
+_Inputs_
 
-IPAddress
-:   Type: mandatory, Text.  
-    IP address for which the blocking state should be evaluated.
+IPAddress : Type: mandatory, Text.  
+IP address for which the blocking state should be evaluated.
 
-*Outputs*
+_Outputs_
 
-LoginAttemptResult
-:   Type: [LoginAttemptResult](<#Structure_LoginAttemptResult>).  
-    Blocking state for the given IP address.
+LoginAttemptResult : Type: [LoginAttemptResult](users-api.md#Structure_LoginAttemptResult%3E).  
+Blocking state for the given IP address.
 
-### IPAddress_GetBlocks { #IPAddress_GetBlocks }
+### IPAddress\_GetBlocks { \#IPAddress\_GetBlocks }
 
 Returns the blocking state of the IP address. If there are no blocks for this address, the list will be empty. If no IP address is given, information on all blocked IP addresses will be returned.
 
-*Inputs*
+_Inputs_
 
-IPAddress
-:   Type: optional, Text.  
-    IP Address for which the current block information should be given.
+IPAddress : Type: optional, Text.  
+IP Address for which the current block information should be given.
 
-*Outputs*
+_Outputs_
 
-BlockedAddresses
-:   Type: [LoginAttemptPublic](<#Structure_LoginAttemptPublic>) List.  
-    Blocked login attempts associated to the given IP address, or all IP addresses, if no input is given.
+BlockedAddresses : Type: [LoginAttemptPublic](users-api.md#Structure_LoginAttemptPublic%3E) List.  
+Blocked login attempts associated to the given IP address, or all IP addresses, if no input is given.
 
-### IPAddress_Unblock { #IPAddress_Unblock }
+### IPAddress\_Unblock { \#IPAddress\_Unblock }
 
 Ends the blocking period for the specified IP address, allowing any user to login in that address.
 
-*Inputs*
+_Inputs_
 
-IPAddress
-:   Type: mandatory, Text.  
-    The IP address to be unblocked.
+IPAddress : Type: mandatory, Text.  
+The IP address to be unblocked.
 
-### UseActiveDirectoryAuthentication { #UseActiveDirectoryAuthentication }
+### UseActiveDirectoryAuthentication { \#UseActiveDirectoryAuthentication }
 
 Returns the Users configuration that determines if the Active Directory is used for authentication
 
-*Outputs*
+_Outputs_
 
-IsActive
-:   Type: Boolean.  
-    
+IsActive : Type: Boolean.
 
-### UseIntegratedAuthentication { #UseIntegratedAuthentication }
+### UseIntegratedAuthentication { \#UseIntegratedAuthentication }
 
 Returns the Users configuration that determines if the Integrated Authentication is used to login.
 
-*Outputs*
+_Outputs_
 
-IsActive
-:   Type: Boolean.  
-    
+IsActive : Type: Boolean.
 
-### UseLDAPAuthentication { #UseLDAPAuthentication }
+### UseLDAPAuthentication { \#UseLDAPAuthentication }
 
 Returns the Users configuration that determines if the Active Directory is used for authentication
 
-*Outputs*
+_Outputs_
 
-IsActive
-:   Type: Boolean.  
-    
+IsActive : Type: Boolean.
 
-### User_CanChangePassword { #User_CanChangePassword }
+### User\_CanChangePassword { \#User\_CanChangePassword }
 
 Checks if the User is allowed to change a password. It is false for Active Directory users.
 
-*Inputs*
+_Inputs_
 
-UserId
-:   Type: mandatory, User Identifier.  
-    
+UserId : Type: mandatory, User Identifier.
 
-*Outputs*
+_Outputs_
 
-IsAllowed
-:   Type: Boolean.  
-    
+IsAllowed : Type: Boolean.
 
-### User_Create { #User_Create }
+### User\_Create { \#User\_Create }
 
 Create a new user. Requires UserManager role to be invoked.  
 Fails when the username is repeated.
 
-*Inputs*
+_Inputs_
 
-User
-:   Type: mandatory, User.  
-    
+User : Type: mandatory, User.
 
-*Outputs*
+_Outputs_
 
-UserId
-:   Type: User Identifier.  
-    
+UserId : Type: User Identifier.
 
-### User_CreateOrUpdate { #User_CreateOrUpdate }
+### User\_CreateOrUpdate { \#User\_CreateOrUpdate }
 
 Create or updates a user. Requires UserManager role to be invoked.
 
-*Inputs*
+_Inputs_
 
-User
-:   Type: mandatory, User.  
-    
+User : Type: mandatory, User.
 
-*Outputs*
+_Outputs_
 
-UserId
-:   Type: User Identifier.  
-    
+UserId : Type: User Identifier.
 
-### User_DeleteIfNoRoles { #User_DeleteIfNoRoles }
+### User\_DeleteIfNoRoles { \#User\_DeleteIfNoRoles }
 
 Deletes the User if there are no roles assigned to it.
 
-*Inputs*
+_Inputs_
 
-UserId
-:   Type: mandatory, User Identifier.  
-    
+UserId : Type: mandatory, User Identifier.
 
-### User_GetBlockedStatus { #User_GetBlockedStatus }
+### User\_GetBlockedStatus { \#User\_GetBlockedStatus }
 
 Returns information regarding the blocking state of the user and the blocking reason, in the specified IP address. If no IP address is given, checks the last IP address from where the user attempted to login.
 
-*Inputs*
+_Inputs_
 
-Username
-:   Type: mandatory, Text.  
-    The username of the user whose information regarding the blocked/unblocked state will be retrieved.
+Username : Type: mandatory, Text.  
+The username of the user whose information regarding the blocked/unblocked state will be retrieved.
 
-IPAddress
-:   Type: optional, Text.  
-    The IP address for which the information regarding the blocked/unblocked user state will be retrieved.
+IPAddress : Type: optional, Text.  
+The IP address for which the information regarding the blocked/unblocked user state will be retrieved.
 
-*Outputs*
+_Outputs_
 
-LoginAttemptResult
-:   Type: [LoginAttemptResult](<#Structure_LoginAttemptResult>).  
-    Blocking state and reason for the given username.
+LoginAttemptResult : Type: [LoginAttemptResult](users-api.md#Structure_LoginAttemptResult%3E).  
+Blocking state and reason for the given username.
 
-### User_GetIdByUsername { #User_GetIdByUsername }
+### User\_GetIdByUsername { \#User\_GetIdByUsername }
 
 Returns the user identifier for a specific user given the username
 
-*Inputs*
+_Inputs_
 
-Username
-:   Type: mandatory, Text.  
-    
+Username : Type: mandatory, Text.
 
-*Outputs*
+_Outputs_
 
-UserId
-:   Type: User Identifier.  
-    
+UserId : Type: User Identifier.
 
-### User_GetLastFailedLoginAttempts { #User_GetLastFailedLoginAttempts }
+### User\_GetLastFailedLoginAttempts { \#User\_GetLastFailedLoginAttempts }
 
-Returns a list of last failed login attempts (one record for each IP address). This information can be used to invoke User_Unblock or IPaddress_Unblock.
+Returns a list of last failed login attempts \(one record for each IP address\). This information can be used to invoke User\_Unblock or IPaddress\_Unblock.
 
-*Inputs*
+_Inputs_
 
-Username
-:   Type: mandatory, Text.  
-    The username of the user whose failed login attempts are retrieved.
+Username : Type: mandatory, Text.  
+The username of the user whose failed login attempts are retrieved.
 
-Since
-:   Type: optional, Date Time.  
-    Only the login attempts after this datetime are retrieved.
+Since : Type: optional, Date Time.  
+Only the login attempts after this datetime are retrieved.
 
-*Outputs*
+_Outputs_
 
-LoginAttempt
-:   Type: [LoginAttemptPublic](<#Structure_LoginAttemptPublic>) List.  
-    List of last failed login attempts for the given username.
+LoginAttempt : Type: [LoginAttemptPublic](users-api.md#Structure_LoginAttemptPublic%3E) List.  
+List of last failed login attempts for the given username.
 
-### User_GetName { #User_GetName }
+### User\_GetName { \#User\_GetName }
 
 Returns the name of the logged user.
 
-*Outputs*
+_Outputs_
 
-Name
-:   Type: Text.  
-    
+Name : Type: Text.
 
-### User_GetUnifiedLoginUrl { #User_GetUnifiedLoginUrl }
+### User\_GetUnifiedLoginUrl { \#User\_GetUnifiedLoginUrl }
 
 Returns the Url used for custom unified login patterns. Includes Windows Integrated Authentication pattern.
 
-*Inputs*
+_Inputs_
 
-OriginalUrl
-:   Type: mandatory, Text.  
-    
+OriginalUrl : Type: mandatory, Text.
 
-*Outputs*
+_Outputs_
 
-Url
-:   Type: Text.  
-    
+Url : Type: Text.
 
-### User_IsExternalUser { #User_IsExternalUser }
+### User\_IsExternalUser { \#User\_IsExternalUser }
 
+_Inputs_
 
+UserId : Type: mandatory, User Identifier.
 
-*Inputs*
+_Outputs_
 
-UserId
-:   Type: mandatory, User Identifier.  
-    
+IsExternal : Type: Boolean.
 
-*Outputs*
-
-IsExternal
-:   Type: Boolean.  
-    
-
-### User_Login { #User_Login }
+### User\_Login { \#User\_Login }
 
 Action to login using username and password as credentials.
 
-*Inputs*
+_Inputs_
 
-Username
-:   Type: mandatory, Text.  
-    User's username.
+Username : Type: mandatory, Text.  
+User's username.
 
-Password
-:   Type: mandatory, Text.  
-    User's password (should not be encrypted).
+Password : Type: mandatory, Text.  
+User's password \(should not be encrypted\).
 
-RememberLogin
-:   Type: mandatory, Boolean.  
-    If true, the login will be persistent for 10 days.
+RememberLogin : Type: mandatory, Boolean.  
+If true, the login will be persistent for 10 days.
 
-### User_Logout { #User_Logout }
+### User\_Logout { \#User\_Logout }
 
 Logs out the current user. Session variables are cleared during the logout process.
 
-### User_Unblock { #User_Unblock }
+### User\_Unblock { \#User\_Unblock }
 
 Ends the blocking period for the specified user, allowing the user to login in all IP addresses where the user was blocked.
 
-*Inputs*
+_Inputs_
 
-Username
-:   Type: mandatory, Text.  
-    The username of the user that is being unblocked and that will be allowed to login again from the specified IP address.
+Username : Type: mandatory, Text.  
+The username of the user that is being unblocked and that will be allowed to login again from the specified IP address.
 
-IPAddress
-:   Type: optional, Text.  
-    The IP address that is being unblocked and from where the specified user will be allowed to login again.
+IPAddress : Type: optional, Text.  
+The IP address that is being unblocked and from where the specified user will be allowed to login again.
 
-### User_Update { #User_Update }
+### User\_Update { \#User\_Update }
 
 Updates a specific user.
 
-*Inputs*
+_Inputs_
 
-User
-:   Type: mandatory, User.  
-    
-
+User : Type: mandatory, User.
 
 ## Structures
 
-### LoginAttemptPublic { #Structure_LoginAttemptPublic }
+### LoginAttemptPublic { \#Structure\_LoginAttemptPublic }
 
 Represents the Login attempt record structure that is exposed
 
-*Attributes*
+_Attributes_
 
-Instant
-:   Type: Date Time.  
-    
+Instant : Type: Date Time.
 
-Success
-:   Type: Boolean.  
-    
+Success : Type: Boolean.
 
-IPAddress
-:   Type: Text (45).  
-    
+IPAddress : Type: Text \(45\).
 
-UsernameFailureCount
-:   Type: Integer.  
-    
+UsernameFailureCount : Type: Integer.
 
-IPAddressFailureCount
-:   Type: Integer.  
-    
+IPAddressFailureCount : Type: Integer.
 
-RequestKey
-:   Type: Text (36).  
-    
+RequestKey : Type: Text \(36\).
 
-UserAgent
-:   Type: Text (200).  
-    
+UserAgent : Type: Text \(200\).
 
-Visitor
-:   Type: Text (36).  
-    
+Visitor : Type: Text \(36\).
 
-Result
-:   Type: Text.  
-    
-
+Result : Type: Text.
 
 ## Static Entities
 
-### LoginAttemptResult { #StaticEntity_LoginAttemptResult }
+### LoginAttemptResult { \#StaticEntity\_LoginAttemptResult }
 
 The alternative values that may appear in the LoginAttempt record Result column.
 
-*Attributes*
+_Attributes_
 
-Id
-:   Type: Text (50).  
-    
+Id : Type: Text \(50\).
 
-*Records*
+_Records_
 
 * InvalidLDAPAuthentication
 * BlockedIP
@@ -480,28 +382,21 @@ Id
 * InvalidUser
 * InvalidPassword
 
-### MenuItem { #StaticEntity_MenuItem }
+### MenuItem { \#StaticEntity\_MenuItem }
 
 Menu item to be used in menu web block parameters.
 
-*Attributes*
+_Attributes_
 
-Id
-:   Type: Integer.  
-    
+Id : Type: Integer.
 
-Order
-:   Type: Integer.  
-    
+Order : Type: Integer.
 
-Caption
-:   Type: Text (50).  
-    
+Caption : Type: Text \(50\).
 
-*Records*
+_Records_
 
 * Applications
 * Users
 * Groups
-
 

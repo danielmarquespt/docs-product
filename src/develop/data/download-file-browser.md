@@ -1,5 +1,7 @@
 ---
-summary: Use Download Tool in a Flow to send file to the browser, so the users can download the file through the browser built-in download feature.
+summary: >-
+  Use Download Tool in a Flow to send file to the browser, so the users can
+  download the file through the browser built-in download feature.
 tags: support-application_development; runtime-traditionalwebandreactiveweb;
 ---
 
@@ -14,4 +16,5 @@ To send the file to the browser, use the **Download Tool**, and pass it the valu
 
 For example, you can create a DownloadImageOnClick Action that takes the image binary and file name as the input parameters, and then pass those parameters to the Download Tool at the end of the Flow:
 
-![Adding link](<images/download-binary-example.png?width=600>)
+![Adding link](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/data/images/download-binary-example.png?width=600%3E)
+

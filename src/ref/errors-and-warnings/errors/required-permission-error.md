@@ -4,12 +4,13 @@ The `Required Permission` error is issued in the following situation:
 
 * `You are not allowed to update your Personal Area in module '<consumer module>'. Please contact your Service Center administrator.`
 
-    You no longer have the Publish security level on the Consumer module you've selected to run your module.
+  You no longer have the Publish security level on the Consumer module you've selected to run your module.
 
-    Retry the Run operation and if you still get this message, contact your Service Center administrator to grant permissions.
+  Retry the Run operation and if you still get this message, contact your Service Center administrator to grant permissions.
 
 * `You are not allowed to use '<module>' as User Provider module. Please contact your Service Center administrator.`
 
-    You no longer have the Reference security level on the module you've selected to as User Provider.
+  You no longer have the Reference security level on the module you've selected to as User Provider.
 
-    Contact your Service Center administrator to grant permissions.
+  Contact your Service Center administrator to grant permissions.
+

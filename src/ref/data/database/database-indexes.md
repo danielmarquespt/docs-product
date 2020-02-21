@@ -16,7 +16,7 @@ Automatic indexes are deleted if the attribute Delete Rule is changed to Ignore.
 
 ## Custom Indexes
 
-You can define your own [indexes](<../../../develop/data/modeling/index-create.md>), improve the performance of your applications. When you create an index, OutSystems creates it on the database with the `OSIDX` prefix.
+You can define your own [indexes](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/data/modeling/index-create.md%3E), improve the performance of your applications. When you create an index, OutSystems creates it on the database with the `OSIDX` prefix.
 
 ### Unique index
 
@@ -27,3 +27,4 @@ You can define your own [indexes](<../../../develop/data/modeling/index-create.m
 `CREATE INDEX OSIDX_<internal name> ON <Entity>(<attributes>)`
 
 If you are using an Oracle database, you can define the Indexes tablespace in the Configuration Tool.
+

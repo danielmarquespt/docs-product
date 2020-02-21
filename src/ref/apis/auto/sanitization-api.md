@@ -4,119 +4,104 @@ Starting in Platform Version 9.1.0.21., this API provides methods to avoid code 
 
 ## Summary
 
-Action | Description
----|---
-[BuildSafe_InClauseIntegerList](<#BuildSafe_InClauseIntegerList>) | Returns a comma-delimited text value containing all the integer values provided as input. The returned value can be safely used in a SQL &quot;IN&quot; clause.
-[BuildSafe_InClauseTextList](<#BuildSafe_InClauseTextList>) | Returns a comma-delimited text value with the encoded version of all the text values provided as input. The returned value can be safely used in a SQL &quot;IN&quot; clause.
-[SanitizeHtml](<#SanitizeHtml>) | Sanitizes the provided HTML using the HtmlSanitizer NuGet package.
-[VerifyJavascriptLiteral](<#VerifyJavascriptLiteral>) | Ensure the provided JavaScript only contains literals. If it contains anything else, an INVALID JAVASCRIPT LITERAL exception is thrown.
-[VerifySqlLiteral](<#VerifySqlLiteral>) | **Deprecated**. Ensure the provided SQL only contains literals. If it contains anything else, an INVALID SQL LITERAL exception is thrown.
+| Action | Description |
+| :--- | :--- |
+| [BuildSafe\_InClauseIntegerList](sanitization-api.md#BuildSafe_InClauseIntegerList%3E) | Returns a comma-delimited text value containing all the integer values provided as input. The returned value can be safely used in a SQL "IN" clause. |
+| [BuildSafe\_InClauseTextList](sanitization-api.md#BuildSafe_InClauseTextList%3E) | Returns a comma-delimited text value with the encoded version of all the text values provided as input. The returned value can be safely used in a SQL "IN" clause. |
+| [SanitizeHtml](sanitization-api.md#SanitizeHtml%3E) | Sanitizes the provided HTML using the HtmlSanitizer NuGet package. |
+| [VerifyJavascriptLiteral](sanitization-api.md#VerifyJavascriptLiteral%3E) | Ensure the provided JavaScript only contains literals. If it contains anything else, an INVALID JAVASCRIPT LITERAL exception is thrown. |
+| [VerifySqlLiteral](sanitization-api.md#VerifySqlLiteral%3E) | **Deprecated**. Ensure the provided SQL only contains literals. If it contains anything else, an INVALID SQL LITERAL exception is thrown. |
 
 ## Actions
 
-### BuildSafe_InClauseIntegerList { #BuildSafe_InClauseIntegerList }
+### BuildSafe\_InClauseIntegerList { \#BuildSafe\_InClauseIntegerList }
 
-Returns a comma-delimited text value containing all the integer values provided as input. The returned value can be safely used in a SQL &quot;IN&quot; clause.
+Returns a comma-delimited text value containing all the integer values provided as input. The returned value can be safely used in a SQL "IN" clause.
 
-*Inputs*
+_Inputs_
 
-ValueList
-:   Type: RecordList of [IntegerLiteral](<#Structure_IntegerLiteral>). Mandatory.  
-    List of integer values to include in the returned value.
+ValueList : Type: RecordList of [IntegerLiteral](sanitization-api.md#Structure_IntegerLiteral%3E). Mandatory.  
+List of integer values to include in the returned value.
 
-*Outputs*
+_Outputs_
 
-Output
-:   Type: Text.  
-    A string containing comma-separated integer values to be used in a SQL &quot;IN&quot; clause.
+Output : Type: Text.  
+A string containing comma-separated integer values to be used in a SQL "IN" clause.
 
-### BuildSafe_InClauseTextList { #BuildSafe_InClauseTextList }
+### BuildSafe\_InClauseTextList { \#BuildSafe\_InClauseTextList }
 
-Returns a comma-delimited text value with the encoded version of all the text values provided as input. The returned value can be safely used in a SQL &quot;IN&quot; clause.
+Returns a comma-delimited text value with the encoded version of all the text values provided as input. The returned value can be safely used in a SQL "IN" clause.
 
-*Inputs*
+_Inputs_
 
-ValueList
-:   Type: RecordList of [TextLiteral](<#Structure_TextLiteral>). Mandatory.  
-    List of text values to include in the returned value.
+ValueList : Type: RecordList of [TextLiteral](sanitization-api.md#Structure_TextLiteral%3E). Mandatory.  
+List of text values to include in the returned value.
 
-*Outputs*
+_Outputs_
 
-Output
-:   Type: Text.  
-    A string containing a set of encoded text values separated by commas to be used in a SQL &quot;IN&quot; clause.
+Output : Type: Text.  
+A string containing a set of encoded text values separated by commas to be used in a SQL "IN" clause.
 
-### SanitizeHtml { #SanitizeHtml }
+### SanitizeHtml { \#SanitizeHtml }
 
 Sanitizes the provided HTML using the HtmlSanitizer NuGet package.  
-Note: The underlying library was recently changed from OWASP Java HTML Sanitizer Project. Check the [Release Notes](<https://success.outsystems.com/Support/Release_Notes/11/Platform_Server>) for a summary of what changed.
+Note: The underlying library was recently changed from OWASP Java HTML Sanitizer Project. Check the [Release Notes](https://success.outsystems.com/Support/Release_Notes/11/Platform_Server>) for a summary of what changed.
 
-*Inputs*
+_Inputs_
 
-Html
-:   Type: Text. Mandatory.  
-    The HTML to sanitize.
+Html : Type: Text. Mandatory.  
+The HTML to sanitize.
 
-*Outputs*
+_Outputs_
 
-SanitizedHtml
-:   Type: Text.  
-    The sanitized HTML.
+SanitizedHtml : Type: Text.  
+The sanitized HTML.
 
-### VerifyJavascriptLiteral { #VerifyJavascriptLiteral }
+### VerifyJavascriptLiteral { \#VerifyJavascriptLiteral }
 
 Ensures the provided JavaScript only contains literals. If it contains anything else, an INVALID JAVASCRIPT LITERAL exception is thrown.
 
-*Inputs*
+_Inputs_
 
-JavascriptLiteral
-:   Type: Text. Mandatory.  
-    The JavaScript literal to sanitize.
+JavascriptLiteral : Type: Text. Mandatory.  
+The JavaScript literal to sanitize.
 
-*Outputs*
+_Outputs_
 
-SanitizedJavascriptLiteral
-:   Type: Text.  
-    The sanitized JavaScript literal.
+SanitizedJavascriptLiteral : Type: Text.  
+The sanitized JavaScript literal.
 
-### VerifySqlLiteral { #VerifySqlLiteral }
+### VerifySqlLiteral { \#VerifySqlLiteral }
 
 **Deprecated**. Ensures the provided SQL only contains literals. If it contains anything else, an INVALID SQL LITERAL exception is thrown.
 
-*Inputs*
+_Inputs_
 
-SqlLiteral
-:   Type: Text. Mandatory.  
-    The SQL to sanitize.
+SqlLiteral : Type: Text. Mandatory.  
+The SQL to sanitize.
 
-*Outputs*
+_Outputs_
 
-SanitizedSqlLiteral
-:   Type: Text.  
-    The sanitized SQL.
-
+SanitizedSqlLiteral : Type: Text.  
+The sanitized SQL.
 
 ## Structures
 
-### IntegerLiteral { #Structure_IntegerLiteral }
+### IntegerLiteral { \#Structure\_IntegerLiteral }
 
-Simple structure holding a long integer value. Used as a record definition when providing a list of IntegerLiteral records to include in a SQL &quot;IN&quot; clause.
+Simple structure holding a long integer value. Used as a record definition when providing a list of IntegerLiteral records to include in a SQL "IN" clause.
 
-*Attributes*
+_Attributes_
 
-Value
-:   Type: LongInteger. Mandatory.  
-    An integer value to consider when creating a SQL &quot;IN&quot; clause.
+Value : Type: LongInteger. Mandatory.  
+An integer value to consider when creating a SQL "IN" clause.
 
-### TextLiteral { #Structure_TextLiteral }
+### TextLiteral { \#Structure\_TextLiteral }
 
-Simple structure holding a text value. Used as a record definition when providing a list of TextLiteral records to include in a SQL &quot;IN&quot; clause.
+Simple structure holding a text value. Used as a record definition when providing a list of TextLiteral records to include in a SQL "IN" clause.
 
-*Attributes*
+_Attributes_
 
-Value
-:   Type: Text (2000). Mandatory.  
-    A text value to consider when creating a SQL &quot;IN&quot; clause.
-
-
+Value : Type: Text \(2000\). Mandatory.  
+A text value to consider when creating a SQL "IN" clause.
 

@@ -1,6 +1,8 @@
 ---
-tags: runtime-traditionalweb; 
-summary: FileUpload allows the end-user to transfer a file or add content to the application.
+tags: runtime-traditionalweb;
+summary: >-
+  FileUpload allows the end-user to transfer a file or add content to the
+  application.
 ---
 
 # FileUpload
@@ -14,31 +16,25 @@ Use the FileUpload to allow the end-user to transfer a file or add content. Alth
 Drag the FileUpload widget and set a label for it. After the widget is configured, create a button to save the file.
 
 1. Drag FileUpload pattern into the preview.
+2. Change the content in Empty Message.
 
-1. Change the content in Empty Message.
-
-    ![](<images/fileupload-image-1.png>)
+   ![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/controls/fileupload/images/fileupload-image-1.png%3E)
 
 ## Demo
 
-<iframe src="https://drive.google.com/file/d/1rkJmu_1uqdVtF4CdobtCRoYx5FbxvceB/preview" width="750" height="500"></iframe>
-
 ## Input Parameters
 
-| Input Name |  Description |  Type | Mandatory | Default Value |
-|---|---|---|---|---|
-| ExtendedClass  |  Add custom style classes to this Block. | Text | False | None |
+| Input Name | Description | Type | Mandatory | Default Value |
+| :--- | :--- | :--- | :--- | :--- |
+| ExtendedClass | Add custom style classes to this Block. | Text | False | None |
 
 ## Layout and Classes
 
-![](<images/fileupload-image-1.png>)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/controls/fileupload/images/fileupload-image-1.png%3E)
 
 ## CSS Selectors
 
-| Element |  CSS Class |  Description  |
-| ---|---|---
-| .file-upload | .active |  When the icon to delete is visible |
-
-
-
+| Element | CSS Class | Description |
+| :--- | :--- | :--- |
+| .file-upload | .active | When the icon to delete is visible |
 

@@ -1,5 +1,7 @@
 ---
-summary: Use an aggregate with grouped columns to obtain only the distinct values of entity attributes.
+summary: >-
+  Use an aggregate with grouped columns to obtain only the distinct values of
+  entity attributes.
 tags: support-application_development; support-Database; support-webapps
 ---
 
@@ -10,12 +12,13 @@ Database tables may have columns containing repeated values. There are situation
 To get distinct values of an entity attribute:
 
 1. In an aggregate in the action flow, add the entity. 
-1. Hover on the attribute for which you want to obtain distinct values, click ![Aggregate Menu](../../../shared/icons-service-studio/aggregate-menu.png) and choose to group by the attribute.
+2. Hover on the attribute for which you want to obtain distinct values, click ![Aggregate Menu](../../../../.gitbook/assets/aggregate-menu.png) and choose to group by the attribute.
 
-![Get Distinct Values From the Database](images/distinct.png)
+![Get Distinct Values From the Database](../../../../.gitbook/assets/distinct.png)
 
 The aggregate only outputs the attribute values that are grouped.
 
 To get distinct values using multiple entity attributes, select all the required attributes and choose to `Group by selected attributes`.
 
-![Get Distinct Values From the Database](images/distinct-2.png)
+![Get Distinct Values From the Database](../../../../.gitbook/assets/distinct-2.png)
+

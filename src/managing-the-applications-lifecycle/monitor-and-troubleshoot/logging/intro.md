@@ -14,14 +14,11 @@ OutSystems 11 enables you to store the log data in a separate database, reducing
 
 Each OutSystems 11 application writes its own log entries using an internal logging API, making sure that user requests are not blocked while these logs are being written. This logging API collects log information produced by the application and sends it to the log database.
 
-![Logging architecture overview](images/logging-overview.png?width=700)
+![Logging architecture overview](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/managing-the-applications-lifecycle/monitor-and-troubleshoot/logging/images/logging-overview.png?width=700)
 
 It's important to note that the Deployment Controller Service writes directly to the database tables, but Service Center consults only the database views.
 
 This section of the documentation is an overview of the log architecture and provides the reference for the log database views. If you need information about the tables in the database, you should inspect the database manually.
 
-<div class="info" markdown="1">
+ Also available: \[Logging database and architecture in OutSystems 10\]\(https://success.outsystems.com/Documentation/10/Managing\_the\_Applications\_Lifecycle/Monitor\_and\_Troubleshoot/Logging\_database\_and\_architecture\).
 
-Also available: [Logging database and architecture in OutSystems 10](https://success.outsystems.com/Documentation/10/Managing_the_Applications_Lifecycle/Monitor_and_Troubleshoot/Logging_database_and_architecture).
-
-</div>

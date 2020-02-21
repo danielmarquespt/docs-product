@@ -1,313 +1,253 @@
 # EPA Taskbox API
 
-For Platform Version 9.0.0.0. The Embedded Process Automation (EPA) automatically displays in the user's web browser all pending activities in a floating taskbox. Each item includes instructions and a link that will lead the user to the web page where the activity can be completed. In Mobile Apps a custom taskbox needs to be created.
+For Platform Version 9.0.0.0. The Embedded Process Automation \(EPA\) automatically displays in the user's web browser all pending activities in a floating taskbox. Each item includes instructions and a link that will lead the user to the web page where the activity can be completed. In Mobile Apps a custom taskbox needs to be created.
 
 ## Summary
 
-Action | Description
----|---
-[API_GetActivities](<#API_GetActivities>) | Returns the activities of a user.%%Activity filtering and pagination are allowed.
-[API_GetActivityGuidanceHtml](<#API_GetActivityGuidanceHtml>) | Encodes the activity guidance instructions in HTML format.
-[API_GetActivityPagination](<#API_GetActivityPagination>) | Returns the pagination information of all activities currently displayed in the Taskbox of the user.
-[API_GetActivityVisualization](<#API_GetActivityVisualization>) | Returns information on how an open activity is displayed in the Taskbox.
-[API_GetDynamicHtml](<#API_GetDynamicHtml>) | [Deprecated] Returns the JavaScript code for the Taskbox and its current content.
-[API_GetNewOpenActivity](<#API_GetNewOpenActivity>) | Returns the activity that is currently open by the user and has the indicated activity as one of the previous activities in the process flow.
-[API_GetStaticHtml](<#API_GetStaticHtml>) | [Deprecated] Returns the HTML of the Taskbox with absolute URLs, i.e., starting with &quot;http://&lt;Server Name&gt;/&quot;.
-[API_MarkActivitiesAsSeen](<#API_MarkActivitiesAsSeen>) | Displays all Taskbox activities for the user as already seen, i.e., only new activities will be displayed as not seen in the Taskbox.
-[API_SetActivityVisualization](<#API_SetActivityVisualization>) | Sets how an open activity is displayed in the Taskbox.
-[Inbox_DisableInServer](<#Inbox_DisableInServer>) | Disables the Taskbox in the environment.
-[Inbox_EnableInServer](<#Inbox_EnableInServer>) | Enables the Taskbox in the environment.
+| Action | Description |
+| :--- | :--- |
+| [API\_GetActivities](epa-taskbox-api.md#API_GetActivities%3E) | Returns the activities of a user.%%Activity filtering and pagination are allowed. |
+| [API\_GetActivityGuidanceHtml](epa-taskbox-api.md#API_GetActivityGuidanceHtml%3E) | Encodes the activity guidance instructions in HTML format. |
+| [API\_GetActivityPagination](epa-taskbox-api.md#API_GetActivityPagination%3E) | Returns the pagination information of all activities currently displayed in the Taskbox of the user. |
+| [API\_GetActivityVisualization](epa-taskbox-api.md#API_GetActivityVisualization%3E) | Returns information on how an open activity is displayed in the Taskbox. |
+| [API\_GetDynamicHtml](epa-taskbox-api.md#API_GetDynamicHtml%3E) | \[Deprecated\] Returns the JavaScript code for the Taskbox and its current content. |
+| [API\_GetNewOpenActivity](epa-taskbox-api.md#API_GetNewOpenActivity%3E) | Returns the activity that is currently open by the user and has the indicated activity as one of the previous activities in the process flow. |
+| [API\_GetStaticHtml](epa-taskbox-api.md#API_GetStaticHtml%3E) | \[Deprecated\] Returns the HTML of the Taskbox with absolute URLs, i.e., starting with "[http://&lt;Server](http://<Server) Name&gt;/". |
+| [API\_MarkActivitiesAsSeen](epa-taskbox-api.md#API_MarkActivitiesAsSeen%3E) | Displays all Taskbox activities for the user as already seen, i.e., only new activities will be displayed as not seen in the Taskbox. |
+| [API\_SetActivityVisualization](epa-taskbox-api.md#API_SetActivityVisualization%3E) | Sets how an open activity is displayed in the Taskbox. |
+| [Inbox\_DisableInServer](epa-taskbox-api.md#Inbox_DisableInServer%3E) | Disables the Taskbox in the environment. |
+| [Inbox\_EnableInServer](epa-taskbox-api.md#Inbox_EnableInServer%3E) | Enables the Taskbox in the environment. |
 
-Structure | Description
----|---
-[Inbox_FilterCriteria](<#Structure_Inbox_FilterCriteria>) | 
-[Inbox_PaginationCriteria](<#Structure_Inbox_PaginationCriteria>) | 
-[Activity](<#Structure_Activity>) | The structure with the information of an activity in the TaskBox.
-[PaginationInfo](#Structure_PaginationInfo) | The structure with information of the number of activities in the TaskBox.
-
+| Structure | Description |
+| :--- | :--- |
+| [Inbox\_FilterCriteria](epa-taskbox-api.md#Structure_Inbox_FilterCriteria%3E) |  |
+| [Inbox\_PaginationCriteria](epa-taskbox-api.md#Structure_Inbox_PaginationCriteria%3E) |  |
+| [Activity](epa-taskbox-api.md#Structure_Activity%3E) | The structure with the information of an activity in the TaskBox. |
+| [PaginationInfo](epa-taskbox-api.md#Structure_PaginationInfo) | The structure with information of the number of activities in the TaskBox. |
 
 ## Actions
 
-### API_GetActivities { #API_GetActivities }
+### API\_GetActivities { \#API\_GetActivities }
 
 Returns the activities of a user.  
 Activity filtering and pagination are allowed.
 
-*Inputs*
+_Inputs_
 
-UserId
-:   Type: mandatory, User Identifier.  
-    The identifier of the user.
+UserId : Type: mandatory, User Identifier.  
+The identifier of the user.
 
-FilterCriteria
-:   Type: optional, [Inbox_FilterCriteria](<#Structure_Inbox_FilterCriteria>).  
-    The criteria for filtering activities.  
-    Leave it empty for no filtering.
+FilterCriteria : Type: optional, [Inbox\_FilterCriteria](epa-taskbox-api.md#Structure_Inbox_FilterCriteria%3E).  
+The criteria for filtering activities.  
+Leave it empty for no filtering.
 
-PaginationCriteria
-:   Type: mandatory, [Inbox_PaginationCriteria](<#Structure_Inbox_PaginationCriteria>).  
-    The pagination criteria for displaying the activities in the Taskbox of the user.  
-    Leave it empty for no pagination.
+PaginationCriteria : Type: mandatory, [Inbox\_PaginationCriteria](epa-taskbox-api.md#Structure_Inbox_PaginationCriteria%3E).  
+The pagination criteria for displaying the activities in the Taskbox of the user.  
+Leave it empty for no pagination.
 
-*Outputs*
+_Outputs_
 
-ActivityList
-:   Type: [Activity](#Structure_Activity) Record List.  
-    The list of activities.
+ActivityList : Type: [Activity](epa-taskbox-api.md#Structure_Activity) Record List.  
+The list of activities.
 
-PaginationInfo
-:   Type: [PaginationInfo](#Structure_PaginationInfo).  
-    The definite pagination information for displaying the activities in the Taskbox of the user.
+PaginationInfo : Type: [PaginationInfo](epa-taskbox-api.md#Structure_PaginationInfo).  
+The definite pagination information for displaying the activities in the Taskbox of the user.
 
-### API_GetActivityGuidanceHtml { #API_GetActivityGuidanceHtml }
+### API\_GetActivityGuidanceHtml { \#API\_GetActivityGuidanceHtml }
 
 Encodes the activity guidance instructions in HTML format.
 
-*Inputs*
+_Inputs_
 
-Guidance
-:   Type: mandatory, Text.  
-    The activity guidance instructions.
+Guidance : Type: mandatory, Text.  
+The activity guidance instructions.
 
-*Outputs*
+_Outputs_
 
-GuidanceHtml
-:   Type: Text.  
-    The activity guidance instructions encoded in HTML format.
+GuidanceHtml : Type: Text.  
+The activity guidance instructions encoded in HTML format.
 
-### API_GetActivityPagination { #API_GetActivityPagination }
+### API\_GetActivityPagination { \#API\_GetActivityPagination }
 
 Returns the pagination information of all activities currently displayed in the Taskbox of the user.
 
-*Inputs*
+_Inputs_
 
-UserId
-:   Type: mandatory, User Identifier.  
-    The identifier of the user.
+UserId : Type: mandatory, User Identifier.  
+The identifier of the user.
 
-FilterCriteria
-:   Type: optional, [Inbox_FilterCriteria](<#Structure_Inbox_FilterCriteria>).  
-    The criteria for filtering activities.  
-    Leave it empty for no filtering.
+FilterCriteria : Type: optional, [Inbox\_FilterCriteria](epa-taskbox-api.md#Structure_Inbox_FilterCriteria%3E).  
+The criteria for filtering activities.  
+Leave it empty for no filtering.
 
-*Outputs*
+_Outputs_
 
-PaginationInfo
-:   Type: [PaginationInfo](#Structure_PaginationInfo).  
-    The pagination information of all activities currently displayed in the Taskbox of the user.
+PaginationInfo : Type: [PaginationInfo](epa-taskbox-api.md#Structure_PaginationInfo).  
+The pagination information of all activities currently displayed in the Taskbox of the user.
 
-### API_GetActivityVisualization { #API_GetActivityVisualization }
+### API\_GetActivityVisualization { \#API\_GetActivityVisualization }
 
 Returns information on how an open activity is displayed in the Taskbox.
 
-*Inputs*
+_Inputs_
 
-ActivityId
-:   Type: mandatory, Activity Identifier.  
-    The identifier of the activity.
+ActivityId : Type: mandatory, Activity Identifier.  
+The identifier of the activity.
 
-*Outputs*
+_Outputs_
 
-HideDone
-:   Type: Boolean.  
-    If True, the 'Done' button is not available when the activity is open in the Taskbox.
+HideDone : Type: Boolean.  
+If True, the 'Done' button is not available when the activity is open in the Taskbox.
 
-HideRelease
-:   Type: Boolean.  
-    If True, the 'Release' button is not available when the activity is open in the Taskbox.
+HideRelease : Type: Boolean.  
+If True, the 'Release' button is not available when the activity is open in the Taskbox.
 
-CustomInstructions
-:   Type: Text.  
-    The text/HTML of custom instructions displayed below the normal activity instructions when the activity is open in the Taskbox.  
-    The instructions have a maximum length of 500 characters.
+CustomInstructions : Type: Text.  
+The text/HTML of custom instructions displayed below the normal activity instructions when the activity is open in the Taskbox.  
+The instructions have a maximum length of 500 characters.
 
-### API_GetDynamicHtml { #API_GetDynamicHtml }
+### API\_GetDynamicHtml { \#API\_GetDynamicHtml }
 
-[Deprecated] Returns the JavaScript code for the Taskbox and its current content.
+\[Deprecated\] Returns the JavaScript code for the Taskbox and its current content.
 
-*Inputs*
+_Inputs_
 
-EspaceId
-:   Type: mandatory, Espace Identifier.  
-    [Deprecated]
+EspaceId : Type: mandatory, Espace Identifier.  
+\[Deprecated\]
 
-UserId
-:   Type: mandatory, User Identifier.  
-    The identifier of the user.
+UserId : Type: mandatory, User Identifier.  
+The identifier of the user.
 
-Locale
-:   Type: mandatory, Text.  
-    [Deprecated]
+Locale : Type: mandatory, Text.  
+\[Deprecated\]
 
-Data
-:   Type: mandatory, Text.  
-    [Deprecated]
+Data : Type: mandatory, Text.  
+\[Deprecated\]
 
-*Outputs*
+_Outputs_
 
-Html
-:   Type: Text.  
-    The JavaScript code for the Taskbox and its current content.
+Html : Type: Text.  
+The JavaScript code for the Taskbox and its current content.
 
-### API_GetNewOpenActivity { #API_GetNewOpenActivity }
+### API\_GetNewOpenActivity { \#API\_GetNewOpenActivity }
 
 Returns the activity that is currently open by the user and has the indicated activity as one of the previous activities in the process flow.
 
-*Inputs*
+_Inputs_
 
-UserId
-:   Type: mandatory, User Identifier.  
-    The identifier of the user.
+UserId : Type: mandatory, User Identifier.  
+The identifier of the user.
 
-PreviousActivityId
-:   Type: mandatory, Activity Identifier.  
-    The identifier of one of the previous activities in the process flow.
+PreviousActivityId : Type: mandatory, Activity Identifier.  
+The identifier of one of the previous activities in the process flow.
 
-*Outputs*
+_Outputs_
 
-ActivityId
-:   Type: Activity Identifier.  
-    The activity that is currently open by the user.
+ActivityId : Type: Activity Identifier.  
+The activity that is currently open by the user.
 
-### API_GetStaticHtml { #API_GetStaticHtml }
+### API\_GetStaticHtml { \#API\_GetStaticHtml }
 
-[Deprecated] Returns the HTML of the Taskbox with absolute URLs, i.e., starting with &quot;http://&lt;Server Name&gt;/&quot;.
+\[Deprecated\] Returns the HTML of the Taskbox with absolute URLs, i.e., starting with "[http://&lt;Server](http://<Server) Name&gt;/".
 
-*Inputs*
+_Inputs_
 
-EspaceId
-:   Type: mandatory, Espace Identifier.  
-    The identifier of the eSpace.
+EspaceId : Type: mandatory, Espace Identifier.  
+The identifier of the eSpace.
 
-UserId
-:   Type: mandatory, User Identifier.  
-    The identifier of the user.
+UserId : Type: mandatory, User Identifier.  
+The identifier of the user.
 
-Locale
-:   Type: mandatory, Text.  
-    The language locale.
+Locale : Type: mandatory, Text.  
+The language locale.
 
-Data
-:   Type: mandatory, Text.  
-    [Deprecated]
+Data : Type: mandatory, Text.  
+\[Deprecated\]
 
-*Outputs*
+_Outputs_
 
-Html
-:   Type: Text.  
-    The HTML of the Taskbox with absolute URLs, i.e., starting with &quot;http://&lt;Server Name&gt;/&quot;.
+Html : Type: Text.  
+The HTML of the Taskbox with absolute URLs, i.e., starting with "[http://&lt;Server](http://<Server) Name&gt;/".
 
-### API_MarkActivitiesAsSeen { #API_MarkActivitiesAsSeen }
+### API\_MarkActivitiesAsSeen { \#API\_MarkActivitiesAsSeen }
 
 Displays all Taskbox activities for the user as already seen, i.e., only new activities will be displayed as not seen in the Taskbox.
 
-*Inputs*
+_Inputs_
 
-UserId
-:   Type: mandatory, User Identifier.  
-    The identifier of the user.
+UserId : Type: mandatory, User Identifier.  
+The identifier of the user.
 
-### API_SetActivityVisualization { #API_SetActivityVisualization }
+### API\_SetActivityVisualization { \#API\_SetActivityVisualization }
 
 Sets how an open activity is displayed in the Taskbox.
 
-*Inputs*
+_Inputs_
 
-ActivityId
-:   Type: mandatory, Activity Identifier.  
-    The identifier of the activity.
+ActivityId : Type: mandatory, Activity Identifier.  
+The identifier of the activity.
 
-HideDone
-:   Type: optional, Boolean.  
-    If True, the 'Done' button is not available when the activity is open in the Taskbox.
+HideDone : Type: optional, Boolean.  
+If True, the 'Done' button is not available when the activity is open in the Taskbox.
 
-HideRelease
-:   Type: optional, Boolean.  
-    If True, the 'Release' button is not available when the activity is open in the Taskbox.
+HideRelease : Type: optional, Boolean.  
+If True, the 'Release' button is not available when the activity is open in the Taskbox.
 
-CustomInstructions
-:   Type: optional, Text.  
-    The text/HTML for custom instructions displayed below the normal activity instructions when the activity is open in the Taskbox.  
-    The custom instructions have a maximum length of 500 characters.
+CustomInstructions : Type: optional, Text.  
+The text/HTML for custom instructions displayed below the normal activity instructions when the activity is open in the Taskbox.  
+The custom instructions have a maximum length of 500 characters.
 
-### Inbox_DisableInServer { #Inbox_DisableInServer }
+### Inbox\_DisableInServer { \#Inbox\_DisableInServer }
 
 Disables the Taskbox in the environment.
 
-### Inbox_EnableInServer { #Inbox_EnableInServer }
+### Inbox\_EnableInServer { \#Inbox\_EnableInServer }
 
 Enables the Taskbox in the environment.
 
-
 ## Structures
 
-### Inbox_FilterCriteria { #Structure_Inbox_FilterCriteria }
+### Inbox\_FilterCriteria { \#Structure\_Inbox\_FilterCriteria }
 
+_Attributes_
 
-*Attributes*
+ActivityLabel : Type: Text \(50\).
 
-ActivityLabel
-:   Type: Text (50).  
-    
+### Inbox\_PaginationCriteria { \#Structure\_Inbox\_PaginationCriteria }
 
-### Inbox_PaginationCriteria { #Structure_Inbox_PaginationCriteria }
+_Attributes_
 
+StartIndex : Type: Integer.
 
-*Attributes*
+LineCount : Type: Integer.
 
-StartIndex
-:   Type: Integer.  
-    
-
-LineCount
-:   Type: Integer.  
-    
-
-### Activity { #Structure_Activity }
+### Activity { \#Structure\_Activity }
 
 The structure with the information of an activity in the TaskBox.
 
 _Attributes_
 
-Id
-:   Type: EntityReference.
-    The identifier of the Activity.
+Id : Type: EntityReference. The identifier of the Activity.
 
-Label
-:   Type: Text (50).
-    The label of the Activity.
+Label : Type: Text \(50\). The label of the Activity.
 
-LabelLang
-:   Type: Text (50).
-    The code of the language locale of the label.
+LabelLang : Type: Text \(50\). The code of the language locale of the label.
 
-Details
-:   Type: Text (50).
-    The details of the Activity.
+Details : Type: Text \(50\). The details of the Activity.
 
-DueDate
-:   Type: DateTime.
-    The due date of the Activity.
+DueDate : Type: DateTime. The due date of the Activity.
 
-IsOpened
-:   Type: Boolean.
-    Is True if the activity is already open by a user.
+IsOpened : Type: Boolean. Is True if the activity is already open by a user.
 
-IsSeen
-:   Type: Boolean.
-    Is False if the activity is not visible in the TaskBox due to pagination.
- 
+IsSeen : Type: Boolean. Is False if the activity is not visible in the TaskBox due to pagination.
 
-### PaginationInfo { #Structure_PaginationInfo }
+### PaginationInfo { \#Structure\_PaginationInfo }
 
 The structure with information of the number of activities in the TaskBox.
 
 _Attributes_
 
-Total
-:   Type: Integer.
-    The total number of activities in the TaskBox.
+Total : Type: Integer. The total number of activities in the TaskBox.
 
-Unseen
-:   Type: Integer.
-    The number of unseen activities due to pagination.
+Unseen : Type: Integer. The number of unseen activities due to pagination.
+

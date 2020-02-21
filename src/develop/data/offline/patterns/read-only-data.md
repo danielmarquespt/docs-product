@@ -1,5 +1,7 @@
 ---
-summary: Use this synchronization pattern when your users only need to read data while the app is offline and the amount of data to synchronize is small.
+summary: >-
+  Use this synchronization pattern when your users only need to read data while
+  the app is offline and the amount of data to synchronize is small.
 tags: runtime-mobile
 ---
 
@@ -13,71 +15,58 @@ This data synchronization pattern is recommended for mobile apps where the end-u
 
 The following is an overview of the Read-Only Data pattern logic:
 
-1. ![](images/icon-client.png) Invokes server to get data.
+1. ![](../../../../../.gitbook/assets/icon-client.png) Invokes server to get data.
+2. ![](../../../../../.gitbook/assets/icon-server.png) Returns database data.
+3. ![](../../../../../.gitbook/assets/icon-client.png) Deletes and recreates data in the local storage with the data received from the server.
 
-1. ![](images/icon-server.png) Returns database data.
-
-1. ![](images/icon-client.png) Deletes and recreates data in the local storage with the data received from the server.
-
-<div class="info" markdown="1">
-
-Download and store locally only the minimum subset of data relevant to the user to reduce the amount of data synchronized.
-
-</div>
+ Download and store locally only the minimum subset of data relevant to the user to reduce the amount of data synchronized.
 
 Download the [sample module for the Read-Only Data pattern](http://www.outsystems.com/forge/component/1638/Offline+Data+Sync+Patterns/), that uses companies as an example of data to synchronize. The following sections explain how to automatically generate this synchronization pattern and provide detailed descriptions of the data model and logic used in the sample module.
-
 
 ## Automatically Generate the Pattern for an Entity
 
 To automatically generate the logic needed to implement this pattern for an entity:
 
 1. In Service Studio, open the Data tab.
+2. Under Local Storage, select the local entity of the entity you want to synchronize in the database.
+3. Right-click on the local company and choose **Create Action to Sync Data \(Read-Only\)**.
 
-1. Under Local Storage, select the local entity of the entity you want to synchronize in the database.
+   This option is only available if the local entity is linked to the database entity \(with the Id as a foreign key to the database entity\). That happens if you create local entities with a right click on **Local Storage** and choose **Add Entity from Database...**
 
-1. Right-click on the local company and choose **Create Action to Sync Data (Read-Only)**.
-
-    This option is only available if the local entity is linked to the database entity (with the Id as a foreign key to the database entity). That happens if you create local entities with a right click on **Local Storage** and choose **Add Entity from Database...**
-
-    ![Create Action to Sync Data \(Read-Only\)](images/read-only-data-accelerator.png)
+   ![Create Action to Sync Data \(Read-Only\)](../../../../../.gitbook/assets/read-only-data-accelerator.png)
 
 This creates the actions needed to implement the Read-Only synchronization pattern:
 
-SyncLocal&lt;Entity&gt;
-:   Client action that starts the synchronization between the local entity and the entity in the server database.
+SyncLocal&lt;Entity&gt; : Client action that starts the synchronization between the local entity and the entity in the server database.
 
-Sync&lt;Entity&gt;
-:   Server action called by the SyncLocal&lt;Entity&gt; action, that retrieves the current records of the entity in the database to be stored in the client local storage.
+Sync&lt;Entity&gt; : Server action called by the SyncLocal&lt;Entity&gt; action, that retrieves the current records of the entity in the database to be stored in the client local storage.
 
-If you want this pattern to run in the [synchronization template mechanism](<../sync-implement.md>), add a call to the SyncLocal&lt;Entity&gt; in the OfflineDataSync client action.
-
+If you want this pattern to run in the [synchronization template mechanism](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/data/offline/sync-implement.md%3E), add a call to the SyncLocal&lt;Entity&gt; in the OfflineDataSync client action.
 
 ## Data Model
 
 This sample defines a Database entity `Company` and its Local Storage counterpart `LocalCompany`.
 
-![Read-Only Data Pattern Data Model](images/read-only-data-data-model.png)
-
+![Read-Only Data Pattern Data Model](../../../../../.gitbook/assets/read-only-data-data-model.png)
 
 ## OfflineDataSync Logic
 
 The following is a description of the logic of the `OfflineDataSync` client action:
 
-![Read-Only Data Pattern OfflineDataSync](images/read-only-data-offlinedatasync.png)
+![Read-Only Data Pattern OfflineDataSync](../../../../../.gitbook/assets/read-only-data-offlinedatasync.png)
 
 1. Calls the `ServerDataSync` server action to retrieve data from the database. The server returns a list of Company records.
-1. Deletes all Company records in the local storage.
-1. Recreates the Company records in the local storage using the list of records returned by the server.
+2. Deletes all Company records in the local storage.
+3. Recreates the Company records in the local storage using the list of records returned by the server.
 
 `DeleteAllLocalCompanies` and `CreateOrUpdateAllLocalCompanies` are entity actions created automatically for the `LocalCompany` local storage entity. This is a local storage feature to help you handle records.
-
 
 ## ServerDataSync Logic
 
 The following is a description of the logic of the `ServerDataSync` server action:
 
-![Read-Only Data Pattern ServerDataSync](images/read-only-data-serverdatasync.png)
+![Read-Only Data Pattern ServerDataSync](../../../../../.gitbook/assets/read-only-data-serverdatasync.png)
 
 1. The aggregate `GetCompanies` fetches all the Company records from the database.
-1. Assigns the records returned by the aggregate to the output parameter of the action.
+2. Assigns the records returned by the aggregate to the output parameter of the action.
+

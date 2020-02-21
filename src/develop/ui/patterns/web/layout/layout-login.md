@@ -1,5 +1,5 @@
 ---
-tags: runtime-traditionalweb; 
+tags: runtime-traditionalweb;
 summary: LayoutLogin is a custom page layout for the login screen.
 ---
 
@@ -13,13 +13,13 @@ OutSystems UI already has LayoutLogin and LoginForm by default. Add input widget
 
 ## Input Parameters
 
-| **Input Name** |  **Description** |  **Type** | **Mandatory** | **Default Value** |
-|---|---|---|---|---|
-| DeviceConfiguration  |  Configuration to change the default values that set when the application will be seen as phone, tablet or desktop |  DeviceConfig | False | none |
+| **Input Name** | **Description** | **Type** | **Mandatory** | **Default Value** |
+| :--- | :--- | :--- | :--- | :--- |
+| DeviceConfiguration | Configuration to change the default values that set when the application will be seen as phone, tablet or desktop | DeviceConfig | False | none |
 
 ## Layout and Classes
 
-![](<images/layoutlogin-image-1.png>)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/layout/images/layoutlogin-image-1.png%3E)
 
 ### Login
 
@@ -34,12 +34,13 @@ Drag an image, GIF or video to this placeholder.
 ### Change background-color
 
 1. In the Interface tab, go to the Login screen.
-1. Drag a container to the BackgroundImage placeholder.
-1. Set the Style Classes of that container to `full-height background-your-color`. 
-1. Publish and test.
+2. Drag a container to the BackgroundImage placeholder.
+3. Set the Style Classes of that container to `full-height background-your-color`. 
+4. Publish and test.
 
-![](<images/layoutlogin-image-2.png?width=750>)
+![](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/ui/patterns/web/layout/images/layoutlogin-image-2.png?width=750%3E)
 
 ## Compatibility with other Patterns
 
 [LoginForm](loginform.md)
+

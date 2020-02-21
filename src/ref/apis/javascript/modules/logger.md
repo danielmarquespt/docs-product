@@ -1,6 +1,8 @@
 ---
 tags: runtime-mobileandreactiveweb
-summary: Provides methods to log messages or errors. Used as "console.log" but also logs messages in Service Center.
+summary: >-
+  Provides methods to log messages or errors. Used as "console.log" but also
+  logs messages in Service Center.
 ---
 
 # Logger
@@ -11,37 +13,20 @@ This logger will work both as a `console.log` logger and as server logger, sendi
 
 ## Summary
 
-<table markdown="1">
-<thead>
-<tr>
-<th colspan="2">Functions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>[error](logger.md#error)</td>
-<td>
-Logs an error.
-</td>
-</tr>
-<tr>
-<td>[log](logger.md#log)</td>
-<td>
-Logs a message.
-</td>
-</tr>
-</tbody>
-</table>
+| Functions |  |
+| :--- | :--- |
+| \[error\]\(logger.md\#error\) |  Logs an error. |
+| \[log\]\(logger.md\#log\) |  Logs a message. |
 
 ## Functions
 
 ### error
 
-**error(module: string, messageOrError: string \| Error, [error: Error]): void**
+**error\(module: string, messageOrError: string \| Error, \[error: Error\]\): void**
 
 Logs an error.
 
-If both `messageOrError` and `error` arguments are supplied, message information (and stack information, if `messageOrError` is an Error object) will be concatenated using `\n` as separator before being logged.
+If both `messageOrError` and `error` arguments are supplied, message information \(and stack information, if `messageOrError` is an Error object\) will be concatenated using `\n` as separator before being logged.
 
 Example 1:
 
@@ -53,7 +38,7 @@ try {
 }
 ```
 
-Example 2 (error logging in asynchronous code):
+Example 2 \(error logging in asynchronous code\):
 
 ```javascript
 yourClientAsyncAction().then(function() {
@@ -65,22 +50,22 @@ yourClientAsyncAction().then(function() {
 
 Parameters:
 
-* **module**: string<br/> Name of a module to log.
-* **messageOrError**: string \| Error<br/> Error or message to log.
-* (Optional) **error**: Error<br/> Error object.
+* **module**: string  Name of a module to log.
+* **messageOrError**: string \| Error  Error or message to log.
+* \(Optional\) **error**: Error  Error object.
 
 Returns: void
 
 ### log
 
-**log(module: string, message: string): void**
+**log\(module: string, message: string\): void**
 
 Logs a message.
 
 Parameters:
 
-* **module**: string<br/> Name of a module to log.
-* **message**: string<br/> Log message.
+* **module**: string  Name of a module to log.
+* **message**: string  Log message.
 
 Returns: void
 

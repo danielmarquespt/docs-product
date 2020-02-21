@@ -1,5 +1,7 @@
 ---
-summary: Learn more about the different types relationships between entities in OutSystems.
+summary: >-
+  Learn more about the different types relationships between entities in
+  OutSystems.
 tags: support-application_development; support-Database; support-webapps
 ---
 
@@ -7,9 +9,9 @@ tags: support-application_development; support-Database; support-webapps
 
 In Service Studio, an entity encloses not only the logical definition of a business entity, but also its **relationships** with other entities.
 
-Relationships are created by defining a single **reference attribute** (also known as "foreign key" in database terminology). Its data type is `<Entity> Identifier` which corresponds to the type of the Identifier of the other entity. The reference attribute is shown with a different icon (![reference attribute icon](<images/reference-attr.png>) or ![key reference attribute icon](<images/key-reference-attr.png>), depending on the type of relationship) which is also visible in Entity Diagrams. 
+Relationships are created by defining a single **reference attribute** \(also known as "foreign key" in database terminology\). Its data type is `<Entity> Identifier` which corresponds to the type of the Identifier of the other entity. The reference attribute is shown with a different icon \(![reference attribute icon](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/data/modeling/relationship/images/reference-attr.png%3E) or ![key reference attribute icon](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/data/modeling/relationship/images/key-reference-attr.png%3E), depending on the type of relationship\) which is also visible in Entity Diagrams.
 
-The entity where the reference attribute should be created depends on the cardinality (One-to-One, One-to-Many, Many-to-Many) and optionality (mandatory or optional) of the relationship. Static entities can only have relationships with other static entities.
+The entity where the reference attribute should be created depends on the cardinality \(One-to-One, One-to-Many, Many-to-Many\) and optionality \(mandatory or optional\) of the relationship. Static entities can only have relationships with other static entities.
 
 A relationship can be:
 
@@ -19,14 +21,13 @@ A relationship can be:
 
 Check below for more information on each of these types of relationships.
 
-
 ## One-to-One Relationships
 
-A One-to-One relationship between two entities indicates that one record in Entity `A` corresponds to one record in Entity `B` and one record in Entity `B` has only one associated record in Entity `A`. 
+A One-to-One relationship between two entities indicates that one record in Entity `A` corresponds to one record in Entity `B` and one record in Entity `B` has only one associated record in Entity `A`.
 
-In this case the ![key reference attribute icon](<images/key-reference-attr.png>) reference attribute can be either in Entity `A` or Entity `B`. To decide which entity contains the reference attribute you have to consider the optionality of the relationship. When both sides of the relationship are either mandatory or optional, you have to decide to which Entity you should add the relationship, considering factors like which entity is shared the most.
+In this case the ![key reference attribute icon](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/data/modeling/relationship/images/key-reference-attr.png%3E) reference attribute can be either in Entity `A` or Entity `B`. To decide which entity contains the reference attribute you have to consider the optionality of the relationship. When both sides of the relationship are either mandatory or optional, you have to decide to which Entity you should add the relationship, considering factors like which entity is shared the most.
 
-Learn how to [create a One-to-One relationship](<relationship-one-to-one.md>).
+Learn how to [create a One-to-One relationship](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/data/modeling/relationship/relationship-one-to-one.md%3E).
 
 ### Example
 
@@ -39,17 +40,17 @@ A `ContactPhoto` always belongs to a `Contact`. A `Contact` can have one `Contac
 
 To implement this relationship, the primary key of the `ContactPhoto` must be a reference attribute to the Primary key of the `Contact`:
 
-Entity Diagram | Module Tree
----------------|------------
-![](images/one-to-one-entity-diagram.png) | ![](images/one-to-one-module-tree.jpg)
+| Entity Diagram | Module Tree |
+| :--- | :--- |
+| ![](../../../../../.gitbook/assets/one-to-one-entity-diagram.png) | ![](../../../../../.gitbook/assets/one-to-one-module-tree.jpg) |
 
 ## One-to-Many Relationships
 
 A One-to-Many relationship between two entities indicates that one record in Entity `A` corresponds to multiple records in Entity `B` but one record in Entity `B` has only one associated record in Entity `A`.
 
-In this situation, the ![reference attribute icon](<images/reference-attr.png>) reference attribute must be in the "Many side" of the relationship, i.e. in Entity `B`.
+In this situation, the ![reference attribute icon](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/data/modeling/relationship/images/reference-attr.png%3E) reference attribute must be in the "Many side" of the relationship, i.e. in Entity `B`.
 
-Learn how to [create a One-to-Many relationship](<relationship-one-to-many.md>).
+Learn how to [create a One-to-Many relationship](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/data/modeling/relationship/relationship-one-to-many.md%3E).
 
 ### Example
 
@@ -62,16 +63,15 @@ A `Company` has one or more `Contact`. An `Contact` belongs to a `Company`.
 
 To implement this relationship, the reference attribute must be in the entity `Contact`:
 
-Entity Diagram | Module Tree
----------------|------------
-![](images/one-to-many-entity-diagram.png) | ![](images/one-to-many-module-tree.png)
-
+| Entity Diagram | Module Tree |
+| :--- | :--- |
+| ![](../../../../../.gitbook/assets/one-to-many-entity-diagram.png) | ![](../../../../../.gitbook/assets/one-to-many-module-tree.png) |
 
 ## Many-to-Many Relationships
 
-A Many-to-Many relationship between two entities indicates that one record in Entity `A` corresponds to multiple records in Entity `B` and a record in Entity `B` can have more than one associated record in Entity `A`. In this situation, you must create a **third** entity with, at least, two ![reference attribute icon](<images/reference-attr.png>) reference attributes for Entity `A` and Entity `B`. A Many-to-Many relationship is, in fact, two One-to-Many relationships with this third entity.
+A Many-to-Many relationship between two entities indicates that one record in Entity `A` corresponds to multiple records in Entity `B` and a record in Entity `B` can have more than one associated record in Entity `A`. In this situation, you must create a **third** entity with, at least, two ![reference attribute icon](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/data/modeling/relationship/images/reference-attr.png%3E) reference attributes for Entity `A` and Entity `B`. A Many-to-Many relationship is, in fact, two One-to-Many relationships with this third entity.
 
-Learn how to [create a Many-to-Many relationship](<relationship-many-to-many.md>).
+Learn how to [create a Many-to-Many relationship](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/data/modeling/relationship/relationship-many-to-many.md%3E).
 
 ### Example
 
@@ -88,17 +88,15 @@ To implement this relationship, a third Entity must be created, `CompanyContact`
 * `CompanyId`
 * `ContactId`
 
-Entity Diagram | Module Tree
----------------|------------
-![](images/many-to-many-entity-diagram.png) | ![](images/many-to-many-module-tree.png)
-
+| Entity Diagram | Module Tree |
+| :--- | :--- |
+| ![](../../../../../.gitbook/assets/many-to-many-entity-diagram.png) | ![](../../../../../.gitbook/assets/many-to-many-module-tree.png) |
 
 ## Referential Integrity
 
 When you create relationships between an entity `A` and an entity `B`, you must specify the referential integrity mechanism that you want to apply in your module, i.e. what must happen in entity `B` if the corresponding record in entity `A` is deleted. In OutSystems this behavior is defined by the value of the "Delete Rule" property of reference attributes.
 
-Learn more about the different [Delete Rules](<delete-rules.md>) in OutSystems.
-
+Learn more about the different [Delete Rules](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/data/modeling/relationship/delete-rules.md%3E) in OutSystems.
 
 ## Relationship Indexes
 
@@ -109,7 +107,4 @@ When the reference attribute is defined, an index is automatically created in or
 and covers the reference attribute that implements the relationship.
 
 **You should not delete this index.** If you do, Service Studio displays a warning notifying you of the performance impact this operation might have.
-
-
-
 

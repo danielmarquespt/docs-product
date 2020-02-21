@@ -1,15 +1,18 @@
 ---
-summary: Create your app logic faster with OutSystems AI-assisted development. Use AI-powered suggestions and add logic nodes automatically to your flow and boost your low-code development.
+summary: >-
+  Create your app logic faster with OutSystems AI-assisted development. Use
+  AI-powered suggestions and add logic nodes automatically to your flow and
+  boost your low-code development.
 tags: support-application_development;
 ---
 
 # AI-assisted development
 
-![Artificial intelligence gives development suggestions for a low-code logic](images/ai-flow-service-studio.gif?width=500)
+![Artificial intelligence gives development suggestions for a low-code logic](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/logic/images/ai-flow-service-studio.gif?width=500)
 
-Create app logic in a smart way, with AI-assisted development. This feature helps you develop faster and better with the use of artificial intelligence and machine learning algorithms that analyze millions of anonymized samples of logic. AI-assisted development predicts what you need next and shows the suggestions in the flow connectors when you click the AI radar (the blue circle).
+Create app logic in a smart way, with AI-assisted development. This feature helps you develop faster and better with the use of artificial intelligence and machine learning algorithms that analyze millions of anonymized samples of logic. AI-assisted development predicts what you need next and shows the suggestions in the flow connectors when you click the AI radar \(the blue circle\).
 
-With this feature, you have an AI co-developer available in any flow kind throughout Service Studio. The AI-assisted development also attempts to automatically fill in the properties for the newly created nodes (for example, parameters in a Server Action). When this happens, you'll see the star animation.
+With this feature, you have an AI co-developer available in any flow kind throughout Service Studio. The AI-assisted development also attempts to automatically fill in the properties for the newly created nodes \(for example, parameters in a Server Action\). When this happens, you'll see the star animation.
 
 The number of provided suggestions varies from one to six, depending on the confidence level of the assistant. When the confidence level about the next element in the flow is high, you see only one suggestion in the list, and you can press the Enter key to insert it immediately.
 
@@ -26,41 +29,32 @@ These are the requirements for using the AI-assisted development feature.
 
 There are two ways you can get suggestions.
 
-* Click the AI radar (blue circle) on the flow connectors  
+* Click the AI radar \(blue circle\) on the flow connectors
 
-    ![Suggestions show after clicking](images/ai-flow-node-click.png?width=600)
+  ![Suggestions show after clicking](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/logic/images/ai-flow-node-click.png?width=600)
 
-* Drag and drop a connector in the flow window  
-    
-    ![Suggestions show after dragging the connector](images/ai-flow-node-drag.gif?width=600)
+* Drag and drop a connector in the flow window
 
+  ![Suggestions show after dragging the connector](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/logic/images/ai-flow-node-drag.gif?width=600)
 
 ### Enabling and disabling the feature
 
 To enable or disable the feature, go to the **Edit** menu in Service Studio and select **Preferences**. In the Preferences window, locate the **AI-Assisted Development** section and check the status of the option **Enable inline flow suggestions**.
 
-![Setting to turn AI suggestions on or off](images/ai-flow-settings.png?width=400)
+![Setting to turn AI suggestions on or off](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/logic/images/ai-flow-settings.png?width=400)
 
-<div class="info" markdown="1">
-
-When the properties of the selected suggestion are auto-filled you can see the Service Studio stars popping. Check the properties to validate that everything is as you need.
-
-</div>
+ When the properties of the selected suggestion are auto-filled you can see the Service Studio stars popping. Check the properties to validate that everything is as you need.
 
 ### What kind of suggestions does AI-assisted development give me?
 
 The AI assistant tries to guess what you need next in your flow, based on all the available context and all it has learned from millions of anonymized action flow patterns. When you click on the AI radar, you can expect the following suggestions:
 
-* Specific suggestions - they enable you to add nodes to the flow with pre-filled business context (for example, an Action with populated Source field).
-* Generic suggestions - to add nodes that fit the current position in the flow, but they don't contain any business context (for example, a Message node for you to enter text).    
+* Specific suggestions - they enable you to add nodes to the flow with pre-filled business context \(for example, an Action with populated Source field\).
+* Generic suggestions - to add nodes that fit the current position in the flow, but they don't contain any business context \(for example, a Message node for you to enter text\).    
 
 In total, you get between one and six suggestions. If the AI assistant is very confident about what you might need in your next step - it gives you just one suggestion. In general, the number of options varies depending on the assistant's confidence and the information it can extract from the context: the more specific information you add to Actions, the more precise the suggestions are.
 
-<div class="info" markdown="1">
-	
-The suggested nodes have different names than what you might be used to. As an example, Aggregates show as Get Data. This gives a more natural and conversational interface.
-
-</div>
+ The suggested nodes have different names than what you might be used to. As an example, Aggregates show as Get Data. This gives a more natural and conversational interface.
 
 ### Maximizing the assistant's accuracy
 
@@ -73,7 +67,7 @@ To ensure the best suggestions from the assistant, you should fill in the missin
 
 Once you open the assistant menu, move the suggestion selection with the keyboard arrow keys. Select the highlighted suggestion with the ENTER key.
 
-![AI suggestions selected with the keyboard](images/ai-flow-node-suggestion.gif?width=600)
+![AI suggestions selected with the keyboard](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/logic/images/ai-flow-node-suggestion.gif?width=600)
 
 ### High-confidence suggestions
 
@@ -85,19 +79,19 @@ Here are some troubleshooting tips to help you.
 
 ### How can I prevent accidental activations?
 
-If you only want to select the connector, and not activate the suggestions, click outside the connector's center. If the connector is too small (less than two spaces), you can click anywhere in the connector.
+If you only want to select the connector, and not activate the suggestions, click outside the connector's center. If the connector is too small \(less than two spaces\), you can click anywhere in the connector.
 
 ### What does it mean when there are no more suggestions?
 
 When there's nothing more to add, and it's not the end of the flow, you can edit your flow manually.
 
-![AI shows message about the end of logic](images/ai-flow-ts-no-suggestions.png?width=400)
+![AI shows message about the end of logic](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/logic/images/ai-flow-ts-no-suggestions.png?width=400)
 
 ### Why do I have to click again to get suggestions?
 
 If this keeps happening, check your internet connection and try again.
 
-![AI show message to try again](images/ai-flow-ts-tryagain.png?width=600)
+![AI show message to try again](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/develop/logic/images/ai-flow-ts-tryagain.png?width=600)
 
 ### Why isn't the AI radar showing up?
 
@@ -111,3 +105,4 @@ The AI suggestion node may not show because:
 ### Why does the AI radar disappear?
 
 If there's a recurring error or a poor Internet connection, the AI radar is temporarily deactivated to ensure your Service Studio experience runs smoothly.
+

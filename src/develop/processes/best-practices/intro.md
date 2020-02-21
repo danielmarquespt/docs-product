@@ -13,3 +13,4 @@ This topic lists all best practices present in this help:
 * [Limit the Use of Conditional Starts](limit-conditional-starts.md)
 * [Separate Process Logic from Application Logic](separate-process-application-logic.md)
 * [Scale Queries over Process Entities](scale-queries.md)
+

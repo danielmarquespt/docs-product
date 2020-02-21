@@ -1,5 +1,5 @@
 ---
-tags: 
+tags: null
 ---
 
 # Operands
@@ -16,7 +16,7 @@ Any element writable or not that is available in the current scope of your expre
 
 ### Function call
 
-Service Studio provides some built-in functions. A built-in function always returns a value and can take zero or more parameters, separated by commas. See [Built-in Functions](<../../lang/auto/builtinfunctions.final.md>).
+Service Studio provides some built-in functions. A built-in function always returns a value and can take zero or more parameters, separated by commas. See [Built-in Functions](https://github.com/danielmarquespt/docs-product/tree/e7ea3f444d5129dab245c69ab72ae091554bc4fb/src/ref/lang/auto/builtinfunctions.final.md%3E).
 
 You can also call a User Function. A User Function also returns a value and can take zero or more parameters, separated by commas.
 
@@ -24,4 +24,5 @@ You can also call a User Function. A User Function also returns a value and can 
 
 In Service Studio there are some elements that provide runtime properties, such as widgets and timers. These are properties that are instantiated at runtime.
 
-In fact, besides literals (which must be typed), an expression operand is basically any element that can be selected in the Expression editor's Scope Tree.
+In fact, besides literals \(which must be typed\), an expression operand is basically any element that can be selected in the Expression editor's Scope Tree.
+

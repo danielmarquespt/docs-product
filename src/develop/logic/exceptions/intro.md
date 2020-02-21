@@ -13,12 +13,11 @@ When an exception is raised, the execution of the application flow is interrupte
 
 In OutSystems you can handle exceptions in your application using the Exception Handler action flow element. For raising exceptions in your logic, use the Raise Exception action flow element.
 
-
 ## Types of Exceptions
 
 There are several types of exceptions, which differ in the way they are raised and how they can be handled in the application. Exceptions follow a hierarchy that determines how they are handled:
 
-![](images/exception-types.png)
+![](../../../../.gitbook/assets/exception-types.png)
 
 In this hierarchy, a "parent node" exception can handle any "children node" exception type. For example, a Security Exception Handler will handle an Invalid Login exception, if it appears in the flow before an Invalid Login Exception Handler.
 
@@ -50,13 +49,11 @@ OutSystems can raise Database Exceptions whenever you are interacting with the d
 
 Security Exceptions can be raised by OutSystems whenever you have authentication or other security mechanisms in your application module. Security Exceptions include:
 
-Invalid Login
-:   The login provided by the end-user is not correct. This exception is raised by the Login and LoginPassword System actions.
+Invalid Login : The login provided by the end-user is not correct. This exception is raised by the Login and LoginPassword System actions.
 
-Not Registered
-:   The end-user is not registered and cannot access the current screen without registration. When you create new custom Roles in your module, OutSystems creates specific Role Exceptions under Not Registered Exception:
+Not Registered : The end-user is not registered and cannot access the current screen without registration. When you create new custom Roles in your module, OutSystems creates specific Role Exceptions under Not Registered Exception:
 
-    * Not &lt;Role&gt; &#8211; the end-user is accessing a screen without an authorized Role. 
+* Not &lt;Role&gt; – the end-user is accessing a screen without an authorized Role. 
 
 OutSystems allows you to raise in your logic the Not Registered Exception or any of the existing Role Exceptions.
 
@@ -64,7 +61,7 @@ A Security Exception Handler will handle any of the above exceptions if there is
 
 ### Communication Exception
 
-Communication Exceptions applies only to Reactive Web and Mobile apps and are raised whenever there is a communication problem while the client device is trying to connect to the server, such as no internet connection. Weak connections may also lead to communication exceptions whenever the server fails to reply within the specified timeout value (default timeout is set in the Server Request Timeout property of the module).
+Communication Exceptions applies only to Reactive Web and Mobile apps and are raised whenever there is a communication problem while the client device is trying to connect to the server, such as no internet connection. Weak connections may also lead to communication exceptions whenever the server fails to reply within the specified timeout value \(default timeout is set in the Server Request Timeout property of the module\).
 
 Communication Exceptions are raised only by OutSystems, you are not able to raise them in your logic.
 
@@ -81,3 +78,4 @@ When an exception is raised by OutSystems, the ExceptionMessage property of the 
 When you handle an exception in your module, you can use the Log Error property of the Exception Handler element to choose if OutSystems will log the exception. Logged exceptions will be accessible in the management console of your OutSystems environment.
 
 In the case of integrations, OutSystems logs all the exceptions independently of the value you set in the Log Error property of the Exception Handler.
+

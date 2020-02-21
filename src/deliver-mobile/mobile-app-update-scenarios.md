@@ -1,5 +1,7 @@
 ---
-summary: Understand how automatic updates to mobile apps work when you click on "1-Click Publish".
+summary: >-
+  Understand how automatic updates to mobile apps work when you click on
+  "1-Click Publish".
 tags: runtime-mobile; support-application_development; support-Mobile_Apps
 ---
 
@@ -27,10 +29,7 @@ Even though every time a “1-Click Publish” runs the changes are automaticall
 
 After these changes are published, the experience of the end-users with outdated applications may suffer some impact. In the case of plugins, it is a good practice to include fallbacks in the apps to avoid crashing until the last version is installed on the device. These potential issues are automatically fixed when the end-user upgrades to the latest application package.
 
-<div class="warning" markdown="1">
-
-When installing a new version of an Android app already installed on the device and generated using the build type "Debug", uninstall the previous version from the device before installing the new one. This guarantees the new features will be working correctly.
-
-</div>
+ When installing a new version of an Android app already installed on the device and generated using the build type "Debug", uninstall the previous version from the device before installing the new one. This guarantees the new features will be working correctly.
 
 After the first mobile app generation, every time you click “1-Click Publish”, OutSystems will generate a new application package in the situations listed above. You can then download those application packages via Service Studio, Service Center and LifeTime. This guarantees that the latest application package available to download from the environment is synchronized with the development of the application.
+

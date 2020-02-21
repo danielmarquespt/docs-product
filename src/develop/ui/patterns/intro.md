@@ -1,18 +1,16 @@
 ---
-summary: Drag and drop patterns to use the most common UI components, like calendar, tool tip, carousel, and many more.
+summary: >-
+  Drag and drop patterns to use the most common UI components, like calendar,
+  tool tip, carousel, and many more.
 ---
 
 # Patterns
 
-<div class="info" markdown="1">
-
-Check <a href="https://outsystemsui.outsystems.com/OutSystemsUIWebsite/PatternOverview" title="Demos and previews of the patterns">UI Patterns</a> on the OutSystems UI website for the list of patterns and their previews.
-
-</div>
+ Check [UI Patterns](https://outsystemsui.outsystems.com/OutSystemsUIWebsite/PatternOverview) on the OutSystems UI website for the list of patterns and their previews.
 
 In OutSystems you can use the pre-built patterns, which implement common UI patterns and components. Patterns cover the most used UI patterns and interactions in mobile and web apps, to distance developers as much a possible from the need to program CSS.
 
-## Customization 
+## Customization
 
 You can customize the patterns by writing additional CSS that changes their look and feel. Additionally, you can change the structure to be able to display something else or remove unwanted elements. You can even change the code and the pattern behavior like adding swipe gestures or adding new events. Keep in mind that code customizations can make patterns behave unpredictably and are not officially supported.
 
