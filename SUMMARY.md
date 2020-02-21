@@ -1320,4 +1320,5 @@
     * [Manage Your OutSystems Infrastructure](src/managing-the-applications-lifecycle/initial-setup-of-an-infrastructure.md)
     * [Managing the Applications Lifecycle](src/managing-the-applications-lifecycle/intro.md)
     * [Lifecycle Management and Data Protection](src/managing-the-applications-lifecycle/data-protection.md)
+* [Sync Test](sync-test.md)
 
